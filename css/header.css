@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+
+header{
+    background-color: rgb(29, 29, 29);
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    
+}
+nav{float: right;}
+.nav-items > li{
+    display: inline-block;
+    line-height: 50px;
+    padding: 0 50px;
+    color: rgb(255, 255, 255);
+    text-shadow: 0.1px 0.1px rgb(0, 0, 0);
+    font-size: large;
+    
+}
+.nav-items > li:hover{
+    font-size: larger;
+}
+
+
+.logo{
+    display: inline-block;
+    padding: 20px;
+    color: white;
+    font-size: larger;
+}
