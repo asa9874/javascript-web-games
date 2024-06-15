@@ -2,10 +2,8 @@
 
 .flex-container{
     display: flex;
-    background-color:black;
-    overflow: auto;
-    display: flex; 
-    justify-content: center; 
+    align-content:flex-start;
+    flex-wrap: wrap;
 }
 
 body{
