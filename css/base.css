@@ -16,7 +16,7 @@ body{
     padding: 30px;
     padding-bottom: 0;
     color: aliceblue;
-    font-size:30px;
+    font-size:40px;
     font-weight: 1000;
 }
 
@@ -25,6 +25,7 @@ body{
     height: 500px;
     background-color: rgb(61, 60, 60);
     justify-content: center; 
+    box-shadow: 10px 10px 10px rgb(0, 0, 0);
 }
 
 
@@ -32,4 +33,20 @@ body{
     height: 100px;
     width: 100px;
     margin: 10px;
+}
+
+
+
+.booksection{height: 2000px;}
+
+.bookyear{
+    color: aliceblue;
+    font-weight: 1000;
+    padding: 20px;
+    font-size: 30px;
+}
+.book{
+    height: 300px;
+    width: 200px;
+    margin: 20px;
 }
