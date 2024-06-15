@@ -2,7 +2,6 @@
 
 .flex-container{
     display: flex;
-    align-content:flex-start;
     flex-wrap: wrap;
 }
 
@@ -33,18 +32,3 @@ body{
     margin: 10px;
 }
 
-
-
-.booksection{height: 2000px;}
-
-.bookyear{
-    color: aliceblue;
-    font-weight: 1000;
-    padding: 20px;
-    font-size: 30px;
-}
-.book{
-    height: 300px;
-    width: 200px;
-    margin: 20px;
-}
