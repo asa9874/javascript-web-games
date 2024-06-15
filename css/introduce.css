@@ -9,12 +9,15 @@
     text-align: center;
     align-items: center;
     flex-direction: column;
+    align-content:center;
 }
 
 .introduce p:nth-child(1){
     font-size: 80px;
     font-weight:900;
     margin: 30px;
+    margin-top: 150px;
+
 }
 .introduce p:nth-child(2){
     font-size: 40px;

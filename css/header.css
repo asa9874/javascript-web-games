@@ -18,8 +18,15 @@ nav{float: right;}
     font-size: large;
     
 }
+
+li a{
+    text-decoration: none; /* 밑줄 제거 */
+    color: inherit; /* 부모 요소의 색상을 상속 */
+}
+
 .nav-items > li:hover{
-    font-size: larger;
+    transform: scale(1.05);
+    transition: all 0.3s;
 }
 
 
