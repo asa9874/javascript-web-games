@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+
+.project{
+    margin: 10px;
+    height: 700px;
+    background-color: rgb(41, 39, 39);
+}
+
+.project .projectlogo{
+    margin: 20px;
+    height: 95%;
+    width: 500px;
+    background-color: rgb(26, 34, 41);
+    float: left;
+}
+
+.project .projecttitle{
+    color: aliceblue;
+    padding: 30px;
+    font-size: 80px;
+    font-weight: 800;
+}
+
+.project .projectDescription{
+    font-size: 40px;
+    color: rgb(181, 186, 201);
+    
+}

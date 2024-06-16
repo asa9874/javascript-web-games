@@ -19,16 +19,24 @@ body{
 
 .setction{
     margin: 15px;
-    height: 500px;
+    height: 2000px;
     background-color: rgb(61, 60, 60);
     justify-content: center; 
     box-shadow: 10px 10px 10px rgb(0, 0, 0);
 }
 
+.sectionsubtitle{
+    color: aliceblue;
+    font-weight: 1000;
+    padding: 20px;
+    font-size: 30px;
+}
 
-.languageimg{
+.techimg{
     height: 100px;
     width: 100px;
     margin: 10px;
 }
 
+.projectsection{height: 2150px;}
+.techsection{height: 1000px;}

@@ -1,17 +1,6 @@
 @charset "utf-8";
 
 
-
-.booksection{height: 2000px;}
-
-
-.bookyear{
-    color: aliceblue;
-    font-weight: 1000;
-    padding: 20px;
-    font-size: 30px;
-}
-
 .book{
     height: 300px;
     width: 200px;
