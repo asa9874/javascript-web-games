@@ -2,28 +2,35 @@
 
 
 .project{
-    margin: 10px;
-    height: 700px;
+    margin: 100px;
+    height: 600px;
     background-color: rgb(41, 39, 39);
+    border-radius: 40px;
 }
 
 .project .projectlogo{
     margin: 20px;
-    height: 95%;
+    height: 85%;
     width: 500px;
     background-color: rgb(26, 34, 41);
     float: left;
+    border-radius: 40px;
 }
 
 .project .projecttitle{
     color: aliceblue;
     padding: 30px;
-    font-size: 80px;
+    font-size: 50px;
     font-weight: 800;
 }
 
 .project .projectDescription{
+    display: inline-block;
+    padding: 20px;
+    height: 65%;
+    width: 74%;
     font-size: 40px;
     color: rgb(181, 186, 201);
-    
+    background-color: rgb(48, 50, 53);
+    border-radius: 40px;
 }
