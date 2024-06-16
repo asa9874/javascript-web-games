@@ -10,8 +10,9 @@
 
 .project .projectlogo{
     margin: 20px;
-    height: 85%;
-    width: 500px;
+    margin-top: 60px;
+    height: 75%;
+    width: 15%;
     background-color: rgb(26, 34, 41);
     float: left;
     border-radius: 40px;
@@ -31,6 +32,10 @@
     width: 74%;
     font-size: 40px;
     color: rgb(181, 186, 201);
-    background-color: rgb(48, 50, 53);
+    background-color: rgb(34, 34, 34);
     border-radius: 40px;
+}
+
+@media screen and (max-width: 1500px)
+{
 }

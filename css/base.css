@@ -46,3 +46,8 @@ body{
     padding: 10px;
 }
 .techsection{height: 1000px;}
+
+@media screen and (max-width: 1500px){
+    .setction{height: 3000px;}
+    .techsection{height: 1000px;}
+}
