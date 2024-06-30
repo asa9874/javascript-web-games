@@ -1,41 +1,35 @@
 @charset "utf-8";
 
-
-.project{
-    margin: 100px;
-    height: 600px;
-    background-color: rgb(41, 39, 39);
-    border-radius: 40px;
+.projectsection{
+    flex-direction: column;
+    flex-wrap:nowrap
 }
 
-.project .projectlogo{
+.projectlogo{
     margin: 20px;
     margin-top: 60px;
-    height: 75%;
-    width: 15%;
+    height: 300px;
+    width: 300px;
     background-color: rgb(26, 34, 41);
     float: left;
     border-radius: 40px;
 }
 
-.project .projecttitle{
+.projecttitle{
     color: aliceblue;
     padding: 30px;
     font-size: 50px;
     font-weight: 800;
 }
 
-.project .projectDescription{
+.projectDescription{
     display: inline-block;
     padding: 20px;
-    height: 65%;
+    height: 210px;
     width: 74%;
-    font-size: 40px;
+    font-size: 20px;
     color: rgb(181, 186, 201);
     background-color: rgb(34, 34, 34);
-    border-radius: 40px;
+    border-radius: 10px;
 }
 
-@media screen and (max-width: 1500px)
-{
-}
