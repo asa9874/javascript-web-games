@@ -14,53 +14,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 리스트 생성
     const stringList = [
-        "★SQL시작 | ★Python으로 API사용",
-        "",
-        "",
-        "GithubPages로 웹호스팅 | ★네트워크 | ★CS기초지식 공부 | ★Python으로 알고리즘 공부 시작",
-        "stack | ★Queues | ★우선순위큐 | ★deque | ★정렬알고리즘  | ★백트래킹 | ★DP | ★Prefix sum | ★ Greedy | ★ 백준문제풀기",
-        "Graph, DFS, BFS ,Two-Point, 백준문제풀기",
-        "Tree, 백준골드2달성",
-        "Django 학습 ,Union-Find,LCS 알고리즘 학습",
-        "Django 학습, SQLD 자격증 준비, Java 학습",
-        "Django 학습, Java 학습, Python Steam Api 토이프로젝트",
-        "Django 학습, Java 학습, JavaScript 학습, Python Discord Bot 구동 토이프로젝트",
-        "JavaScript 학습",
-        "JavaScript 학습, HTML5 학습, CSS3 학습",
-        "JavaScript 학습, HTML5 학습, CSS3 학습, Linux 학습",
-        "Spring Boot 학습, Linux 학습,Clean Code 독서, 보안의 기본 독서",
-        "Spring Boot 학습, Linux 학습,보안 공부",
-        "Spring Boot 학습, Linux 학습, Kotlin 학습",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        
-    ]
-
+        ["SQL", "Python APi사용"],
+        ["SQL", "Python API사용"],
+        [],
+        [],
+        ["GithubPages 웹호스팅", "네트워크기초지식", "알고리즘시작"],
+        ["자료구조 ", "정렬 알고리즘", "다이나믹프로그래밍", "그리디알고리즘", "백준문제풀이"],
+        ["Graph", "DFS", "BFS", "Two-Point", "백준문제풀이"],
+        ["Tree", "백준문제풀이"],
+        ["Django ", "Union-Find", "LCS 알고리즘 "],
+        ["Django ", "SQLD 자격증 준비", "Java "],
+        ["Django ", "Java ", "Python Steam Api","SQLD시험합격"],
+        ["Django ", "Java ", "JavaScript ", "Python Discord Bot"],
+        ["JavaScript "],
+        ["JavaScript ", "HTML5 ", "CSS3 "],
+        ["JavaScript ", "HTML5 ", "CSS3 ", "Linux "],
+        ["Spring Boot ", "Linux ", "Clean Code 독서", "보안의 기본 독서"],
+        ["Spring Boot ", "Linux ", "보안 공부"],
+        ["Spring Boot ", "Linux ", "Kotlin "],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+    ];
 
     // 리스트의 길이만큼 행(row)을 생성
     const numRows = stringList.length;
-    const numCols = 2;
 
     for (let i = 0; i < numRows; i++) {
         const row = table.insertRow();
 
-        // 첫 번째 셀: 인덱스 값
+        // 첫 번째 셀: 주차 값
         const cell1 = row.insertCell();
         cell1.textContent = weeks[i];
 
-        // 두 번째 셀: 리스트의 문자열 내용
-        const cell2 = row.insertCell();
-        cell2.textContent = stringList[i];
+        // 두 번째 셀부터: 리스트의 문자열 내용
+        if (Array.isArray(stringList[i])) {
+            for (let j = 0; j < 7; j++) {
+                const cell = row.insertCell();
+                cell.textContent = stringList[i][j];
+            }
+        } else {
+            const cell = row.insertCell();
+            cell.textContent = stringList[i];
+        }
     }
 });
