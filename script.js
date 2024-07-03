@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ["SQL", "Python APi사용"],
         ["SQL", "Python API사용"],
         [],
-        [],
         ["GithubPages 웹호스팅", "네트워크기초지식", "알고리즘시작"],
         ["자료구조 ", "정렬 알고리즘", "다이나믹프로그래밍", "그리디알고리즘", "백준문제풀이"],
         ["Graph", "DFS", "BFS", "Two-Point", "백준문제풀이"],
