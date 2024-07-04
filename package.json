@@ -1,0 +1,19 @@
+{
+  "homepage": "https://asa9874.github.io/",
+  "name": "fruit-game",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.3.1"
+  },
+  "dependencies": {
+    "gh-pages": "^6.1.1",
+    "matter-js": "^0.20.0"
+  }
+}
