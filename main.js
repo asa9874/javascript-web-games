@@ -36,12 +36,13 @@ function koreaninit(){
 
 
 document.addEventListener('DOMContentLoaded', englishinit());
-document.addEventListener('onclick', englishinit());
 document.addEventListener('DOMContentLoaded', koreaninit());
 
-
-
-
+buttons.forEach(button => {
+    button.addEventListener('click', function() {
+        checkCorrect(button);
+    });
+});
 
 function checkCorrect(button) {
     if(Voca[button.innerText]===corret){
