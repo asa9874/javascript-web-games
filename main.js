@@ -1,5 +1,5 @@
 import {Voca} from "./english.js"
-
+import { addFruit } from "./coin.js";
 
 const valuesList = Object.keys(Voca);
 const buttons = document.querySelectorAll('#btn1, #btn2, #btn3, #btn4');
@@ -45,8 +45,16 @@ buttons.forEach(button => {
 });
 
 function checkCorrect(button) {
-    if(Voca[button.innerText]===corret){
+    setTimeout(()=>{
+        if(Voca[button.innerText]===corret){
+            addFruit(0);
+        }
+        else{
+            addFruit(1);
+        }
+    
         englishinit();
         koreaninit();
-    }
+    },300);
+    
 }
