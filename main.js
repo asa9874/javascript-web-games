@@ -34,27 +34,48 @@ function koreaninit(){
     corret=englishDefinition;
 }
 
-
+//로드
 document.addEventListener('DOMContentLoaded', englishinit());
 document.addEventListener('DOMContentLoaded', koreaninit());
 
+
+//버튼 클릭함수 주입
 buttons.forEach(button => {
     button.addEventListener('click', function() {
         checkCorrect(button);
     });
 });
 
+//정답확인
 function checkCorrect(button) {
+    var balltype=0;
+
+    //버튼 비활성화
+    buttons.forEach(button => {button.disabled = true;});
+
+    //정답아닐때 빨간색
+    if(Voca[button.innerText]!=corret){
+        balltype=1;
+        button.style.backgroundColor="#fc5757"
+    }
+
+    //정답 답안에 초록색(항상실행)
+    buttons.forEach(button => {
+        if(Voca[button.innerText]===corret){button.style.backgroundColor="#00ff51"}
+    });
+
+    //시간지난후 버튼활성화, 색초기화
     setTimeout(()=>{
-        if(Voca[button.innerText]===corret){
-            addFruit(0);
-        }
-        else{
-            addFruit(1);
-        }
-    
+        addFruit(balltype);
+        buttons.forEach(button => { button.style.backgroundColor="#fbeee0"});
         englishinit();
         koreaninit();
-    },300);
+        buttons.forEach(button => {button.disabled = false;});
+    },1000);
+
+    
+
+    
     
 }
+

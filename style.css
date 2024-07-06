@@ -40,9 +40,11 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
-  font-size: 50px;
-  background-color: rgb(22, 21, 21);
+  font-size: 60px;
+  background-color: rgb(252, 87, 87);
   color: white;
+  border-radius: 30px;
+  box-shadow: 3px 3px rgb(3, 2, 2);
 }
 
 
@@ -66,10 +68,41 @@ button {
   line-height: 1;
   margin: 20px;
   padding: 1.2em 2.8em;
-  text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
 }
 
+
+/* CSS */
+button {
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 20px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button:hover {
+  background-color: #ffffff;
+}
+
+button:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  button {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}

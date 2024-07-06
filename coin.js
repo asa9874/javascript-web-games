@@ -7,7 +7,7 @@ const render = Render.create({
     element: document.getElementById('matter-container'),
     options: {
         wireframes:false,
-        background:"#042d75",
+        background:"#a9f5d1",
         width:620,
         height:910,
     }
@@ -19,15 +19,15 @@ const world = engine.world;
 //벽
 const walloption={
     isStatic: true,
-    render:{fillStyle: "#0a0a0a"}
+    render:{fillStyle: "#030303"}
 }
 const leftWall= Bodies.rectangle(15,450,30,910, walloption);
 const rightWall= Bodies.rectangle(605,450,30,910, walloption);
 const groundWall= Bodies.rectangle(310,890,620,40, walloption);
-const topLine=Bodies.rectangle(310,150,620,2,{
+const topLine=Bodies.rectangle(310,150,560,2,{
     isSensor:true,
     isStatic: true, 
-    render:{fillStyle: "#0a0a0a"}, 
+    render:{fillStyle: "#ff002b"}, 
     name:"topline",
 })
 
