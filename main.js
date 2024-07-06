@@ -75,10 +75,5 @@ function checkCorrect(button) {
         koreaninit();
         buttons.forEach(button => {button.disabled = false;});
     },1000);
-
-    
-
-    
-    
 }
 
