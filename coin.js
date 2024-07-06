@@ -77,6 +77,7 @@ Events.on(engine,"collisionStart",(event) =>{
     event.pairs.forEach((collision)=> {
         if(collision.bodyA.index + collision.bodyB.index===1){
             World.remove(world, [collision.bodyA,collision.bodyB]);
+            playSound("pop",0.5);
         }
 
         if(!disableAction && ((collision.bodyA.name=== "topline" && collision.bodyB.index===0)||(collision.bodyB.name=== "topline"&& collision.bodyA.index===0))){
@@ -84,3 +85,12 @@ Events.on(engine,"collisionStart",(event) =>{
         }
     });
 });
+
+
+
+
+export function playSound(name,vol) {
+    const audio = new Audio('./public/'+name+'.mp3');
+    audio.volume = vol;
+    audio.play();
+}

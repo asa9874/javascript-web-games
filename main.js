@@ -1,5 +1,5 @@
 import {Voca} from "./english.js"
-import { addFruit } from "./coin.js";
+import { addFruit,playSound } from "./coin.js";
 
 const valuesList = Object.keys(Voca);
 const buttons = document.querySelectorAll('#btn1, #btn2, #btn3, #btn4');
@@ -57,7 +57,10 @@ function checkCorrect(button) {
     if(Voca[button.innerText]!=corret){
         balltype=1;
         button.style.backgroundColor="#fc5757"
+        playSound("bad",0.5)
     }
+    //정답
+    else{playSound("good",0.3)}
 
     //정답 답안에 초록색(항상실행)
     buttons.forEach(button => {

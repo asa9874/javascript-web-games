@@ -5,12 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>영단어 퀴즈</title>
-    <link rel="icon" href="./icon.png"/>
+    <link rel="icon" href="./public/icon.png"/>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="popup.css">
 </head>
 <body>
     <script type="module" src="/coin.js"></script>
     <script type="module" src="/main.js"></script>
+    <script type="module" src="/popup.js"></script>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span id="closePopup" class="close">&times;</span>
+            <p id="popuptitle">영단어 퀴즈!</p>
+            <p id="popupintroduce">초록색공으로 가득채워봐요!</p>
+            <img src="https://media.tenor.com/gQwV8s2pCp8AAAAi/gura-hololive.gif">
+            <img src="https://media.tenor.com/gQwV8s2pCp8AAAAi/gura-hololive.gif">
+            
+        </div>
+    </div>
+
     <div class="container">
         <div id="matter-container"></div>
         <div class="main-content">
