@@ -81,7 +81,7 @@ Events.on(engine,"collisionStart",(event) =>{
         }
 
         if(!disableAction && ((collision.bodyA.name=== "topline" && collision.bodyB.index===0)||(collision.bodyB.name=== "topline"&& collision.bodyA.index===0))){
-            alert("게임오버");
+            alert("클리어!!!");
         }
     });
 });
