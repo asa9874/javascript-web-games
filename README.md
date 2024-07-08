@@ -2,6 +2,7 @@
 <h2>게임플레이</h2>
 https://asa9874.github.io/fruit-game/
 
+![image](https://github.com/asa9874/fruit-game/assets/84450816/e5e024fe-5177-4be4-9dbd-be624e210e56)
 
 <h3>🌳Node.js사용법</h3>
 https://asa9874.tistory.com/271
