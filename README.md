@@ -1,4 +1,4 @@
-<h1>첫 Node.js, Vite 클론코딩, 깃헙페이지 배포(2024.07)</h1>
+<h1>Node.js, Vite 수박게임 클론코딩, 깃헙페이지 배포</h1>
 <h2>게임플레이</h2>
 https://asa9874.github.io/fruit-game/
 
