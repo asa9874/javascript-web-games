@@ -1,0 +1,51 @@
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
+  width: 600px;
+  height: 850px;
+  background-color: #f84459;
+  
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f86e7e;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1500px;
+  gap: 150px; /* 박스 사이의 간격 조절 */
+}
+
+
+html {
+  min-width: 1200px;
+}
+
+img{
+  height: 700px;
+  width: 500px;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+.animename{
+  margin-top: 20px; 
+  font-size: large;
+  font-weight: 1000;
+}
+
+
+.year{
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 1000;
+}
