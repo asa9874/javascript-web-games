@@ -1,0 +1,31 @@
+
+@keyframes moved1{
+    20%{transform: translateX(0px);}
+    70%{transform: translateX(400px);}
+    100%{transform: translateX(0px);}
+}
+  
+@keyframes moved2{
+    20%{transform: translateX(0px);}
+    70%{transform: translateX(-400px);}
+    100%{transform: translateX(0px);}
+}
+
+
+@keyframes hidden1{
+20%{opacity:1;}
+80%{opacity:0;}
+100%{opacity:1;}
+}
+
+.animatemove1 {
+animation: moved1 5s forwards;
+}
+
+.animatemove2 {
+animation: moved2 5s forwards;
+}
+
+.animatehidden {
+animation: hidden1 5s forwards;
+}
