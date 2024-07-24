@@ -33,19 +33,32 @@ function AnimeYearVisible(){
         $year2.toggleClass('visible'); 
         $year1.toggleClass('visible');
         randomAnime();
-    }, 3000);
+        
+    }, 3500);
 }
+
+//버튼 비활성화만들기
+function Clickable(){
+    $('.box1, .box2').css('pointer-events', 'none');
+    setTimeout(function() {
+        $('.box1, .box2').css('pointer-events', 'auto');
+    }, 5000);
+}
+
 
 
 //애니메이션 지우는 작업
 function RemoveAnimation(){
-    $box1.removeClass('animatemove1');
-    $box1.removeClass('animatehidden');
-    $box2.removeClass('animatemove2');
-    $box2.removeClass('animatehidden');
+    setTimeout(function() {
+        $box1.removeClass('animatemove1');
+        $box1.removeClass('animatehidden');
+        $box2.removeClass('animatemove2');
+        $box2.removeClass('animatehidden');
+        
+        void $box1[0].offsetWidth; 
+        void $box2[0].offsetWidth; 
+    }, 5000);
     
-    void $box1[0].offsetWidth; 
-    void $box2[0].offsetWidth; 
 }
 
 
@@ -54,6 +67,7 @@ function RemoveAnimation(){
 
 //버튼 누를때1
 $('.box1').on('click', function() {
+    Clickable();
     RemoveAnimation()
     AnimeYearVisible()
 
@@ -64,6 +78,7 @@ $('.box1').on('click', function() {
 
 //버튼 누를때2
 $('.box2').on('click', function() {
+    Clickable();
     RemoveAnimation()
     AnimeYearVisible()
     
