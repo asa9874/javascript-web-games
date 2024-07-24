@@ -36,25 +36,25 @@ img{
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
-.animename{
+.anime-name{
   margin-top: 20px; 
   font-size: large;
   font-weight: 1000;
 }
 
 
-.year{
+.anime-year{
   margin-bottom: 20px;
   font-size: 30px;
   font-weight: 1000;
   visibility: hidden;
 }
 
-.year.visible{
+.anime-year.visible{
   visibility: visible;
 }
 
-.year.invisible{
+.anime-year.invisible{
   visibility: none;
 }
 
