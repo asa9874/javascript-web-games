@@ -65,7 +65,7 @@ animation: hidden1 5s forwards;
 }
 
 .animateremoveintroducebox{
-    animation: removeintroducebox 1s ease;
+    animation: removeintroducebox 1.1s ease;
 }
 
 @keyframes comeintroducebox{
@@ -74,7 +74,7 @@ animation: hidden1 5s forwards;
 }
 
 .animaterecomeintroducebox{
-    animation: comeintroducebox 1s ease;
+    animation: comeintroducebox 1.1s ease;
 }
 
 

@@ -138,6 +138,7 @@ function GameOver(){
     $('.introducetitle').text("게임 오바.")
     $('.introducecontent').text("너의 점수는 "+parseInt($score.text(), 10)+'점이다.')
     $('.startbutton').text("다시시작")
+    $('.introduceimage').attr('src', 'https://media1.tenor.com/m/ITuWS_FU7cQAAAAC/anime.gif');
 
     $introduce.addClass('animaterecomeintroducebox')
     setTimeout(function() {
@@ -180,7 +181,7 @@ $('.startbutton').on('click', function() {
     
     //초기설정
     $score.text(0);
-    $LifeCount.text(4);
+    $LifeCount.text(5);
 
     //보이게
     updateLifeImages()
