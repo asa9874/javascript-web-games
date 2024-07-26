@@ -23,7 +23,8 @@ html {
   bottom: 0;
   background-image: url("./image.png");
   background-repeat: no-repeat;
-  opacity: 0.5;
+  opacity: 1;
+  transition: opacity 0.5s;
   z-index: -1; 
 }
 
@@ -108,8 +109,79 @@ html {
   right: 0;
 }
 
+.score{
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 20px;
+  font-size: 100px;
+  color: #fd909d;
+  font-weight: 1000;
+  text-shadow: 1px 1px 10px black;
+}
+
 .life{
   height: 90px;
   width: 90px;
   margin: 10px;
 }
+
+
+.introduce{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction:column;
+  height: 1200px;
+  width: 2000px;
+  background-color:#fd909d;
+  opacity: 0.97;
+  border-radius: 50px;
+}
+
+.introducetitle{
+  margin-top: 50px;
+  font-size: 130px;
+  text-align: center;
+  font-weight: 1000;
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 6px rgb(255, 255, 255) ;
+}
+
+.introducecontent{
+  margin: 100px;
+  font-size: 50px;
+  height: 500px;
+  font-weight: 1000;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.startbutton{
+  height: 200px;
+  width: 400px;
+  font-size: 70px;
+  background-color:rgb(233, 105, 135);
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 10px rgb(184, 100, 146);
+  border-radius: 20px;
+  border: #74323a;
+  transition: transform 0.5s;
+}
+
+.startbutton:hover{
+  transform: scale(1.05);
+}
+
+

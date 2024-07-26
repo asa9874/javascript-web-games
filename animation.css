@@ -18,11 +18,7 @@
 100%{opacity:1;}
 }
 
-@keyframes startgamebox{
-    0%{transform:translateY(200%);}
-    50%{transform:translateY(100%);}
-    100%{transform:translateY(0%);}
-}
+
 
 .animatemove1 {
 animation: moved1 5s forwards;
@@ -36,9 +32,55 @@ animation: moved2 5s forwards;
 animation: hidden1 5s forwards;
 }
 
+
+
+
+
+
+
+@keyframes startgamebox{
+    0%{transform:translateY(200%);}
+    50%{transform:translateY(100%);}
+    100%{transform:translateY(0%);}
+}
+
+
 .animatestartgamebox{
     animation: startgamebox 2s ease-in;
 }
+
+
+@keyframes startgametitle{
+    0%{transform:translateY(-200%);}
+    100%{transform:translateY(0%);}
+}
+
+.animatestartgametitle{
+    animation: startgametitle 1s ease;
+}
+
+@keyframes removeintroducebox{
+    0%{transform:translateY(0%);}
+    100%{transform:translateY(-300%);}
+}
+
+.animateremoveintroducebox{
+    animation: removeintroducebox 1s ease;
+}
+
+@keyframes comeintroducebox{
+    0%{transform:translateY(-300%);}
+    100%{transform:translateY(0%);}
+}
+
+.animaterecomeintroducebox{
+    animation: comeintroducebox 1s ease;
+}
+
+
+
+
+
 
 
 
