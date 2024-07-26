@@ -15,7 +15,7 @@ const $score=$('.score');
 const $introduce=$('.introduce');
 let year1Date=new Date($year1.text()).getTime()
 let year2Date=new Date($year2.text()).getTime()
-
+$('.backgroundimg').css('background-image', 'url("./sakura.png")');
 const $LifeCount = $('.LifeCount')
 
 $box1.hide();
