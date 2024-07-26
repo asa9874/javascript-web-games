@@ -90,7 +90,7 @@ Events.on(engine,"collisionStart",(event) =>{
 
 
 export function playSound(name,vol) {
-    const audio = new Audio('https://raw.githubusercontent.com/asa9874/Github-User-Content/main/'+name+'.mp3');
+    const audio = new Audio('./'+name+'.mp3');
     audio.volume = vol;
     audio.play();
 }
