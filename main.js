@@ -26,8 +26,6 @@ $score.hide();
 
 
 
-
-
 //랜덤 애니 선택함수
 function randomAnime(){
     $('.box').each(function() {
