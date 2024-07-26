@@ -1,4 +1,4 @@
-<h1>Vite로 제작한 영단어 퀴즈게임</h1>
+<h1>Vite로 제작한 영단어 퀴즈게임(2024.07)</h1>
 <h2>게임플레이</h2>
 <h3>https://asa9874.github.io/English_Voca_game/</h3>
 <img src="./gameimg.png">
