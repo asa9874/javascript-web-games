@@ -3,7 +3,7 @@ import './style.css'
 import './animation.css'
 import $ from 'jquery'
 import { ANIMATIONS } from './animation'
-
+import './devtoolblock'
 const $box1 = $('.box1');
 const $box2 = $('.box2');
 
