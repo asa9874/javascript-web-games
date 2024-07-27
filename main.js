@@ -15,6 +15,8 @@ const $score=$('.score');
 const $introduce=$('.introduce');
 let year1Date=new Date($year1.text()).getTime()
 let year2Date=new Date($year2.text()).getTime()
+
+let tempyear1,tempyear2
 $('.backgroundimg').css('background-image', 'url("./sakura.png")');
 const $LifeCount = $('.LifeCount')
 
@@ -34,13 +36,25 @@ function randomAnime(){
         $(this).find('.anime-year').text(ANIMATIONS[index]['AnimationYear'])
         $(this).find('.anime-name').text(ANIMATIONS[index]['AnimationName'])
     });
+
     year1Date=new Date($year1.text()).getTime()
     year2Date=new Date($year2.text()).getTime()
-}
+
+    //F12방지용
+    tempyear1=$year1.text()
+    tempyear2=$year2.text()
+    $year1.text("안녕? 안보이지요~")
+    $year2.text("안녕? 안보이지요~")
+}   
 
 
 //애니 나온 년도 보이게하는 함수
 function AnimeYearVisible(){
+    //F12방지용
+    $year1.text(tempyear1)
+    $year2.text(tempyear2)
+
+    
     $year1.toggleClass('visible');
     $year2.toggleClass('visible');
     setTimeout(function() {
