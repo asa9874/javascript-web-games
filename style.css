@@ -1,0 +1,110 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: auto; /* 기본 스크롤 설정 */
+    min-width: 1850px;
+    min-height: 850px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@font-face {
+    font-family: 'MangoDdobak-B';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/MangoDdobak-B.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.backgroundimg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(252, 255, 207);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+    z-index: -1; 
+}
+
+.gamebox{
+    width: 1850px;
+    height: 850px;
+    background-color: rgb(0, 0, 0);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.mainbox{
+    width: 100%;
+    height: 650px;
+}
+
+.textbox{
+    width: 99%;
+    margin-left: 8px;
+    height: 200px;
+    background-color: rgba(245, 188, 219, 0.9);
+    z-index: 2; 
+    position: relative;
+    border-radius: 20px;
+}
+
+.namebox{
+    width: 150px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 87, 151);
+    font-size: 30px;
+    border-radius: 20px;
+    font-family: 'MangoDdobak-B';
+}
+
+.conversation{
+    position: relative;
+    margin: 20px;
+    margin-left: 80px;
+    margin-right: 100px;
+    font-size: 34px;
+    word-wrap: break-word;
+    font-family: 'MangoDdobak-B';
+}
+
+
+.character{
+    float:left;
+    position: absolute; 
+    left: 40%; 
+    top: 10%;
+    z-index: 1; 
+    height: 700px;
+    width: 400px;
+}
+
+.choicebox{
+    visibility: hidden;
+    position: absolute; 
+    float: left;
+    bottom: 3.3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 1850px;
+    height: 850px;
+    z-index: 3; 
+}
+
+.choice{
+    margin: 50px;
+    height: 140px;
+    width: 800px;
+    border-radius: 30px;
+    background-color: rgba(245, 247, 224, 0.9);
+}
