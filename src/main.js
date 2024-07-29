@@ -1,5 +1,5 @@
-import './reset.css'
-import './style.css'
+import '../reset.css'
+import '../style.css'
 import $ from 'jquery'
 import { SCRIPT } from './Script'
 import { PlayBgm,PlayVoice,playEffectSound } from './playsound'
