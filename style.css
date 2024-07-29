@@ -101,17 +101,19 @@ html, body {
 
 .choice{
     margin: 50px;
-    height: 140px;
+    height: 100px;
     width: 800px;
     border-radius: 30px;
     background-color: rgba(245, 247, 224, 0.9);
     transition: transform 0.5s;
-    font-size: 40px;
+    font-size: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-shadow: 1px 1px 1px white;
 }
 
 .choice:hover{
     transform: scale(1.03);
+    background-color: rgb(196, 197, 189,0.9);
 }

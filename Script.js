@@ -48,7 +48,7 @@ export const SCRIPT=[
         "bgm":"surprise",
         "charactor":"https://media1.tenor.com/m/CNI1fSM1XSoAAAAd/shocked-surprised.gif",
         "voice":'003',
-        'background':"url('./img/ryoiki.png')"
+        'background':"url('./backgroundimg/ryoiki.png')"
     },
 ]
 
