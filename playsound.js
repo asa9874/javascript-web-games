@@ -1,3 +1,4 @@
+//효과음
 export function playSound(name,vol) {
     const audio = new Audio('./'+name+'.mp3');
     audio.volume = vol;
@@ -5,6 +6,8 @@ export function playSound(name,vol) {
     return audio;
 }
 
+
+//효과음 중지
 export function stopSound(audio) {
     if (audio) {
         audio.pause();
@@ -12,3 +15,13 @@ export function stopSound(audio) {
     }
 }
 
+
+//브금
+export function ChangeBgm(currentBgm,bgmname,volume){
+    if (currentBgm) {
+        currentBgm.pause();
+        currentBgm.currentTime = 0;
+    }
+    currentBgm=playSound(bgmname,volume)
+    return currentBgm;
+}

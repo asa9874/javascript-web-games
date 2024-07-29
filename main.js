@@ -1,9 +1,9 @@
 import './reset.css'
 import './style.css'
 import $ from 'jquery'
-import { SCRIPT } from './Script'
-import { playSound,stopSound } from './playsound'
-import { BGMLIST,ChoiceList,CharacterList } from './gamechange'
+import { playSound,stopSound,ChangeBgm } from './playsound'
+import { BGMLIST,ChoiceList,CharacterList,SCRIPT } from './SCRIPT'
+import { isChoiceScript } from './choice'
 
 const $gamebox=$('.gamebox')
 const $backgroundimg=$('.backgroundimg')
@@ -26,7 +26,10 @@ let ChoiceindexList=Object.keys(ChoiceList).map(Number);
 let BgmindexList=Object.keys(BGMLIST).map(Number);
 let CharacterindexList=Object.keys(CharacterList).map(Number);
 
+let choicecheck;
+let nowchoice=0;
 let currentBgm;
+
 
 //타이핑관련
 let Conversationtext  // 현재 나온 타이핑
@@ -46,11 +49,23 @@ function typeCharacter() {
   else {
     $conversation.text(Conversationtext); // 타이핑이 끝나면 전체 텍스트 표시
     $('.textbox').css('pointer-events', 'auto');
-    if(ChoiceindexList.includes(NowConversation) && $namebox.text()!="댕댕이"){
+    if(ChoiceindexList.includes(NowConversation) && choicecheck){
       ShowChoicebox()
-  }
+      choicecheck=false
+    }
   }
 }
+
+//텍스트 출력 초기화시키는곳
+function PrintText(name,text){
+  $conversation.text('');
+  currentCharIndex=0;
+  $namebox.text(name)
+  Conversationtext=text
+  $('.textbox').css('pointer-events', 'none');
+  typeCharacter();
+}
+
 
 //선택지 열기
 function ShowChoicebox(){
@@ -60,49 +75,41 @@ function ShowChoicebox(){
     $choice3.text(ChoiceList[NowConversation][3])
 }
 
-//텍스트 출력 초기화시키는곳
-function PrintText(name,text){
-    $conversation.text('');
-    currentCharIndex=0;
-    $namebox.text(name)
-    Conversationtext=text
-    $('.textbox').css('pointer-events', 'none');
-    typeCharacter();
-    
-}
-
-//브금 바꾸는곳
-function ChangeBgm(bgmname,volume){
-  if (currentBgm) {
-    currentBgm.pause();
-    currentBgm.currentTime = 0;
-  }
-  currentBgm=playSound(bgmname,volume)
-}
 
 //선택지 고름
 $('.choice').on('click', function() {
     playSound('choice',0.3)
     PrintText("댕댕이",$(this).text());
     $choicebox.hide();
+
+  if ($(this).is($choice1)) {nowchoice = 1;} 
+  else if ($(this).is($choice2)) {nowchoice = 2;} 
+  else if ($(this).is($choice3)) {nowchoice = 3;} 
 });
+
+
 
 
 
 //텍스트 란 클릭
 $('.textbox').on('click', function() {
     NowConversation+=1;
-    PrintText(SCRIPT[NowConversation].name,SCRIPT[NowConversation].Scripttext)
+    choicecheck=true
+    var nowScript=SCRIPT[NowConversation]
+    if(isChoiceScript(nowScript)){
+      PrintText(nowScript[nowchoice].name,nowScript[nowchoice].Scripttext)
+    }
+    else{
+      PrintText(nowScript.name,nowScript.Scripttext)
+    }
+    
     
     //노래바꾸기
     if (BgmindexList.includes(NowConversation)){
-      ChangeBgm(BGMLIST[NowConversation],0.1)
+      currentBgm=ChangeBgm(currentBgm,BGMLIST[NowConversation].name,BGMLIST[NowConversation].volume)
     }
     //캐릭터 바꾸기
     if (CharacterindexList.includes(NowConversation)){
       $character.attr('src',CharacterList[NowConversation])
     }
 });
-
-
-ChangeBgm('back_peacful',0.5)
