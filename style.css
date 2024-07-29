@@ -81,10 +81,10 @@ html, body {
     float:left;
     position: absolute; 
     left: 40%; 
-    top: 10%;
+    top: 6%;
     z-index: 1; 
-    height: 700px;
-    width: 400px;
+    height: 800px;
+    width: 450px;
 }
 
 .choicebox{

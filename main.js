@@ -1,7 +1,7 @@
 import './reset.css'
 import './style.css'
 import $ from 'jquery'
-import { SCRIPT } from './SCRIPT'
+import { SCRIPT } from './Script'
 import { PlayBgm,PlayVoice,playEffectSound } from './playsound'
 import { isChoiceScript,ChoiceList } from './choice'
 
@@ -20,23 +20,23 @@ $gamebox.css('background-image', 'url("https://img.freepik.com/free-photo/citysc
 $character.attr('src','https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif')
 
 //현재 대화순서
-let NowConversation=-1;
-let nowScript;
+export let NowConversation=-1;
+export let nowScript;
 
-let choicecheck;      //선택지 골랐는지 확인
-let nowchoice=0;      //어떤 선택지?
-let currentBgm;       //현재 Bgm 넣는 변수
-let currentVoice;     //현재 목소리 넣는 변수
+export let choicecheck;      //선택지 골랐는지 확인
+export let nowchoice=0;      //어떤 선택지?
+export let currentBgm;       //현재 Bgm 넣는 변수
+export let currentVoice;     //현재 목소리 넣는 변수
 
 //타이핑관련
-let Conversationtext  // 현재 나온 타이핑
-let currentCharIndex  // 현재 타이핑 위치
-let typingSpeed = 60; // 타이핑 속도 (밀리초)
+export let Conversationtext  // 현재 나온 타이핑
+export let currentCharIndex  // 현재 타이핑 위치
+export let typingSpeed = 60; // 타이핑 속도 (밀리초)
 
 $choicebox.hide();
 
 //타이핑효과
-function typeCharacter() {
+export function typeCharacter() {
   if (currentCharIndex < Conversationtext.length) {
     //목소리 없으면 타이핑소리로 대체
     if(!nowScript.voice){
@@ -58,7 +58,7 @@ function typeCharacter() {
 }
 
 //텍스트 출력 초기화시키는곳
-function PrintText(name,text){
+export function PrintText(name,text){
   $conversation.text('');
   currentCharIndex=0;
   $namebox.text(name)
@@ -69,7 +69,7 @@ function PrintText(name,text){
 
 
 //선택지 열기
-function ShowChoicebox(){
+export function ShowChoicebox(){
     $choicebox.show();
     $choice1.text(ChoiceList[NowConversation][1])
     $choice2.text(ChoiceList[NowConversation][2])
@@ -93,6 +93,25 @@ $('.choice').on('click', function() {
 
 
 
+//바꾸기 함수
+export function ChangeElements(){
+  if (nowScript.voice) {
+    currentVoice=PlayVoice(currentVoice,nowScript.voice,1)
+  }
+  if (nowScript.bgm) {
+    currentBgm=PlayBgm(currentBgm,nowScript.bgm)
+  }
+  if (nowScript.character) {
+    $character.attr('src',nowScript.character)
+  }
+
+  if (nowScript.background) {
+    $gamebox.css('background-image',nowScript.background)
+  }
+}
+
+
+
 //텍스트 란 클릭
 $('.textbox').on('click', function() {
     NowConversation+=1;
@@ -106,9 +125,7 @@ $('.textbox').on('click', function() {
 
 
     //바꾸기
-    currentVoice=PlayVoice(currentVoice,nowScript.voice,1)
-    currentBgm=PlayBgm(currentBgm,nowScript.bgm)
-    $character.attr('src',nowScript.charactor)
-    $gamebox.css('background-image',nowScript.background)
+    ChangeElements()
+    
     
 });
