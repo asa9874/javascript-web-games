@@ -1,9 +1,9 @@
 import './reset.css'
 import './style.css'
 import $ from 'jquery'
-import { playSound,stopSound,ChangeBgm } from './playsound'
-import { BGMLIST,ChoiceList,CharacterList,SCRIPT } from './SCRIPT'
-import { isChoiceScript } from './choice'
+import { playSound,stopSound,PlayBgm,PlayVoice,playEffectSound } from './playsound'
+import { SCRIPT } from './SCRIPT'
+import { isChoiceScript,ChoiceList } from './choice'
 
 const $gamebox=$('.gamebox')
 const $backgroundimg=$('.backgroundimg')
@@ -20,16 +20,12 @@ $character.attr('src','https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif'
 
 //현재 대화순서
 let NowConversation=-1;
+let nowScript;
 
-//게임 변화요소 리스트
-let ChoiceindexList=Object.keys(ChoiceList).map(Number);
-let BgmindexList=Object.keys(BGMLIST).map(Number);
-let CharacterindexList=Object.keys(CharacterList).map(Number);
-
-let choicecheck;
-let nowchoice=0;
-let currentBgm;
-
+let choicecheck;      //선택지 골랐는지 확인
+let nowchoice=0;      //어떤 선택지?
+let currentBgm;       //현재 Bgm 넣는 변수
+let currentVoice;     //현재 목소리 넣는 변수
 
 //타이핑관련
 let Conversationtext  // 현재 나온 타이핑
@@ -41,7 +37,11 @@ $choicebox.hide();
 //타이핑효과
 function typeCharacter() {
   if (currentCharIndex < Conversationtext.length) {
-    playSound('type',0.3)
+    //목소리 없으면 타이핑소리로 대체
+    if(!nowScript.voice){
+      playEffectSound('type',0.3)
+    }
+  
     $conversation.text($conversation.text() + Conversationtext.charAt(currentCharIndex));
     currentCharIndex++;
     setTimeout(typeCharacter, typingSpeed);
@@ -49,7 +49,7 @@ function typeCharacter() {
   else {
     $conversation.text(Conversationtext); // 타이핑이 끝나면 전체 텍스트 표시
     $('.textbox').css('pointer-events', 'auto');
-    if(ChoiceindexList.includes(NowConversation) && choicecheck){
+    if((nowScript.choice === true) && choicecheck){
       ShowChoicebox()
       choicecheck=false
     }
@@ -78,7 +78,8 @@ function ShowChoicebox(){
 
 //선택지 고름
 $('.choice').on('click', function() {
-    playSound('choice',0.3)
+  playEffectSound('choice',0.3)
+    nowScript.voice=null
     PrintText("댕댕이",$(this).text());
     $choicebox.hide();
 
@@ -95,21 +96,16 @@ $('.choice').on('click', function() {
 $('.textbox').on('click', function() {
     NowConversation+=1;
     choicecheck=true
-    var nowScript=SCRIPT[NowConversation]
+    nowScript=SCRIPT[NowConversation]
+    
     if(isChoiceScript(nowScript)){
-      PrintText(nowScript[nowchoice].name,nowScript[nowchoice].Scripttext)
+      nowScript=SCRIPT[NowConversation][nowchoice]
     }
-    else{
-      PrintText(nowScript.name,nowScript.Scripttext)
-    }
-    
-    
-    //노래바꾸기
-    if (BgmindexList.includes(NowConversation)){
-      currentBgm=ChangeBgm(currentBgm,BGMLIST[NowConversation].name,BGMLIST[NowConversation].volume)
-    }
-    //캐릭터 바꾸기
-    if (CharacterindexList.includes(NowConversation)){
-      $character.attr('src',CharacterList[NowConversation])
-    }
+    PrintText(nowScript.name,nowScript.Scripttext)
+
+
+    //바꾸기
+    currentVoice=PlayVoice(currentVoice,nowScript.voice,0.5)
+    currentBgm=PlayBgm(currentBgm,nowScript.bgm)
+    $character.attr('src',nowScript.charactor)
 });

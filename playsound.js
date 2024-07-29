@@ -1,4 +1,4 @@
-//효과음
+
 export function playSound(name,vol) {
     const audio = new Audio('./'+name+'.mp3');
     audio.volume = vol;
@@ -15,13 +15,32 @@ export function stopSound(audio) {
     }
 }
 
+//효과음
+export function playEffectSound(effectname,effectvolume) {
+    playSound("effect/"+effectname,effectvolume)
+}
+
+export function PlayVoice(currentVoice,voicename,volume){
+    if (currentVoice) {
+        currentVoice.pause();
+        currentVoice.currentTime = 0;
+    }
+    currentVoice=playSound("voice/"+voicename,volume)
+    return currentVoice;
+}
+
+//브금 소리크기
+const BGMLIST={
+    'peaceful': 0.2,
+    'surprise':0.1,
+}
 
 //브금
-export function ChangeBgm(currentBgm,bgmname,volume){
-    if (currentBgm) {
+export function PlayBgm(currentBgm,bgmname){
+    if (currentBgm && bgmname) {
         currentBgm.pause();
         currentBgm.currentTime = 0;
     }
-    currentBgm=playSound(bgmname,volume)
+    currentBgm=playSound("music/"+bgmname,BGMLIST[bgmname])
     return currentBgm;
 }
