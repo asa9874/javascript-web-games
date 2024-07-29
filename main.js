@@ -1,7 +1,7 @@
 import './reset.css'
 import './style.css'
 import $ from 'jquery'
-import { playSound,stopSound,PlayBgm,PlayVoice,playEffectSound } from './playsound'
+import { PlayBgm,PlayVoice,playEffectSound } from './playsound'
 import { SCRIPT } from './SCRIPT'
 import { isChoiceScript,ChoiceList } from './choice'
 
@@ -105,7 +105,9 @@ $('.textbox').on('click', function() {
 
 
     //바꾸기
-    currentVoice=PlayVoice(currentVoice,nowScript.voice,0.5)
+    currentVoice=PlayVoice(currentVoice,nowScript.voice,1)
     currentBgm=PlayBgm(currentBgm,nowScript.bgm)
     $character.attr('src',nowScript.charactor)
+    $gamebox.css('background-image',nowScript.background)
+    
 });

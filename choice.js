@@ -1,3 +1,4 @@
+//선택지가 있나요?
 export function isChoiceScript(script) {
     if (script && typeof script === 'object') {
       return script.hasOwnProperty(1);
@@ -7,5 +8,7 @@ export function isChoiceScript(script) {
 
 //선택지
 export const ChoiceList={
-  1:{1:"캬오오오ㅗㅇㅇ",2:"기냐냐냐오옹",3:"케케케ㅔ에켁ㅇ"}
+  1:{1:"첫번째 화살을 날린다.",2:"달을 보며 기도한다.",3:"받아들인다."}
 }
+
+

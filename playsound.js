@@ -1,4 +1,4 @@
-
+//베이스 사운드 함수
 export function playSound(name,vol) {
     const audio = new Audio('./'+name+'.mp3');
     audio.volume = vol;
@@ -7,7 +7,7 @@ export function playSound(name,vol) {
 }
 
 
-//효과음 중지
+//사운드 중지함수
 export function stopSound(audio) {
     if (audio) {
         audio.pause();
@@ -28,6 +28,7 @@ export function PlayVoice(currentVoice,voicename,volume){
     currentVoice=playSound("voice/"+voicename,volume)
     return currentVoice;
 }
+
 
 //브금 소리크기
 const BGMLIST={
