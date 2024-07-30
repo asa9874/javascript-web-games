@@ -1,13 +1,16 @@
 import '../reset.css'
 import '../style.css'
+import '../animation.css'
 import $ from 'jquery'
 import { SCRIPT } from './Script'
 import { PlayBgm,PlayVoice,playEffectSound } from './playsound'
 import { isChoiceScript,ChoiceList } from './choice'
 import { ChangeCharactor } from './charactor'
+import { StartAnimation } from './animation'
 
 export const $GameStartBox=$('.GameStartBox');
 export const $gamebox=$('.gamebox')
+export const $gamebackgroundimg=$('.gamebackgroundimg')
 export const $backgroundimg=$('.backgroundimg')
 export const $conversation=$('.conversation')
 export const $character=$('.character')
@@ -59,8 +62,8 @@ export function typeCharacter() {
   else {
     $conversation.text(Conversationtext); // 타이핑이 끝나면 전체 텍스트 표시
     $('.textbox').css('pointer-events', 'auto');
-    if((nowScript.choice === true) && choicecheck){
-      ShowChoicebox()
+    if((nowScript.choice) && choicecheck){
+      ShowChoicebox(nowScript.choice)
       choicecheck=false
     }
   }
@@ -78,11 +81,11 @@ export function PrintText(name,text){
 
 
 //선택지 열기
-export function ShowChoicebox(){
+export function ShowChoicebox(choicenumber){
     $choicebox.show();
-    $choice1.text(ChoiceList[NowConversation][1])
-    $choice2.text(ChoiceList[NowConversation][2])
-    $choice3.text(ChoiceList[NowConversation][3])
+    $choice1.text(ChoiceList[choicenumber][1])
+    $choice2.text(ChoiceList[choicenumber][2])
+    $choice3.text(ChoiceList[choicenumber][3])
 }
 
 
@@ -102,7 +105,7 @@ $('.choice').on('click', function() {
 
 
 
-//바꾸기 함수
+//바꾸기,체크 함수
 export function ChangeElements(){
   currentVoice=PlayVoice(currentVoice,nowScript.voice,1)
   currentBgm=PlayBgm(currentBgm,nowScript.bgm)
@@ -111,13 +114,27 @@ export function ChangeElements(){
   ChangeCharactor($character2,nowScript.character2)
   ChangeCharactor($character3,nowScript.character3)
 
+
   if(nowScript.background) {
-    $gamebox.css('background-image',nowScript.background)
+    $gamebackgroundimg.css('background-image',nowScript.background)
   }
   if(nowScript.name){
     $namebox.text(nowScript.name)
   }
+  if(nowScript.typingSpeed){
+    typingSpeed=nowScript.typingSpeed
+  }
+  else{
+    typingSpeed=60
+  }
+  if($namebox.text()===""){
+    $namebox.hide()
+  }
+  else{
+    $namebox.show()
+  }
 }
+
 
 //다음대화로 이동하기
 export function NextConversation(){
@@ -144,7 +161,7 @@ $('.textbox').on('click', function() {
 
 
 $GameStartBox.on('click', function() {
-    NextConversation();
-    $GameStartBox.hide();
-    $gamebox.show()
+  NextConversation();
+  $GameStartBox.hide();
+  $gamebox.show()
 });

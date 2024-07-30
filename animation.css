@@ -1,0 +1,11 @@
+@keyframes exampleAnimation {
+    0% { opacity: 0; }
+    100% { opacity: 100;}
+}
+
+.exampleAnimation {
+    animation-name: exampleAnimation;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards; /* 애니메이션이 끝난 후에도 최종 상태를 유지 */
+}
