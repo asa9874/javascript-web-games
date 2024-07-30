@@ -1,18 +1,21 @@
 import $ from 'jquery'
 
 //캐릭터 모습,위치 바꾸기
-export function ChangeCharactor(character,image,position){
-    if(position){
-        if(position==='hidden'){
-            character.hide()
+export function ChangeCharactor(target,character){
+    if(character){
+        if(character.position){
+            if(character.position==='hidden'){
+                target.hide()
+            }
+            else{
+                target.show()
+                target.css('left',character.position+'%')
+            }
         }
-        else{
-            character.show()
-            character.css('left',position+'%')
+    
+        if(character.img){
+            target.attr('src',character.img)
         }
-    }
-    if(image){
-        character.attr('src',image)
     }
 }
 
