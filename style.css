@@ -117,3 +117,22 @@ html, body {
     transform: scale(1.03);
     background-color: rgb(196, 197, 189,0.9);
 }
+
+
+.GameStartBox{
+    height: 100px;
+    width: 700px;
+    border-radius: 30px;
+    background-color: rgba(255, 152, 191, 0.99);
+    transition: transform 0.5s,background-color 1s;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 1px 1px 1px white;
+}
+
+.GameStartBox:hover{
+    transform: scale(1.09);
+    background-color: rgba(248, 10, 208, 0.9);
+}
