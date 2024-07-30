@@ -21,12 +21,14 @@ export function playEffectSound(effectname,effectvolume) {
 }
 
 export function PlayVoice(currentVoice,voicename,volume){
-    if (currentVoice) {
-        currentVoice.pause();
-        currentVoice.currentTime = 0;
+    if(voicename){
+        if (currentVoice) {
+            currentVoice.pause();
+            currentVoice.currentTime = 0;
+        }
+        currentVoice=playSound("voice/"+voicename,volume)
+        return currentVoice;
     }
-    currentVoice=playSound("voice/"+voicename,volume)
-    return currentVoice;
 }
 
 
@@ -38,10 +40,12 @@ const BGMLIST={
 
 //브금
 export function PlayBgm(currentBgm,bgmname){
-    if (currentBgm && bgmname) {
-        currentBgm.pause();
-        currentBgm.currentTime = 0;
+    if (bgmname){
+        if (currentBgm && bgmname) {
+            currentBgm.pause();
+            currentBgm.currentTime = 0;
+        }
+        currentBgm=playSound("music/"+bgmname,BGMLIST[bgmname])
     }
-    currentBgm=playSound("music/"+bgmname,BGMLIST[bgmname])
     return currentBgm;
 }

@@ -4,16 +4,17 @@ import $ from 'jquery'
 import { SCRIPT } from './Script'
 import { PlayBgm,PlayVoice,playEffectSound } from './playsound'
 import { isChoiceScript,ChoiceList } from './choice'
+import { ChangeCharactor } from './charactor'
 
-const $gamebox=$('.gamebox')
-const $backgroundimg=$('.backgroundimg')
-const $conversation=$('.conversation')
-const $character=$('.character')
-const $namebox=$('.namebox')
-const $choicebox=$('.choicebox')
-const $choice1=$('.choice1')
-const $choice2=$('.choice2')
-const $choice3=$('.choice3')
+export const $gamebox=$('.gamebox')
+export const $backgroundimg=$('.backgroundimg')
+export const $conversation=$('.conversation')
+export const $character=$('.character')
+export const $namebox=$('.namebox')
+export const $choicebox=$('.choicebox')
+export const $choice1=$('.choice1')
+export const $choice2=$('.choice2')
+export const $choice3=$('.choice3')
 
 $backgroundimg.css('background-image', 'url("https://img.freepik.com/free-photo/anime-night-sky-illustration_23-2151684354.jpg?t=st=1722092342~exp=1722095942~hmac=2a289c842d707f4eeb2c2d34c4e0163a4ad67367cf8fa925f0969f81dba59b06&w=1380")');
 $gamebox.css('background-image', 'url("https://img.freepik.com/free-photo/cityscape-anime-inspired-urban-area_23-2151028639.jpg?t=st=1722092803~exp=1722096403~hmac=4fa1ebd54d37aeea219565d395c07cc8444e495e005e1d911a65ea171b9f0bf0&w=996")');
@@ -95,15 +96,9 @@ $('.choice').on('click', function() {
 
 //바꾸기 함수
 export function ChangeElements(){
-  if (nowScript.voice) {
-    currentVoice=PlayVoice(currentVoice,nowScript.voice,1)
-  }
-  if (nowScript.bgm) {
-    currentBgm=PlayBgm(currentBgm,nowScript.bgm)
-  }
-  if (nowScript.character) {
-    $character.attr('src',nowScript.character)
-  }
+  currentVoice=PlayVoice(currentVoice,nowScript.voice,1)
+  currentBgm=PlayBgm(currentBgm,nowScript.bgm)
+  ChangeCharactor($character,nowScript.character,nowScript.characterposition)
 
   if (nowScript.background) {
     $gamebox.css('background-image',nowScript.background)

@@ -6,6 +6,7 @@
 //bgm : bgm 이름
 //background : background "url('./img/ryoiki.png')" 형식
 //character : 케릭터 이미지
+//characterposition : 캐릭터 위치 왼쪽%기준, hidden이면숨김
 export const SCRIPT=[
     {
         "id":0,
@@ -13,8 +14,8 @@ export const SCRIPT=[
         "Scripttext":"첫번째 테스트 문장인거시다",
         "voice":'000',
         "bgm":"peaceful",
-        'background':"url('./backgroundimg/street.png')",
-        'character':'./character/emotionless.png'
+        'character':'./character/emotionless.png',
+        'characterposition':30
     },
     {
         "id":1,
@@ -22,8 +23,8 @@ export const SCRIPT=[
         "Scripttext":"선택지중 하나를 골라보는거다",
         "voice":'001',
         "choice":true,
-        'character':'./character/smile.png',
-        
+        'characterposition':50,
+        'background':"url('./backgroundimg/street.png')",
     },
     
     {
@@ -32,6 +33,7 @@ export const SCRIPT=[
             "name":"애옹이",
             "Scripttext":"화살을 날리는걸 고른거다",
             "voice":'002-1',
+            'characterposition':'hidden',
             'character':'./character/smile.png',
         },
         2:{
@@ -54,6 +56,7 @@ export const SCRIPT=[
         "voice":'002',
         "bgm":"surprise",
         'character':'./character/smile.png',
+        'characterposition':50,
         "voice":'003',
         'background':"url('./backgroundimg/classroom.png')"
     },
