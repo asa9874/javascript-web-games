@@ -12,7 +12,7 @@
 //typingSpeed : defalt 60
 //animation : [애니메이션이름,길이]
 //goscript: 숫자 스크립트 번호로  event=> 랜덤이벤트로
-
+//"event":"hospital" 이벤트 시작부분을 나타냄
 export const SCRIPT=[
     {   //0 프롤로그 시작
         "Scripttext":"2040년, 인류는 역사상 가장 참혹한 비극을 맞이했다.",
@@ -46,6 +46,8 @@ export const SCRIPT=[
     {   //6: 병원이벤트
         "name":"주인공",
         "Scripttext":"폐허가 된 도시를 탐험하던 중, 나는 버려진 병원을 발견했다.",
+        'background':"url('./backgroundimg/hospital.png')",
+        "event":"hospital"
     },
     {   //7
         "Scripttext":"병원 내부는 어두컴컴하고 음침했지만, 나는 혹시 모를 의약품을 찾아 들어갔다."
@@ -97,21 +99,22 @@ export const SCRIPT=[
     //event
     {   //13: 기계의 도움이벤트
         "name":"주인공",
-        "Scripttext":"폐허가 된 도시에서 탐험을 마치고, 나는 인공지능 의료 기계를 발견했다. 이 기계는 전쟁 이후에도 여전히 작동하고 있었다.", //1
-        "character1":{"img":'./character/emotionless.png',"position":50} //2
+        "Scripttext":"폐허가 된 도시에서 탐험을 마치고, 나는 인공지능 의료 기계를 발견했다. 이 기계는 전쟁 이후에도 여전히 작동하고 있었다.", 
+        'background':"url('./backgroundimg/robot_help.png')",
+        "event":"robot_help"
     },
     {   //14
-        "Scripttext":"기계는 나를 인식하고 자동으로 진단을 시작했다. 무언가 유용한 치료를 받을 수 있을 것 같은 느낌이 들었다." //1
+        "Scripttext":"기계는 나를 인식하고 자동으로 진단을 시작했다. 무언가 유용한 치료를 받을 수 있을 것 같은 느낌이 들었다." 
     },
     {   //15
-        "Scripttext":"기계가 진단을 끝낸 후, 나에게 필요한 치료를 제공하기 시작했다." //1
+        "Scripttext":"기계가 진단을 끝낸 후, 나에게 필요한 치료를 제공하기 시작했다."
     },
     {   //16
-        "Scripttext":"몇 분 후, 치료가 완료되었고, 기계의 도움 덕분에 체력이 회복되었다." //1
+        "Scripttext":"몇 분 후, 치료가 완료되었고, 기계의 도움 덕분에 체력이 회복되었다." 
     },
     {   //17
-        "Scripttext":"이 기계 덕분에 회복된 체력으로, 나는 다시 모험을 계속할 준비가 되었다.", //1
-        "effect":{"health":20} //2
+        "Scripttext":"이 기계 덕분에 회복된 체력으로, 나는 다시 모험을 계속할 준비가 되었다.", 
+        "effect":{"health":20} 
     },
     {   //18
         "Scripttext":"나는 다음목적지를 향해 걷기 시작했다.",
@@ -127,7 +130,7 @@ export const SCRIPT=[
     {   //19: 야생 동물의 공격 
         "name":"주인공",
         "Scripttext":"정글을 탐험하던 중, 갑자기 야생 동물의 공격을 받았다! 포악한 동물이 눈앞에 나타났고, 나는 즉각적으로 반응해야 했다.",
-        "character1":{"img":'./character/alert.png',"position":50}
+        "evnet":'wildlife_attack'
     },
     {   //20
         "Scripttext":"야생 동물은 매우 공격적이며, 빠르게 움직이며 나를 위협하고 있다. 상황이 매우 위험하다."

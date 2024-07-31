@@ -130,6 +130,7 @@ export function ChangeElements(){
   }
   if(nowScript.name){
     $namebox.text(nowScript.name)
+    $namebox.show()
   }
   else{
     $namebox.hide()
@@ -194,7 +195,7 @@ $GameStartBox.on('click', function() {
 
 //오프닝스킵
 $OpeningSkipBox.on('click', function() {
-  NowConversation=20
+  NowConversation=5
   NextConversation();
   $GameStartBox.hide();
   $gamebox.show()

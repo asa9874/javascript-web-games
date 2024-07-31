@@ -1,10 +1,24 @@
+import { SCRIPT } from "./Script";
+
 //게임 요소
 export let health=100
 
 
 //이벤트 이동, 
-//6:병원 13:착한인공지능 19:동물습격
-let eventlist=[6,13,19]
+//병원,착한로봇,야생의 습격
+let eventlist=getEventIndices(SCRIPT)
+
+//이벤트 시작리스트 리턴해주기
+function getEventIndices(scriptArray) {
+  let eventIndices = [];
+  for (let i = 0; i < scriptArray.length; i++) {
+      if (scriptArray[i].hasOwnProperty('event')) {
+          eventIndices.push(i);
+      }
+  }
+  return eventIndices;
+}
+
 //event= 랜덤이벤트 숫자면 해당번호 스크립트로 이동
 export function goEvent(event){
     var script
