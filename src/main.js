@@ -4,10 +4,11 @@ import '../animation.css'
 import $ from 'jquery'
 import { SCRIPT } from './Script'
 import { PlayBgm,PlayVoice,playEffectSound } from './playsound'
-import { isChoiceScript,ChoiceList } from './choice'
 import { ChangeCharactor } from './charactor'
 import { Animation } from './animation'
+import { goEvent,ChoiceList, SuccessChoice } from './event'
 
+export const $test=$('.test')
 export const $GameStartBox=$('.GameStartBox');
 export const $OpeningSkipBox=$('.OpeningSkipBox')
 export const $gamebox=$('.gamebox')
@@ -28,8 +29,13 @@ export const $choice3=$('.choice3')
 export let NowConversation=-1;
 export let nowScript;
 
+//선택지
 export let choicecheck;      //선택지 골랐는지 확인
-export let nowchoice=0;      //어떤 선택지?
+export let choiceevent;      //어떤 선택지사항인지
+export let choicenow=0;      //어떤 선택지고름?
+export let choicesuccess           //선택지 성공여부
+
+
 export let currentBgm;       //현재 Bgm 넣는 변수
 export let currentVoice;     //현재 목소리 넣는 변수
 
@@ -63,9 +69,8 @@ export function typeCharacter() {
   else {
     $conversation.text(Conversationtext); // 타이핑이 끝나면 전체 텍스트 표시
     $('.textbox').css('pointer-events', 'auto');
-    if((nowScript.choice) && choicecheck){
+    if((nowScript.choice)){
       ShowChoicebox(nowScript.choice)
-      choicecheck=false
     }
   }
 }
@@ -84,22 +89,26 @@ export function PrintText(name,text){
 //선택지 열기
 export function ShowChoicebox(choicenumber){
     $choicebox.show();
-    $choice1.text(ChoiceList[choicenumber][1])
-    $choice2.text(ChoiceList[choicenumber][2])
-    $choice3.text(ChoiceList[choicenumber][3])
+    choiceevent=ChoiceList[choicenumber]
+    $choice1.text(choiceevent[1]["text"])
+    $choice2.text(choiceevent[2]["text"])
+    $choice3.text(choiceevent[3]["text"])
 }
 
 
 //선택지 고름
 $('.choice').on('click', function() {
   playEffectSound('choice',0.3)
-    nowScript.voice=null
-    PrintText("댕댕이",$(this).text());
-    $choicebox.hide();
+  nowScript.voice=null
+  $choicebox.hide();
 
-  if ($(this).is($choice1)) {nowchoice = 1;} 
-  else if ($(this).is($choice2)) {nowchoice = 2;} 
-  else if ($(this).is($choice3)) {nowchoice = 3;} 
+  if ($(this).is($choice1)) {choicenow = 1;} 
+  else if ($(this).is($choice2)) {choicenow = 2;} 
+  else if ($(this).is($choice3)) {choicenow = 3;} 
+  
+  choicesuccess=SuccessChoice()
+  NextConversation()
+  $test.text(1)
 });
 
 
@@ -122,12 +131,15 @@ export function ChangeElements(){
   if(nowScript.name){
     $namebox.text(nowScript.name)
   }
+  else{
+    $namebox.hide()
+  }
 
   if(nowScript.animation){
     Animation(nowScript.animation)
   }
   if(nowScript.goscript){
-    NowConversation=nowScript.goscript
+    NowConversation=goEvent(nowScript.goscript)
   }
 
   if(nowScript.typingSpeed){
@@ -136,13 +148,6 @@ export function ChangeElements(){
   else{
     typingSpeed=60
   }
-
-  if($namebox.text()===""){
-    $namebox.hide()
-  }
-  else{
-    $namebox.show()
-  }
   
 }
 
@@ -150,11 +155,15 @@ export function ChangeElements(){
 //다음대화로 이동하기
 export function NextConversation(){
   NowConversation+=1;
-  choicecheck=true
-  nowScript=SCRIPT[NowConversation]
   
-  if(isChoiceScript(nowScript)){
-    nowScript=SCRIPT[NowConversation][nowchoice]
+  if(SCRIPT[NowConversation].Scripttext){
+    nowScript=SCRIPT[NowConversation]
+    
+  }
+
+  else{
+    nowScript=SCRIPT[NowConversation][choicenow][choicesuccess]
+    
   }
   PrintText(nowScript.name,nowScript.Scripttext)
   //바꾸기
@@ -180,7 +189,7 @@ $GameStartBox.on('click', function() {
 
 //오프닝스킵
 $OpeningSkipBox.on('click', function() {
-  NowConversation=5
+  NowConversation=9
   NextConversation();
   $GameStartBox.hide();
   $gamebox.show()

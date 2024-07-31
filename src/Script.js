@@ -2,19 +2,19 @@
 //id:아이디
 //name:이름   "" -> 숨기기
 //voice: 목소리 이름
-//choice:선택지 열기여부 true false임
+//choice:선택지 열기여부 번호로 작성
 //bgm : bgm 이름
 //background : background "url('./img/ryoiki.png')" 형식
 //character : {img:케릭터 이미지,position:위치} postion:'hidden' -> 숨기기
 //typingSpeed : defalt 60
 //animation : [애니메이션이름,길이]
-//goscript: 숫자 스크립트 번호로 
+//goscript: 숫자 스크립트 번호로  event=> 랜덤이벤트로
 export const SCRIPT=[
     {   //0
         "Scripttext":"2040년, 인류는 역사상 가장 참혹한 비극을 맞이했다.",
         "typingSpeed":100,
-        'background':"url('./backgroundimg/clothshop.png')",
-        'animation':['showbackground',10000],
+        'background':"url('./backgroundimg/opening1.png')",
+        'animation':['fadeinbackground',10000],
     },
     {   
         "Scripttext":"제3차 세계 대전이 발발하며 핵무기와 생화학 무기가 동원된 전쟁은 전 지구를 순식간에 황폐화시켰다.",
@@ -38,48 +38,52 @@ export const SCRIPT=[
     },
 
 
+
     {
-        "name":"애옹이",
-        "Scripttext":"첫번째 테스트 문장인거시다",
-        "voice":'000',
-        "bgm":"peaceful",
-        'character1':{"img":'./character/emotionless.png',"position":30},
-        'character2':{"img":'./character/emotionless.png',"position":60},
-        
+        "name":"주인공",
+        "Scripttext":"폐허가 된 도시를 탐험하던 중, 나는 버려진 병원을 발견했다.",
+        "character1":{"img":'./character/emotionless.png',"position":50}
     },
     {
-        "Scripttext":"선택지중 하나를 골라보는거다",
-        "voice":'001',
-        "choice":1,
-        'character1':{"position":10},
-        'background':"url('./backgroundimg/street.png')",
+        "Scripttext":"병원 내부는 어두컴컴하고 음침했지만, 나는 혹시 모를 의약품을 찾아 들어갔다."
     },
-    
+    {
+        "name":"주인공",
+        "Scripttext":"여기서 응급처치 키트를 찾을 수 있으면 좋을 텐데..."
+    },
+    {
+        "Scripttext":"나는 조심스럽게 병원의 각 방을 뒤지기 시작했다."
+    },
+    {
+        "Scripttext":"몇 분 후, 오래된 진료실에서 희미한 빛을 발하는 상자를 발견했다.",
+        "choice":'hospital'
+    },
     {
         1:{
-            "name":"애옹이",
-            "Scripttext":"화살을 날리는걸 고른거다",
-            "voice":'002-1',
+            "success":{
+                "Scripttext":"상자를 열어보니, 다행히도 응급처치 키트가 들어 있었다! 체력이 증가합니다.",
+
+            },
+            "failure":{
+                "Scripttext":"상자를 열었지만, 안에는 쓸모 없는 오래된 약들 뿐이었다. 실망스럽게도 체력에는 변화가 없다."
+            }
         },
         2:{
-            "name":"애옹이",
-            "Scripttext":"달을 보며 기도한것이다.",
-            "voice":'002-2',
+            "success":{
+                "Scripttext":"나는 상자를 그냥 두고 더 안전한 물품을 찾아 나섰다. 하지만 뒤돌아보니 후회가 밀려온다."
+            },
         },
         3:{
-            "name":"애옹이",
-            "Scripttext":"받아들인것이다.",
-            "voice":'002-3',
-            'goscript':5
-        },
-    },
-    {
-        "Scripttext":"상황전환 테스트인것이다.",
-        'character1':{'position':'hidden'},
-        "bgm":"surprise",
-        "voice":'003',
-        'background':"url('./backgroundimg/classroom.png')"
-    },
+            "success":{
+                "Scripttext":"조심스럽게 상자를 열어 함정을 해제했다. 안에는 응급처치 키트가 들어 있었다! 체력이 증가합니다.",
+
+            },
+            "failure":{
+                "Scripttext":"함정을 해제하려다가 오히려 작동시켜버렸다. 체력이 감소합니다.",
+
+            }
+        }
+    }
 ]
 
 

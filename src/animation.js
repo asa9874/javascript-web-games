@@ -14,7 +14,10 @@ export function StartAnimation(target,animationname,animationduration){
 export function Animation(animation){
     var name=animation[0]
     var len=animation[1]
-    if(name==='showbackground'){
+    if(name==='fadeinbackground'){
+        StartAnimation($('.gamebackgroundimg'),'exampleAnimation',len)
+    }
+    else if(name==='fadeoutbackground'){
         StartAnimation($('.gamebackgroundimg'),'exampleAnimation',len)
     }
 }
