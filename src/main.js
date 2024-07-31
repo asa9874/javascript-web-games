@@ -139,7 +139,9 @@ export function ChangeElements(){
     Animation(nowScript.animation)
   }
   if(nowScript.goscript){
+    
     NowConversation=goEvent(nowScript.goscript)
+    
   }
 
   if(nowScript.typingSpeed){
@@ -192,7 +194,7 @@ $GameStartBox.on('click', function() {
 
 //오프닝스킵
 $OpeningSkipBox.on('click', function() {
-  NowConversation=9
+  NowConversation=20
   NextConversation();
   $GameStartBox.hide();
   $gamebox.show()
