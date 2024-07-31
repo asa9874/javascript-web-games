@@ -110,6 +110,10 @@ html, body {
     z-index: 3; 
 }
 
+.object{
+    top:30%;
+}
+
 .choice{
     margin: 50px;
     height: 100px;
@@ -171,6 +175,37 @@ html, body {
     position: absolute;
     left: 0%;
     top: 0%;
-    font-size: 30px;
+    display: flex;
+
     color: red;
+}
+
+
+.infobox{
+    margin: 20px;
+    position: absolute; 
+    left: 0%;
+    top: 0%;
+    z-index: 4; 
+    display: flex;
+    
+}
+
+.info{
+    position: relative;
+    text-align: center;
+    margin-left: 30px;
+    font-size: 50px;
+    width: 80px;
+    height: 80px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    font-weight: 1000;
+    text-shadow: 4px 4px 3px rgb(0, 0, 0);
+}
+.health{
+    color: red;
+}
+.money{
+    color: yellow;
 }

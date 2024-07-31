@@ -6,7 +6,7 @@ import { SCRIPT } from './Script'
 import { PlayBgm,PlayVoice,playEffectSound } from './playsound'
 import { ChangeCharactor } from './charactor'
 import { Animation } from './animation'
-import { goEvent,ChoiceList, SuccessChoice, health, ChoiceEffect } from './event'
+import { goEvent,ChoiceList, SuccessChoice, health, ChoiceEffect, money } from './event'
 
 export const $test=$('.test')
 export const $GameStartBox=$('.GameStartBox');
@@ -16,6 +16,7 @@ export const $gamebackgroundimg=$('.gamebackgroundimg')
 export const $backgroundimg=$('.backgroundimg')
 export const $conversation=$('.conversation')
 export const $character=$('.character')
+export const $object=$('.object')
 export const $character1=$('.character1')
 export const $character2=$('.character2')
 export const $character3=$('.character3')
@@ -24,6 +25,8 @@ export const $choicebox=$('.choicebox')
 export const $choice1=$('.choice1')
 export const $choice2=$('.choice2')
 export const $choice3=$('.choice3')
+export const $health=$('.health')
+export const $money=$('.money')
 
 //현재 대화순서
 export let NowConversation=-1;
@@ -123,6 +126,7 @@ export function ChangeElements(){
   ChangeCharactor($character1,nowScript.character1)
   ChangeCharactor($character2,nowScript.character2)
   ChangeCharactor($character3,nowScript.character3)
+  ChangeCharactor($object,nowScript.object)
 
 
   if(nowScript.background) {
@@ -155,6 +159,9 @@ export function ChangeElements(){
     ChoiceEffect(nowScript.effect)
     $test.text(health)
   }
+
+  $health.text(health)
+  $money.text(money)
   
 }
 

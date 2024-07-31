@@ -1,7 +1,8 @@
 //베이스 사운드 함수
-export function playSound(name,vol) {
+export function playSound(name,vol, loop = false) {
     const audio = new Audio('./'+name+'.mp3');
     audio.volume = vol;
+    audio.loop = loop;
     audio.play();
     return audio;
 }
@@ -45,7 +46,7 @@ export function PlayBgm(currentBgm,bgmname){
             currentBgm.pause();
             currentBgm.currentTime = 0;
         }
-        currentBgm=playSound("music/"+bgmname,BGMLIST[bgmname])
+        currentBgm = playSound("music/" + bgmname, BGMLIST[bgmname], true);
     }
     return currentBgm;
 }
