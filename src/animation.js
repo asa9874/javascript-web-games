@@ -1,6 +1,7 @@
+import $ from 'jquery'
+
 //애니메이션 시작
 export function StartAnimation(target,animationname,animationduration){
-    
     target.addClass(animationname)
     target.css('animation-duration', `${animationduration}ms`);
     setTimeout(function() {
@@ -9,3 +10,11 @@ export function StartAnimation(target,animationname,animationduration){
     }, animationduration);
 }
 
+
+export function Animation(animation){
+    var name=animation[0]
+    var len=animation[1]
+    if(name==='showbackground'){
+        StartAnimation($('.gamebackgroundimg'),'exampleAnimation',len)
+    }
+}

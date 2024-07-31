@@ -6,9 +6,10 @@ import { SCRIPT } from './Script'
 import { PlayBgm,PlayVoice,playEffectSound } from './playsound'
 import { isChoiceScript,ChoiceList } from './choice'
 import { ChangeCharactor } from './charactor'
-import { StartAnimation } from './animation'
+import { Animation } from './animation'
 
 export const $GameStartBox=$('.GameStartBox');
+export const $OpeningSkipBox=$('.OpeningSkipBox')
 export const $gamebox=$('.gamebox')
 export const $gamebackgroundimg=$('.gamebackgroundimg')
 export const $backgroundimg=$('.backgroundimg')
@@ -121,18 +122,28 @@ export function ChangeElements(){
   if(nowScript.name){
     $namebox.text(nowScript.name)
   }
+
+  if(nowScript.animation){
+    Animation(nowScript.animation)
+  }
+  if(nowScript.goscript){
+    NowConversation=nowScript.goscript
+  }
+
   if(nowScript.typingSpeed){
     typingSpeed=nowScript.typingSpeed
   }
   else{
     typingSpeed=60
   }
+
   if($namebox.text()===""){
     $namebox.hide()
   }
   else{
     $namebox.show()
   }
+  
 }
 
 
@@ -159,9 +170,19 @@ $('.textbox').on('click', function() {
 
 
 
-
+//게임시작
 $GameStartBox.on('click', function() {
   NextConversation();
   $GameStartBox.hide();
   $gamebox.show()
+  $OpeningSkipBox.hide()
+});
+
+//오프닝스킵
+$OpeningSkipBox.on('click', function() {
+  NowConversation=5
+  NextConversation();
+  $GameStartBox.hide();
+  $gamebox.show()
+  $OpeningSkipBox.hide()
 });
