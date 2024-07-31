@@ -6,7 +6,7 @@ import { SCRIPT } from './Script'
 import { PlayBgm,PlayVoice,playEffectSound } from './playsound'
 import { ChangeCharactor } from './charactor'
 import { Animation } from './animation'
-import { goEvent,ChoiceList, SuccessChoice } from './event'
+import { goEvent,ChoiceList, SuccessChoice, health, ChoiceEffect } from './event'
 
 export const $test=$('.test')
 export const $GameStartBox=$('.GameStartBox');
@@ -106,9 +106,9 @@ $('.choice').on('click', function() {
   else if ($(this).is($choice2)) {choicenow = 2;} 
   else if ($(this).is($choice3)) {choicenow = 3;} 
   
-  choicesuccess=SuccessChoice()
+  choicesuccess=SuccessChoice(choiceevent[choicenow])
   NextConversation()
-  $test.text(1)
+  
 });
 
 
@@ -148,6 +148,10 @@ export function ChangeElements(){
   else{
     typingSpeed=60
   }
+  if(nowScript.effect){
+    ChoiceEffect(nowScript.effect)
+    $test.text(health)
+  }
   
 }
 
@@ -158,13 +162,12 @@ export function NextConversation(){
   
   if(SCRIPT[NowConversation].Scripttext){
     nowScript=SCRIPT[NowConversation]
-    
   }
-
   else{
     nowScript=SCRIPT[NowConversation][choicenow][choicesuccess]
-    
   }
+
+
   PrintText(nowScript.name,nowScript.Scripttext)
   //바꾸기
   ChangeElements()

@@ -3,12 +3,16 @@
 //name:이름   "" -> 숨기기
 //voice: 목소리 이름
 //choice:선택지 열기여부 번호로 작성
+//"success":{내용} 성공 
+//"failure":{내용} 실패
+//"effect":{"데이터":숫자} 데이터에 숫자더하기
 //bgm : bgm 이름
 //background : background "url('./img/ryoiki.png')" 형식
 //character : {img:케릭터 이미지,position:위치} postion:'hidden' -> 숨기기
 //typingSpeed : defalt 60
 //animation : [애니메이션이름,길이]
 //goscript: 숫자 스크립트 번호로  event=> 랜덤이벤트로
+
 export const SCRIPT=[
     {   //0
         "Scripttext":"2040년, 인류는 역사상 가장 참혹한 비극을 맞이했다.",
@@ -62,7 +66,7 @@ export const SCRIPT=[
         1:{
             "success":{
                 "Scripttext":"상자를 열어보니, 다행히도 응급처치 키트가 들어 있었다! 체력이 증가합니다.",
-
+                "effect":{"health":-10}
             },
             "failure":{
                 "Scripttext":"상자를 열었지만, 안에는 쓸모 없는 오래된 약들 뿐이었다. 실망스럽게도 체력에는 변화가 없다."
@@ -83,7 +87,10 @@ export const SCRIPT=[
 
             }
         }
-    }
+    },
+    {
+        "Scripttext":"ㅋㅋㅋㅋㅋㅋㅋ"
+    },
 ]
 
 
