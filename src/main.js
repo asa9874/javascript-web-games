@@ -6,7 +6,8 @@ import { SCRIPT } from './Script'
 import { PlayBgm,PlayVoice,playEffectSound } from './playsound'
 import { ChangeCharactor } from './charactor'
 import { Animation } from './animation'
-import { goEvent,ChoiceList, SuccessChoice, health, ChoiceEffect, money, eventlist } from './event'
+import { goEvent, SuccessChoice, health, ChoiceEffect, money, eventlist } from './event'
+import { ChoiceList } from './ChoiceScript'
 
 export const $test=$('.test')
 export const $GameStartBox=$('.GameStartBox');
@@ -120,17 +121,20 @@ $('.choice').on('click', function() {
 
 //바꾸기,체크 함수
 export function ChangeElements(){
+  //소리바꾸기
   currentVoice=PlayVoice(currentVoice,nowScript.voice,1)
   currentBgm=PlayBgm(currentBgm,nowScript.bgm)
   playEffectSound(nowScript.soundeffect,0.3)
+  
+  //오브젝트,캐릭터
   ChangeCharactor($character1,nowScript.character1)
   ChangeCharactor($character2,nowScript.character2)
   ChangeCharactor($character3,nowScript.character3)
   ChangeCharactor($object,nowScript.object)
 
-
+  
   if(nowScript.background) {
-    $gamebackgroundimg.css('background-image',"url('./backgroundimg/"+nowScript.background+"')")
+    $gamebackgroundimg.css('background-image',"url('./backgroundimg/"+nowScript.background+".png')")
   }
   if(nowScript.name){
     $namebox.text(nowScript.name)
@@ -200,10 +204,10 @@ $GameStartBox.on('click', function() {
 
 //오프닝스킵
 $OpeningSkipBox.on('click', function() {
-  NowConversation=45
+  NowConversation=5
   NextConversation();
   $GameStartBox.hide();
   $gamebox.show()
   $OpeningSkipBox.hide()
-  
+  $test.text(eventlist)
 });
