@@ -37,13 +37,48 @@ export function goEvent(event){
     return script
 }
 
-
+//죽으면 되는함수
 function death(){
   window.location.href ='https://www.youtube.com/watch?v=caf-CLksQCk'
 }
 
 
+//성공 or 실패 확인
 
+export function SuccessChoice(nowScript,event){
+  if(NoMoneyCheck(nowScript,event)){ 
+    return "failure"
+  }
+
+  var successRate = event.successRate
+  const random = Math.random();
+  return random < successRate ? "success" : "failure";
+}
+
+//돈이 없어요
+//다음 스크립트의 선택지 효과를 읽음
+export function NoMoneyCheck(nowScript,event){
+  if(event.shop){
+    if(money+nowScript["success"].effect.money<0){
+      return true
+    }
+  }
+}
+
+
+
+//게임요소 변화주기
+export function ChoiceEffect(effect){
+  if(effect.health){
+    health=health+effect.health
+  }
+  if(effect.money){
+    money=money+effect.money
+  }
+
+  if(money<=0){money=0}
+  if(health<=0){health=0}
+}
 
 //선택지
 //text: 선택지 글씨, successRate:성공확률
@@ -72,27 +107,12 @@ export const ChoiceList={
     1: {"text":"쉼터에서 휴식한다", "successRate":1},
     2: {"text":"쉼터 주변을 탐색한다", "successRate":0.8},
     3: {"text":"쉼터를 무시하고 계속 이동한다", "successRate":0.2}
+  },
+  "merchant_purchase": {
+    1: {"text":"응급처치 키트를 구매한다", "successRate":1,'shop':true},
+    2: {"text":"식량을 구매한다", "successRate":1,'shop':true},
+    3: {"text":"아무것도 사지 않는다", "successRate":1}
   }
-
 }
 
 
-//성공 or 실패 확인
-export function SuccessChoice(event){
-  var successRate = event.successRate
-  const random = Math.random();
-  return random < successRate ? "success" : "failure";
-}
-
-//게임요소 변화주기
-export function ChoiceEffect(effect){
-  if(effect.health){
-    health=health+effect.health
-  }
-  if(effect.money){
-    money=money+effect.money
-  }
-
-  if(money<=0){money=0}
-  if(health<=0){health=0}
-}

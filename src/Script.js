@@ -353,6 +353,59 @@ export const SCRIPT=[
     {   
         "Scripttext":"나는 다음목적지를 향해 걷기 시작했다.",
         "goscript":"event"
+    },
+
+
+
+
+
+
+    //상인에게 물건 구매
+    //event
+    {   
+        "name":"주인공",
+        "Scripttext":"여정을 계속하던 중, 나는 한 상인을 만났다. 상인은 다양한 물품을 판매하고 있었다.",
+        "event":"merchant_purchase"
+    },
+    {   
+        "Scripttext":"상인은 친절하게 물건을 보여주며, 나에게 무엇을 살지 물었다."
+    },
+    {   
+        "Scripttext":"나는 어떤 물건을 살지 결정해야 했다."
+    },
+    {   
+        "Scripttext":"어떤 선택을 하겠는가?",
+        "choice":"merchant_purchase"
+    },
+    {   
+        //merchant_purchase 선택지
+        1:{//응급처치 키트 구매
+            "success":{
+                "Scripttext":"응급처치 키트를 구매하여 체력을 회복했다. 체력이 증가합니다.",
+                "effect":{"health":20,"money":-20}
+            },
+            "failure":{
+                "Scripttext":"돈이 부족해서 응급처치 키트를 구매하지 못했다. 체력에는 변화가 없다."
+            }
+        },
+        2:{//식량 구매
+            "success":{
+                "Scripttext":"식량을 구매하여 기운을 차렸다. 체력이 소폭 증가합니다.",
+                "effect":{"health":10,"money":-10}
+            },
+            "failure":{
+                "Scripttext":"돈이 부족해서 식량을 구매하지 못했다. 체력에는 변화가 없다."
+            }
+        },
+        3:{//아무것도 사지 않기
+            "success":{
+                "Scripttext":"아무것도 사지 않고 상인을 지나쳤다. 체력에는 변화가 없습니다."
+            }
+        }
+    },
+    {   
+        "Scripttext":"나는 다음목적지를 향해 걷기 시작했다.",
+        "goscript":"event"
     }
 
 

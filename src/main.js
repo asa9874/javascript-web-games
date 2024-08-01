@@ -109,7 +109,7 @@ $('.choice').on('click', function() {
   else if ($(this).is($choice2)) {choicenow = 2;} 
   else if ($(this).is($choice3)) {choicenow = 3;} 
   
-  choicesuccess=SuccessChoice(choiceevent[choicenow])
+  choicesuccess=SuccessChoice(SCRIPT[NowConversation+1][choicenow],choiceevent[choicenow])
   NextConversation()
   
 });
@@ -200,7 +200,7 @@ $GameStartBox.on('click', function() {
 
 //오프닝스킵
 $OpeningSkipBox.on('click', function() {
-  NowConversation=5
+  NowConversation=45
   NextConversation();
   $GameStartBox.hide();
   $gamebox.show()
