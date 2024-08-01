@@ -191,7 +191,8 @@ export const SCRIPT = [
     {
         "name": "주인공",
         "Scripttext": "걷던 중 맑은 물이 흐르는 샘을 발견했다. 깨끗한 물을 마시면 체력을 회복할 수 있을 것이다.",
-        "event": "clean_water"
+        "event": "clean_water",
+        'background': "clean_water",
     },
     {
         "Scripttext": "샘물을 마시고 체력을 회복하기로 했다."
@@ -216,10 +217,6 @@ export const SCRIPT = [
             "success": {
                 "Scripttext": "샘물을 마시지 않고 지나쳤다. 체력에 변화는 없지만 위험을 피했다."
             },
-            "failure": {
-                "Scripttext": "샘물을 지나쳤지만, 물이 부족해 체력이 감소했다.",
-                "effect": { "health": -5 }
-            }
         },
         3: {//물 분석하기
             "success": {
@@ -243,7 +240,8 @@ export const SCRIPT = [
     {
         "name": "주인공",
         "Scripttext": "숲속을 탐험하던 중, 나는 풍부한 식량을 발견했다. 이 식량이 내 체력에 도움이 될 것이다.",
-        "event": "food_discovery"
+        "event": "food_discovery",
+        'background': "food_discovery",
     },
     {
         "Scripttext": "식량을 발견한 것은 큰 행운이다. 이제 이 식량을 어떻게 활용할지 결정해야 한다."
@@ -292,7 +290,8 @@ export const SCRIPT = [
     {
         "name": "주인공",
         "Scripttext": "탐험 도중 희귀한 유물을 발견했다. 이 유물을 팔면 돈을 벌 수 있을 것이다.",
-        "event": "artifact_found"
+        "event": "artifact_found",
+        "background":"artifact_found"
     },
     {
         "Scripttext": "유물을 어떻게 할 것인가?"
@@ -341,7 +340,8 @@ export const SCRIPT = [
     {
         "name": "주인공",
         "Scripttext": "폐허 속에서 숨겨진 금고를 발견했다. 금고 안에는 예상보다 많은 돈이 들어 있을지도 모른다.",
-        "event": "safe_found"
+        "event": "safe_found",
+        "background":"safe_found"
     },
     {
         "Scripttext": "금고를 어떻게 다룰 것인가?"
@@ -563,7 +563,8 @@ export const SCRIPT = [
     {
         "name": "주인공",
         "Scripttext": "어두운 골목길을 걷던 중, 무법자들의 습격을 받았다. 그들은 무자비하게 나의 소지품을 약탈하기 시작했다.",
-        "event": "bandit_loot"
+        "event": "bandit_loot",
+        "background":"bandit_loot"
     },
     {
         "Scripttext": "무법자들은 나의 돈을 빼앗아 갔고, 나는 무력하게 그들을 바라볼 수밖에 없었다."
@@ -622,7 +623,8 @@ export const SCRIPT = [
     {
         "name": "주인공",
         "Scripttext": "여정을 계속하던 중, 나는 한 상인을 만났다. 상인은 다양한 물품을 판매하고 있었다.",
-        "event": "merchant_purchase"
+        "event": "merchant_purchase",
+        "background":"merchant_purchase"
     },
     {
         "Scripttext": "상인은 친절하게 물건을 보여주며, 나에게 무엇을 살지 물었다."
@@ -671,7 +673,8 @@ export const SCRIPT = [
     {
         "name": "주인공",
         "Scripttext": "질병이나 부상을 치료하기 위해 병원을 방문했다. 치료를 위해 돈이 필요하다.",
-        "event": "medical_expense"
+        "event": "medical_expense",
+        "background":"medical_expense"
     },
     {
         "Scripttext": "병원에서 필요한 치료를 받기 위해 비용을 지불해야 한다."
@@ -721,8 +724,9 @@ export const SCRIPT = [
     // #region 불쌍한 어린 소녀를 만나다
 {
         "name": "주인공",
-        "Scripttext": "어두운 골목에서 불쌍한 어린 소녀를 만났다. 그녀는 도움이 필요해 보인다.",
-        "event": "girl_encounter"
+        "Scripttext": "파괴된 잔해위에서 불쌍한 어린 소녀를 만났다. 그녀는 도움이 필요해 보인다.",
+        "event": "girl_encounter",
+        "background":"girl_encounter"
     },
     {
         "Scripttext": "소녀에게 어떻게 대응할 것인가?"
@@ -754,10 +758,6 @@ export const SCRIPT = [
                 "Scripttext": "소녀를 무시하고 지나쳤다.",
             }
         }
-    },
-    {
-        "name":"소녀",
-        "Scripttext": "감사합니다...",
     },
     {
         "Scripttext": "나는 다음목적지를 향해 걷기 시작했다.",

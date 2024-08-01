@@ -45,7 +45,7 @@ export const ChoiceList = {
     },
     "clean_water": {
         1: { "text": "물 마시기", "successRate": 0.8 },
-        2: { "text": "물 지나치기", "successRate": 0.7 },
+        2: { "text": "물 지나치기", "successRate": 1 },
         3: { "text": "물 분석하기", "successRate": 0.9 }
     },
     "artifact_found": {
