@@ -6,7 +6,7 @@ import { SCRIPT } from './Script'
 import { PlayBgm,PlayVoice,playEffectSound } from './playsound'
 import { ChangeCharactor } from './charactor'
 import { Animation } from './animation'
-import { goEvent,ChoiceList, SuccessChoice, health, ChoiceEffect, money } from './event'
+import { goEvent,ChoiceList, SuccessChoice, health, ChoiceEffect, money, eventlist } from './event'
 
 export const $test=$('.test')
 export const $GameStartBox=$('.GameStartBox');
@@ -122,7 +122,7 @@ $('.choice').on('click', function() {
 export function ChangeElements(){
   currentVoice=PlayVoice(currentVoice,nowScript.voice,1)
   currentBgm=PlayBgm(currentBgm,nowScript.bgm)
-
+  playEffectSound(nowScript.soundeffect,0.3)
   ChangeCharactor($character1,nowScript.character1)
   ChangeCharactor($character2,nowScript.character2)
   ChangeCharactor($character3,nowScript.character3)
@@ -130,7 +130,7 @@ export function ChangeElements(){
 
 
   if(nowScript.background) {
-    $gamebackgroundimg.css('background-image',nowScript.background)
+    $gamebackgroundimg.css('background-image',"url('./backgroundimg/"+nowScript.background+"')")
   }
   if(nowScript.name){
     $namebox.text(nowScript.name)
@@ -144,9 +144,7 @@ export function ChangeElements(){
     Animation(nowScript.animation)
   }
   if(nowScript.goscript){
-    
     NowConversation=goEvent(nowScript.goscript)
-    
   }
 
   if(nowScript.typingSpeed){
@@ -157,7 +155,7 @@ export function ChangeElements(){
   }
   if(nowScript.effect){
     ChoiceEffect(nowScript.effect)
-    $test.text(health)
+    
   }
 
   $health.text(health)
@@ -207,4 +205,5 @@ $OpeningSkipBox.on('click', function() {
   $GameStartBox.hide();
   $gamebox.show()
   $OpeningSkipBox.hide()
+  
 });

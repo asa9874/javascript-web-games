@@ -7,7 +7,8 @@
 //"failure":{내용} 실패
 //"effect":{"데이터":숫자} 데이터에 숫자더하기
 //bgm : bgm 이름
-//background : background "url('./img/ryoiki.png')" 형식
+//soundeffect: 효과음이름
+//background : background "이름.png"형식
 //character1,2,3, object : {img:케릭터 이미지,position:위치} postion:'hidden' -> 숨기기
 //typingSpeed : defalt 60
 //animation : [애니메이션이름,길이]
@@ -17,8 +18,9 @@ export const SCRIPT=[
     {   //프롤로그 시작
         "Scripttext":"2040년, 인류는 역사상 가장 참혹한 비극을 맞이했다.",
         "typingSpeed":100,
-        'background':"url('./backgroundimg/opening1.png')",
+        'background':"opening1.png",
         'animation':['fadeinbackground',10000],
+        'soundeffect':"choice"
     },
     { 
         "Scripttext":"제3차 세계 대전이 발발하며 핵무기와 생화학 무기가 동원된 전쟁은 전 지구를 순식간에 황폐화시켰다.",
@@ -45,13 +47,18 @@ export const SCRIPT=[
         "typingSpeed":100,
         "goscript":"event"
     },
+    {
+        "Scripttext":"나는 뒤졌다. ㅇㅇ",
+        "typingSpeed":100,
+        "goscript":"death"
+    },
 
 
     //event
     {   //병원이벤트
         "name":"주인공",
         "Scripttext":"폐허가 된 도시를 탐험하던 중, 나는 버려진 병원을 발견했다.",
-        'background':"url('./backgroundimg/hospital.png')",
+        'background':"hospital.png",
         "event":"hospital"
     },
     {   
@@ -105,7 +112,7 @@ export const SCRIPT=[
     {   //기계의 도움이벤트
         "name":"주인공",
         "Scripttext":"폐허가 된 도시에서 탐험을 마치고, 나는 인공지능 의료 기계를 발견했다. 이 기계는 전쟁 이후에도 여전히 작동하고 있었다.", 
-        'background':"url('./backgroundimg/robot_help.png')",
+        'background':"robot_help.png",
         "event":"robot_help"
     },
     {  
@@ -136,7 +143,7 @@ export const SCRIPT=[
         "name":"주인공",
         "Scripttext":"정글을 탐험하던 중, 갑자기 야생 동물의 공격을 받았다! 포악한 동물이 눈앞에 나타났고, 나는 즉각적으로 반응해야 했다.",
         "event":'wildlife_attack',
-        'background':"url('./backgroundimg/wildlife_attack.png')",
+        'background':"wildlife_attack.png",
     },
     {   
         "Scripttext":"야생 동물은 매우 공격적이며, 빠르게 움직이며 나를 위협하고 있다. 상황이 매우 위험하다."
@@ -191,7 +198,7 @@ export const SCRIPT=[
         "name":"주인공",
         "Scripttext":"어두운 골목길을 걷던 중, 무법자들의 갑작스러운 습격을 받았다! 주변이 혼란스러워지고, 나는 즉시 대응해야 했다.",
         "event":'bandit_attack',
-        'background':"url('./backgroundimg/bandit_attack.png')",
+        'background':"bandit_attack.png",
         
     },
     {   
@@ -252,7 +259,7 @@ export const SCRIPT=[
         "name":"주인공",
         "Scripttext":"고장난 인공지능 기계가 갑자기 작동하며 공격을 시작했다! 기계의 공격에 맞서 싸워야 했다.",
         "event":"machine_fight",
-        'background':"url('./backgroundimg/machine_fight.png')",
+        'background':"machine_fight.png",
     },
     {   
         "Scripttext":"기계는 매우 강력하고, 공격은 거칠며 예측할 수 없다. 상황이 위험하다."
@@ -310,7 +317,7 @@ export const SCRIPT=[
         "name":"주인공",
         "Scripttext":"여행을 하던 중, 안전하고 편안한 쉼터를 발견했다. 쉼터는 매우 평화롭고 휴식하기에 적합한 곳이었다.",
         "event":"shelter_found",
-        'background':"url('./backgroundimg/shelter_found.png')"
+        'background':"shelter_found.png"
     },
     {   
         "Scripttext":"쉼터에서 충분히 휴식하며 체력을 회복할 수 있었다."
