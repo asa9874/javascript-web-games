@@ -5,7 +5,7 @@ import $ from 'jquery'
 import { SCRIPT } from './Script'
 import { PlayBgm,PlayVoice,playEffectSound } from './playsound'
 import { ChangeCharactor } from './charactor'
-import { Animation } from './animation'
+import { Animation, UpdatingNumber } from './animation'
 import { goEvent, SuccessChoice, health, ChoiceEffect, money, eventlist } from './event'
 import { ChoiceList } from './ChoiceScript'
 
@@ -50,7 +50,7 @@ export let typingSpeed = 60; // 타이핑 속도 (밀리초)
 
 
 //초기세팅
-$backgroundimg.css('background-image', 'url("./backgroundimg/space.png")');
+$backgroundimg.css('background-image', 'url("./backgroundimg/back.png")');
 $gamebox.hide()
 $character.hide();
 $choicebox.hide();
@@ -162,8 +162,8 @@ export function ChangeElements(){
     
   }
 
-  $health.text(health)
-  $money.text(money)
+  UpdatingNumber($health,health,500)
+  UpdatingNumber($money,money,500)
   
 }
 

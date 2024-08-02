@@ -10,14 +10,41 @@ export function StartAnimation(target,animationname,animationduration){
     }, animationduration);
 }
 
-
+//스크립트로 애니메이션 작동 
 export function Animation(animation){
     var name=animation[0]
-    var len=animation[1]
-    if(name==='fadeinbackground'){
-        StartAnimation($('.gamebackgroundimg'),'exampleAnimation',len)
+    if(animation[1]){
+        var len=animation[1]
     }
-    else if(name==='fadeoutbackground'){
-        StartAnimation($('.gamebackgroundimg'),'exampleAnimation',len)
+    
+    if(name==='fadeinbackground'){
+        StartAnimation($('.gamebackgroundimg'),'backgroundfadein',len)
     }
 }
+
+
+//게임 데이터 업데이트 애니메이션보여주기
+export function UpdatingNumber(target, end, duration) {
+    
+    const $element = target
+    const start=parseInt(target.text(),10)
+    const range = end - start;
+    if(range!=0){
+        StartAnimation(target,'updatingnumber',500)
+    }
+    let startTime = null;
+  
+    function updateNumber(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const elapsedTime = timestamp - startTime;
+        const progress = Math.min(elapsedTime / duration, 1);
+        const currentNumber = Math.floor(start + range * progress);
+        $element.text(currentNumber);
+  
+        if (progress < 1) {
+            requestAnimationFrame(updateNumber);
+        }
+    }
+  
+    requestAnimationFrame(updateNumber);
+  }

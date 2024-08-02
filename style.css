@@ -133,43 +133,28 @@ html, body {
     background-color: rgb(196, 197, 189,0.9);
 }
 
-
-.GameStartBox{
-    height: 100px;
-    width: 700px;
-    border-radius: 30px;
-    background-color: rgba(255, 152, 191, 0.99);
-    transition: transform 0.5s,background-color 1s;
-    font-size: 50px;
+.SelectBox{
+    height: 90px;
+    width: 600px;
+    border-radius: 10px;
+    background-color: rgba(180, 172, 197, 0.99);
+    transition: transform 0.5s,background-color 0.5s,box-shadow 0.5s;
+    font-size: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-shadow: 1px 1px 1px white;
+    box-shadow: 3px 3px 10px black;
+    margin: 30px;
 }
 
-.GameStartBox:hover{
+
+.SelectBox:hover{
     transform: scale(1.09);
-    background-color: rgba(248, 10, 208, 0.9);
+    background-color: rgba(107, 103, 106, 1);
+    box-shadow: 3px 3px 30px rgb(78, 49, 49);
 }
 
-.OpeningSkipBox{
-    margin: 50px;
-    height: 100px;
-    width: 700px;
-    border-radius: 30px;
-    background-color: rgba(255, 152, 191, 0.99);
-    transition: transform 0.5s,background-color 1s;
-    font-size: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-shadow: 1px 1px 1px white;
-}
-
-.OpeningSkipBox:hover{
-    transform: scale(1.09);
-    background-color: rgba(248, 10, 208, 0.9);
-}
 
 .test{
     position: absolute;
