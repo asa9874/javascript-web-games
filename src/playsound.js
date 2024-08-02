@@ -37,6 +37,7 @@ export function PlayVoice(currentVoice,voicename,volume){
 const BGMLIST={
     'peaceful': 0.2,
     'surprise':0.1,
+    'Destroyed World':0.2,
 }
 
 //브금

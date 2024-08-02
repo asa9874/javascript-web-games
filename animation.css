@@ -29,3 +29,16 @@
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards; 
 }
+
+@keyframes healthfadeinout {
+    0% { opacity: 0; }
+    50% { opacity: 0.2; }
+    100% { opacity: 0; }
+}
+
+.healthfadeinout{
+    animation-name: healthfadeinout;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards; 
+}

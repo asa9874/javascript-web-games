@@ -28,7 +28,8 @@ export const $choice2=$('.choice2')
 export const $choice3=$('.choice3')
 export const $health=$('.health')
 export const $money=$('.money')
-
+export const $skipbox=$('.skipbox')
+export const $healtheffect=$('.healtheffect')
 //현재 대화순서
 export let NowConversation=-1;
 export let nowScript;
@@ -47,21 +48,21 @@ export let currentVoice;     //현재 목소리 넣는 변수
 export let Conversationtext  // 현재 나온 타이핑
 export let currentCharIndex  // 현재 타이핑 위치
 export let typingSpeed = 60; // 타이핑 속도 (밀리초)
-
+export let skiptext=false
 
 //초기세팅
 $backgroundimg.css('background-image', 'url("./backgroundimg/back.png")');
 $gamebox.hide()
 $character.hide();
 $choicebox.hide();
-
+$healtheffect.hide();
 
 
 
 
 //타이핑효과
 export function typeCharacter() {
-  if (currentCharIndex < Conversationtext.length) {
+  if (currentCharIndex < Conversationtext.length && !skiptext) {
     //목소리 없으면 타이핑소리로 대체
     if(!nowScript.voice){
       playEffectSound('type',0.3)
@@ -71,6 +72,7 @@ export function typeCharacter() {
     setTimeout(typeCharacter, typingSpeed);
   } 
   else {
+    $skipbox.hide();
     $conversation.text(Conversationtext); // 타이핑이 끝나면 전체 텍스트 표시
     $('.textbox').css('pointer-events', 'auto');
     if((nowScript.choice)){
@@ -86,6 +88,8 @@ export function PrintText(name,text){
   $namebox.text(name)
   Conversationtext=text
   $('.textbox').css('pointer-events', 'none');
+  $skipbox.show();
+  skiptext=false
   typeCharacter();
 }
 
@@ -98,11 +102,14 @@ export function ShowChoicebox(choicenumber){
     $choice2.text(choiceevent[2]["text"])
     $choice3.text(choiceevent[3]["text"])
 }
-
+//스킵기능
+$skipbox.on('click', function() {
+  skiptext=true
+})
 
 //선택지 고름
 $('.choice').on('click', function() {
-  playEffectSound('choice',0.3)
+  playEffectSound('button',0.4)
   nowScript.voice=null
   $choicebox.hide();
 
@@ -162,8 +169,8 @@ export function ChangeElements(){
     
   }
 
-  UpdatingNumber($health,health,500)
-  UpdatingNumber($money,money,500)
+  UpdatingNumber($health,health,250)
+  UpdatingNumber($money,money,250)
   
 }
 

@@ -46,7 +46,8 @@ export const SCRIPT = [
     {
         "Scripttext": "이곳에서 새로운 이야기가 시작된다.",
         "typingSpeed": 100,
-        "goscript": "event"
+        "goscript": "event",
+        "bgm":'Destroyed World'
     },
     {
         "Scripttext": "나는 뒤졌다. ㅇㅇ",

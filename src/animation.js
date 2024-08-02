@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import { playEffectSound } from './playsound';
 
 //애니메이션 시작
 export function StartAnimation(target,animationname,animationduration){
@@ -25,12 +26,17 @@ export function Animation(animation){
 
 //게임 데이터 업데이트 애니메이션보여주기
 export function UpdatingNumber(target, end, duration) {
-    
     const $element = target
     const start=parseInt(target.text(),10)
     const range = end - start;
     if(range!=0){
         StartAnimation(target,'updatingnumber',500)
+        if($(target).is('.money')){
+            playEffectSound('money',0.2)
+        }
+        else if(range<0){
+            healthAnimation()
+        }
     }
     let startTime = null;
   
@@ -47,4 +53,20 @@ export function UpdatingNumber(target, end, duration) {
     }
   
     requestAnimationFrame(updateNumber);
-  }
+}
+
+
+export function healthAnimation(){
+    var target=$('.healtheffect')
+    var animationname='healthfadeinout'
+    var animationduration=800
+    target.show()
+    target.addClass(animationname)
+    target.css('animation-duration', `${animationduration}ms`);
+    setTimeout(function() {
+        target.removeClass(animationname);
+        target.hide()
+        void target[0].offsetWidth; 
+        
+    }, animationduration);
+}
