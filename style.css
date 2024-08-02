@@ -56,13 +56,16 @@ html, body {
 }
 
 .textbox{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),url('./elements/4.png');
+    filter: brightness(120%);
+    opacity: 0.99;
     position: absolute;
     width: 99%;
     margin-left: 8px;
     height: 200px;
-    background-color: rgba(245, 188, 219, 0.9);
     z-index: 2; 
     border-radius: 20px;
+    text-shadow: 1px 1px 5px black;
 }
 
 .healtheffect{
@@ -89,10 +92,11 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(255, 87, 151);
+    background-color: rgb(46, 46, 46);
     font-size: 30px;
     border-radius: 20px;
     font-family: 'MangoDdobak-B';
+    color: white;
 }
 
 .conversation{
@@ -103,7 +107,8 @@ html, body {
     word-wrap: break-word;
     font-family: 'MangoDdobak-B';
     overflow: hidden;
-    white-space: pre-wrap;
+    white-space: pre-wrap;;
+    color: white;
 }
 
 .character{
@@ -150,6 +155,28 @@ html, body {
     transform: scale(1.03);
     background-color: rgb(196, 197, 189,0.9);
 }
+
+.choiceboxelement{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.choiceimg{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    left: 67%;
+    right: 0;
+    width: 70px;
+    height: 70px;
+    color: yellow;
+    font-size: 40px;
+    text-shadow: 1px 1px 1px black;
+}
+
 
 .SelectBox{
     height: 90px;

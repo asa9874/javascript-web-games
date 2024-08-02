@@ -26,6 +26,10 @@ export const $choicebox=$('.choicebox')
 export const $choice1=$('.choice1')
 export const $choice2=$('.choice2')
 export const $choice3=$('.choice3')
+export const $choiceimg=$('.choiceimg')
+export const $choiceimg1=$('.choiceimg1')
+export const $choiceimg2=$('.choiceimg2')
+export const $choiceimg3=$('.choiceimg3')
 export const $health=$('.health')
 export const $money=$('.money')
 export const $skipbox=$('.skipbox')
@@ -56,7 +60,7 @@ $gamebox.hide()
 $character.hide();
 $choicebox.hide();
 $healtheffect.hide();
-
+$choiceimg.hide()
 
 
 
@@ -101,7 +105,26 @@ export function ShowChoicebox(choicenumber){
     $choice1.text(choiceevent[1]["text"])
     $choice2.text(choiceevent[2]["text"])
     $choice3.text(choiceevent[3]["text"])
+
+
+    if(choiceevent[1]['shop']){
+      $test.text(eventlist)
+      $choiceimg1.text(SCRIPT[NowConversation+1][1]["success"]["effect"]["money"])
+      $choiceimg1.show()
+    }else{$choiceimg1.hide()}
+    if(choiceevent[2]['shop']){
+      $test.text(eventlist)
+      $choiceimg2.text(SCRIPT[NowConversation+1][2]["success"]["effect"]["money"])
+      $choiceimg2.show()
+    }else{$choiceimg2.hide()}
+    if(choiceevent[3]['shop']){
+      $test.text(eventlist)
+      $choiceimg3.text(SCRIPT[NowConversation+1][3]["success"]["effect"]["money"])
+      $choiceimg3.show()
+    }else{$choiceimg3.hide()}
 }
+
+
 //스킵기능
 $skipbox.on('click', function() {
   skiptext=true
@@ -216,5 +239,4 @@ $OpeningSkipBox.on('click', function() {
   $GameStartBox.hide();
   $gamebox.show()
   $OpeningSkipBox.hide()
-  $test.text(eventlist)
 });
