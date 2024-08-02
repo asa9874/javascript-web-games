@@ -15,7 +15,7 @@
 //"event":"hospital" 이벤트 시작부분을 나타냄
 
 export const SCRIPT = [
-    // #region 프롤로그
+// #region 프롤로그
     {   //프롤로그 시작 
         "Scripttext": "2050년, 인류는 역사상 가장 참혹한 비극을 맞이했다.",
         "typingSpeed": 100,
@@ -24,11 +24,11 @@ export const SCRIPT = [
         'soundeffect': "choice"
     },
     {
-        "Scripttext": "제3차 세계 대전이 발발하며 핵무기와 생화학 무기가 동원된 전쟁은 전 지구를 순식간에 황폐화시켰다.",
+        "Scripttext": "인공지능의 반란, 다른 세계의 습격, 제3차 세계 대전...",
         "typingSpeed": 100,
     },
     {
-        "Scripttext": "도시들은 잿더미로 변했고, 방사능이 대기를 가득 채워 생명체가 살아가기 어려운 환경이 되었다.",
+        "Scripttext": "도시들은 잿더미로 변했고, 로봇과 괴물들은 인간들을 학살하였다.",
         "typingSpeed": 100,
     },
     {
@@ -49,12 +49,15 @@ export const SCRIPT = [
         "goscript": "event",
         "bgm":'Destroyed World'
     },
+// #endregion 프롤로그
+
+// #region 죽음
     {
-        "Scripttext": "나는 뒤졌다. ㅇㅇ",
+        "Scripttext": "나는 뒤. 졌따. ㅠㅠㅠ",
         "typingSpeed": 100,
         "goscript": "death"
     },
-    // #endregion 프롤로그
+// #endregion
 
 
 //좋은거 (체력)
@@ -168,7 +171,7 @@ export const SCRIPT = [
         2: {// 주변 탐색하기
             "success": {
                 "Scripttext": "쉼터 주변을 탐색하며 유용한 자원들을 발견했다. 체력이 대폭 증가한다.",
-                "effect": { "health": 40 }
+                "effect": { "health": 30 }
             },
             "failure": {
                 "Scripttext": "아무것도 찾지못하고 쉼터에서 휴식만을취했다.",
@@ -270,7 +273,7 @@ export const SCRIPT = [
         },
         3: {//식량을 교환한다
             "success": {
-                "Scripttext": "식량을 다른 생존자와 교환하여 필요한 물품을 얻었다. 체력에는 변화가 없지만, 교환한 물품이 유용하다.",
+                "Scripttext": "식량을 다른 생존자와 판매하여 돈을 얻었다.",
                 "effect": { "money": 10 }
             },
             "failure": {
@@ -318,7 +321,8 @@ export const SCRIPT = [
                 "effect": { "health": 20 }
             },
             "failure": {
-                "Scripttext": "유물을 활용하는 데 실패하여 체력을 회복하지 못했다."
+                "Scripttext": "유물이 나에게 이상한 빛을 발사하였다.",
+                "effect": { "health": -20 }
             }
         },
         3: {//유물 분석
@@ -383,6 +387,61 @@ export const SCRIPT = [
         "goscript": "event"
     },
     // #endregion 숨겨진 금고 발견
+
+    // #region 낙오자 구출
+    //event
+    {
+        "name": "주인공",
+        "Scripttext": "여정을 계속하던 중, 나는 위험에 처한 낙오자를 발견했다. 그는 절박한 표정으로 나에게 도움을 요청했다.",
+        "event": "rescue_straggler"
+    },
+    {
+        "Scripttext": "나는 그를 구출할지 아니면 위험을 무릅쓰지 말아야 할지 고민했다."
+    },
+    {
+        "Scripttext": "나는 어떻게 대처할지 결정해야 했다."
+    },
+    {
+        "Scripttext": "어떤 선택을 하겠는가?",
+        "choice": "rescue_straggler"
+    },
+    {
+        //rescue_straggler 선택지
+        1: {//구출하기
+            "success": {
+                "Scripttext": "낙오자를 무사히 구출하여 그의 감사와 함께 돈을 받았다.",
+                "effect": { "money": 30 }
+            },
+            "failure": {
+                "Scripttext": "낙오자를 구출하려 했으나, 배신당해 돈을 빼앗겼다.",
+                "effect": { "money": -20 }
+            }
+        },
+        2: {//구출하지 않기
+            "success": {
+                "Scripttext": "낙오자를 구출하지 않고 지나쳤다. 체력에는 변화가 없다."
+            },
+            "failure": {
+                "Scripttext": "낙오자를 구출하지 않았지만, 양심의 가책을 느껴 체력이 감소했다.",
+                "effect": { "health": -5 }
+            }
+        },
+        3: {//경계를 하며 구출하기
+            "success": {
+                "Scripttext": "경계를 늦추지 않으며 낙오자를 구출해 돈을 얻었다.",
+                "effect": { "money": 20 }
+            },
+            "failure": {
+                "Scripttext": "경계를 늦추지 않았지만, 결국 배신당해 돈을 잃었다.",
+                "effect": { "money": -10 }
+            }
+        }
+    },
+    {
+        "Scripttext": "나는 다음목적지를 향해 걷기 시작했다.",
+        "goscript": "event"
+    },
+    //#endregion 낙오자 구출
 
 
 //나쁜거 (체력)
@@ -486,7 +545,6 @@ export const SCRIPT = [
         3: {//협상하기
             "success": {
                 "Scripttext": "협상에 성공하여 무법자들을 달래었다. 체력이 소폭 증가한다.",
-                "effect": { "health": 5 }
             },
             "failure": {
                 "Scripttext": "협상 도중 무법자들이 더욱 공격적으로 나왔다. 체력이 감소한다.",
@@ -532,8 +590,8 @@ export const SCRIPT = [
         },
         2: {//기계와 싸우기
             "success": {
-                "Scripttext": "기계와의 싸움에서 승리했다! 체력이 소폭 증가한다.",
-                "effect": { "health": 10 }
+                "Scripttext": "기계와의 싸움에서 승리했다! 기계부품들을 팔았다!",
+                "effect": { "money": 10 }
             },
             "failure": {
                 "Scripttext": "기계와의 싸움에서 패배했다. 심각한 부상을 입어 체력이 감소한다.",
@@ -542,8 +600,7 @@ export const SCRIPT = [
         },
         3: {//기계 제어 시도
             "success": {
-                "Scripttext": "기계를 제어해 공격을 중단시켰다. 체력이 소폭 증가한다.",
-                "effect": { "health": 5 }
+                "Scripttext": "기계를 제어해 공격을 중단시켰다. ",
             },
             "failure": {
                 "Scripttext": "기계를 제어하려다가 기계의 반격을 받았다. 체력이 감소한다.",
@@ -556,6 +613,169 @@ export const SCRIPT = [
         "goscript": "event"
     },
     //#endregion 기계와의 싸움
+
+    // #region 광신도와의 만남
+    //event
+    {
+        "name": "주인공",
+        "Scripttext": "어두운 숲 속을 탐험하던 중, 나는 한 무리의 광신도를 만났다. 그들은 이상한 의식을 행하고 있었다.",
+        "event": "fanatic_encounter"
+    },
+    {
+        "Scripttext": "광신도들은 나를 적대적으로 바라보며 위협을 가해왔다."
+    },
+    {
+        "Scripttext": "나는 어떻게 대처할지 결정해야 했다."
+    },
+    {
+        "Scripttext": "어떤 선택을 하겠는가?",
+        "choice": "fanatic_encounter"
+    },
+    {
+        //fanatic_encounter 선택지
+        1: {//저항하기
+            "success": {
+                "Scripttext": "광신도들과의 싸움에서 승리했다. 체력이 감소했지만, 그들을 물리쳤다.",
+                "effect": { "health": -10 }
+            },
+            "failure": {
+                "Scripttext": "저항했지만 광신도들에게 심한 부상을 당했다. 체력이 크게 감소합니다.",
+                "effect": { "health": -20 }
+            }
+        },
+        2: {//도망가기
+            "success": {
+                "Scripttext": "광신도들의 추격을 따돌리고 무사히 도망쳤다. 체력이 소폭 감소합니다.",
+                "effect": { "health": -5 }
+            },
+            "failure": {
+                "Scripttext": "도망치려 했으나 실패하고 광신도들에게 붙잡혀 체력이 크게 감소합니다.",
+                "effect": { "health": -20 }
+            }
+        },
+        3: {//설득하기
+            "success": {
+                "Scripttext": "광신도들을 설득하여 나의 편으로 만들었다. ",
+            },
+            "failure": {
+                "Scripttext": "설득하려 했으나 실패하고 분노한 광신도들에게 심한 부상을 당했다. 체력이 크게 감소합니다.",
+                "effect": { "health": -25 }
+            }
+        }
+    },
+    {
+        "Scripttext": "나는 다음목적지를 향해 걷기 시작했다.",
+        "goscript": "event"
+    },
+//#endregion 광신도와의 만남
+
+    // #region 도시에서 몬스터에게서 숨기
+    //event
+    {
+        "name": "주인공",
+        "Scripttext": "도시를 탐험하던 중, 나는 거대한 몬스터의 포효를 들었다. 몬스터가 나를 발견하기 전에 숨을 곳을 찾아야 했다.",
+        "event": "hide_from_monster"
+    },
+    {
+        "Scripttext": "몬스터는 날카로운 이빨과 발톱을 가진 무시무시한 생명체였다. 나는 최대한 조용히 움직이며 숨을 곳을 찾아야 했다."
+    },
+    {
+        "Scripttext": "나는 어떻게 대처할지 결정해야 했다."
+    },
+    {
+        "Scripttext": "어떤 선택을 하겠는가?",
+        "choice": "hide_from_monster"
+    },
+    {
+        //hide_from_monster 선택지
+        1: {//건물 안에 숨기
+            "success": {
+                "Scripttext": "근처 건물 안에 성공적으로 숨어 몬스터의 눈을 피했다."
+            },
+            "failure": {
+                "Scripttext": "건물 안에 숨으려 했지만 몬스터에게 들켜 도망쳐야 했다. 체력이 감소합니다.",
+                "effect": { "health": -10 }
+            }
+        },
+        2: {//쓰레기 더미 속에 숨기
+            "success": {
+                "Scripttext": "쓰레기 더미 속에 숨어 몬스터의 눈을 피했다. 하지만 약간의 체력을 소모했다.",
+                "effect": { "health": -5 }
+            },
+            "failure": {
+                "Scripttext": "쓰레기 더미 속에 숨으려 했지만 몬스터에게 들켜 도망쳐야 했다. 체력이 크게 감소합니다.",
+                "effect": { "health": -20 }
+            }
+        },
+        3: {//도망가기
+            "success": {
+                "Scripttext": "몬스터의 추격을 따돌리고 안전한 장소로 도망쳤다."
+            },
+            "failure": {
+                "Scripttext": "도망치려 했으나 몬스터에게 공격받아 체력이 크게 감소합니다.",
+                "effect": { "health": -30 }
+            }
+        }
+    },
+    {
+        "Scripttext": "나는 다음목적지를 향해 걷기 시작했다.",
+        "goscript": "event"
+    },
+//#endregion 도시에서 몬스터에게서 숨기
+
+    // #region 구조물 붕괴
+//event
+{
+    "name": "주인공",
+    "Scripttext": "오래된 건물을 탐험하던 중, 갑자기 구조물이 붕괴되기 시작했다. 나는 급히 대처해야 했다.",
+    "event": "structure_collapse"
+},
+{
+    "Scripttext": "붕괴하는 구조물의 파편이 사방으로 흩어졌고, 나는 어떻게든 피해를 최소화하려고 했다."
+},
+{
+    "Scripttext": "나는 어떻게 대처할지 결정해야 했다."
+},
+{
+    "Scripttext": "어떤 선택을 하겠는가?",
+    "choice": "structure_collapse"
+},
+{
+    //structure_collapse 선택지
+    1: {//구조물 밑으로 피하기
+        "success": {
+            "Scripttext": "구조물 밑으로 피하는 데 성공하여 큰 피해를 입지 않았다.",
+            "effect": { "health": -5 }
+        },
+        "failure": {
+            "Scripttext": "구조물 밑으로 피하려 했지만, 파편에 맞아 체력이 크게 감소합니다.",
+            "effect": { "health": -30 }
+        }
+    },
+    2: {//도망가기
+        "success": {
+            "Scripttext": "붕괴하는 구조물에서 멀리 도망치는 데 성공했다. ",
+        },
+        "failure": {
+            "Scripttext": "도망치려 했으나, 파편에 맞아 체력이 감소하고 돈도 잃었다.",
+            "effect": { "health": -20, "money": -20 }
+        }
+    },
+    3: {//가만히
+        "success": {
+            "Scripttext": "가만히있었는데 기적적으로 아무런 피해가 없었다!",
+        },
+        "failure": {
+            "Scripttext": "붕괴하는 구조물에 맞아 체력이 크게 감소했다.",
+            "effect": { "health": -50 }
+        }
+    }
+},
+{
+    "Scripttext": "나는 다음목적지를 향해 걷기 시작했다.",
+    "goscript": "event"
+},
+//#endregion 구조물 붕괴
 
 
 //나쁜거 (돈)
@@ -615,7 +835,59 @@ export const SCRIPT = [
     },
     //#endregion 약탈당함
 
-
+    // #region 군인들에게 협박받음
+    //event
+    {
+        "name": "주인공",
+        "Scripttext": "황폐해진 도시를 탐험하던 중, 나는 무장한 군인들에게 포위되었다. 그들은 돈을 요구하며 나를 협박했다.",
+        "event": "soldier_extortion"
+    },
+    {
+        "Scripttext": "군인들은 무기를 휘두르며 나에게 돈을 내놓으라고 위협했다."
+    },
+    {
+        "Scripttext": "나는 어떻게 대처할지 결정해야 했다."
+    },
+    {
+        "Scripttext": "어떤 선택을 하겠는가?",
+        "choice": "soldier_extortion"
+    },
+    {
+        //soldier_extortion 선택지
+        1: {//돈을 준다
+            "success": {
+                "Scripttext": "군인들에게 돈을 주고 무사히 상황을 모면했다.",
+                "effect": { "money": -30 }
+            },
+            "failure": {
+                "Scripttext": "돈이없자 분노한 군인들에게 구타당했다.",
+                "effect": { "health": -20 }
+            }
+        },
+        2: {//도망가기
+            "success": {
+                "Scripttext": "군인들의 추격을 따돌리고 무사히 도망쳤다.",
+            },
+            "failure": {
+                "Scripttext": "도망치려 했으나 실패하고 군인들에게 붙잡혀 돈을 모두 빼앗겼다.",
+                "effect": { "money": -100, "health": -20}
+            }
+        },
+        3: {//설득하기
+            "success": {
+                "Scripttext": "군인들을 설득하여 상황을 무사히 넘겼다. 돈을 잃지 않았다."
+            },
+            "failure": {
+                "Scripttext": "설득하려 했으나 실패하고 군인들에게 돈을 빼앗겼다.",
+                "effect": { "money": -50 }
+            }
+        }
+    },
+    {
+        "Scripttext": "나는 다음목적지를 향해 걷기 시작했다.",
+        "goscript": "event"
+    },
+//#endregion 군인들에게 협박받음
 
 
 //상점
