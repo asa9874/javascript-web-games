@@ -734,7 +734,8 @@ export const SCRIPT = [
 {
     "name": "주인공",
     "Scripttext": "오래된 건물을 탐험하던 중, 갑자기 구조물이 붕괴되기 시작했다. 나는 급히 대처해야 했다.",
-    "event": "structure_collapse"
+    "event": "structure_collapse",
+    "background":"Distroyed_city (2)",
 },
 {
     "Scripttext": "붕괴하는 구조물의 파편이 사방으로 흩어졌고, 나는 어떻게든 피해를 최소화하려고 했다."
@@ -849,7 +850,7 @@ export const SCRIPT = [
         "event": "soldier_extortion",
         "background":"Distroyed_city (11)",
         "character1":{"img":"soilder (1)","position":40},
-        "character2":{"img":"soilder (2)","position":70},
+        "character2":{"img":"soilder (2)","position":60},
         "character3":{"img":"soilder (3)","position":10},
     },
     {

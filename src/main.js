@@ -9,53 +9,60 @@ import { Animation, UpdatingNumber } from './animation'
 import { goEvent, SuccessChoice, health, ChoiceEffect, money, eventlist } from './event'
 import { ChoiceList } from './ChoiceScript'
 
-export const $test=$('.test')
-export const $GameStartBox=$('.GameStartBox');
-export const $OpeningSkipBox=$('.OpeningSkipBox')
-export const $gamebox=$('.gamebox')
-export const $gamebackgroundimg=$('.gamebackgroundimg')
-export const $backgroundimg=$('.backgroundimg')
-export const $conversation=$('.conversation')
-export const $character=$('.character')
-export const $object=$('.object')
-export const $character1=$('.character1')
-export const $character2=$('.character2')
-export const $character3=$('.character3')
-export const $namebox=$('.namebox')
-export const $choicebox=$('.choicebox')
-export const $choice1=$('.choice1')
-export const $choice2=$('.choice2')
-export const $choice3=$('.choice3')
-export const $choiceimg=$('.choiceimg')
-export const $choiceimg1=$('.choiceimg1')
-export const $choiceimg2=$('.choiceimg2')
-export const $choiceimg3=$('.choiceimg3')
-export const $health=$('.health')
-export const $money=$('.money')
-export const $skipbox=$('.skipbox')
-export const $healtheffect=$('.healtheffect')
+const $test=$('.test')
+const $GameStartBox=$('.GameStartBox');
+const $OpeningSkipBox=$('.OpeningSkipBox')
+const $gamebox=$('.gamebox')
+const $gamebackgroundimg=$('.gamebackgroundimg')
+const $backgroundimg=$('.backgroundimg')
+const $conversation=$('.conversation')
+const $character=$('.character')
+const $object=$('.object')
+const $character1=$('.character1')
+const $character2=$('.character2')
+const $character3=$('.character3')
+const $namebox=$('.namebox')
+const $choicebox=$('.choicebox')
+const $choice=$('.choice')
+const $choice1=$('.choice1')
+const $choice2=$('.choice2')
+const $choice3=$('.choice3')
+const $choiceimg=$('.choiceimg')
+const $choiceimg1=$('.choiceimg1')
+const $choiceimg2=$('.choiceimg2')
+const $choiceimg3=$('.choiceimg3')
+const $health=$('.health')
+const $money=$('.money')
+const $skipbox=$('.skipbox')
+const $healtheffect=$('.healtheffect')
+const $startbox=$('.startbox')
+const $textbox=$('.textbox')
+
 //현재 대화순서
-export let NowConversation=-1;
-export let nowScript;
+let NowConversation=-1;
+let nowScript;
 
 //선택지
-export let choicecheck;      //선택지 골랐는지 확인
-export let choiceevent;      //어떤 선택지사항인지
-export let choicenow=0;      //어떤 선택지고름?
-export let choicesuccess           //선택지 성공여부
+let choicecheck;      //선택지 골랐는지 확인
+let choiceevent;      //어떤 선택지사항인지
+let choicenow=0;      //어떤 선택지고름?
+let choicesuccess           //선택지 성공여부
 
 
-export let currentBgm;       //현재 Bgm 넣는 변수
-export let currentVoice;     //현재 목소리 넣는 변수
+let currentBgm;       //현재 Bgm 넣는 변수
+let currentVoice;     //현재 목소리 넣는 변수
 
 //타이핑관련
-export let Conversationtext  // 현재 나온 타이핑
-export let currentCharIndex  // 현재 타이핑 위치
-export let typingSpeed = 60; // 타이핑 속도 (밀리초)
-export let skiptext=false
+let Conversationtext  // 현재 나온 타이핑
+let currentCharIndex  // 현재 타이핑 위치
+let typingSpeed = 60; // 타이핑 속도 (밀리초)
+let skiptext=false
 
 //초기세팅
 $backgroundimg.css('background-image', 'url("./backgroundimg/back.png")');
+$textbox.css('background-image','linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),url("./elements/4.png")')
+$choice.css('background-image','linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),url("./elements/choice.png")')
+
 $gamebox.hide()
 $character.hide();
 $choicebox.hide();
@@ -65,7 +72,7 @@ $choiceimg.hide()
 
 
 //타이핑효과
-export function typeCharacter() {
+function typeCharacter() {
   if (currentCharIndex < Conversationtext.length && !skiptext) {
     //목소리 없으면 타이핑소리로 대체
     if(!nowScript.voice){
@@ -86,7 +93,7 @@ export function typeCharacter() {
 }
 
 //텍스트 출력 초기화시키는곳
-export function PrintText(name,text){
+function PrintText(name,text){
   $conversation.text('');
   currentCharIndex=0;
   $namebox.text(name)
@@ -99,7 +106,7 @@ export function PrintText(name,text){
 
 
 //선택지 열기
-export function ShowChoicebox(choicenumber){
+function ShowChoicebox(choicenumber){
     $choicebox.show();
     choiceevent=ChoiceList[choicenumber]
     $choice1.text(choiceevent[1]["text"])
@@ -147,7 +154,7 @@ $('.choice').on('click', function() {
 
 
 //바꾸기,체크 함수
-export function ChangeElements(){
+function ChangeElements(){
   //소리바꾸기
   currentVoice=PlayVoice(currentVoice,nowScript.voice,1)
   currentBgm=PlayBgm(currentBgm,nowScript.bgm)
@@ -196,7 +203,7 @@ export function ChangeElements(){
 
 
 //다음대화로 이동하기
-export function NextConversation(){
+function NextConversation(){
   NowConversation+=1;
   
   if(SCRIPT[NowConversation].Scripttext){
@@ -224,17 +231,16 @@ $('.textbox').on('click', function() {
 //게임시작
 $GameStartBox.on('click', function() {
   NextConversation();
-  $GameStartBox.hide();
+  $startbox.hide()
   $gamebox.show()
-  $OpeningSkipBox.hide()
+  
 });
 
 //오프닝스킵
 $OpeningSkipBox.on('click', function() {
-  NowConversation=94
+  NowConversation=5
   NextConversation();
-  $GameStartBox.hide();
+  $startbox.hide()
   $gamebox.show()
-  $OpeningSkipBox.hide()
   $test.text(eventlist)
 });

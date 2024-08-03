@@ -9,11 +9,25 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'ONE-Mobile-POP'
 }
 @font-face {
     font-family: 'MangoDdobak-B';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/MangoDdobak-B.woff2') format('woff2');
     font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Danjo-bold-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Danjo-bold-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ONE-Mobile-POP';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
 }
 
@@ -41,6 +55,41 @@ html, body {
     opacity: 1;
 }
 
+.startbox{
+    position: absolute; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.GameTitle{
+    letter-spacing:6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Danjo-bold-Regular';
+    font-size: 80px;
+    color: rgb(255, 255, 255);
+    font-weight: 1000;
+    text-shadow: 3px 3px 50px rgb(0, 0, 0);
+    margin-bottom: 20px;
+}
+.GameSubTitle{
+    letter-spacing:6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Danjo-bold-Regular';
+    font-size: 60px;
+    margin-bottom: 170px;
+    color: rgb(36, 255, 84);
+    font-weight: 1000;
+    text-shadow: 3px 3px 50px rgb(0, 0, 0);
+}
+
 .gamebox{
     position: relative;
     width: 1800px;
@@ -56,7 +105,6 @@ html, body {
 }
 
 .textbox{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),url('./elements/4.png');
     filter: brightness(120%);
     opacity: 0.99;
     position: absolute;
@@ -138,17 +186,21 @@ html, body {
 }
 
 .choice{
+    letter-spacing:9px;
+    background-size: cover;
+    font-family: 'ONE-Mobile-POP';
     margin: 50px;
     height: 100px;
     width: 800px;
     border-radius: 30px;
     background-color: rgba(245, 247, 224, 0.9);
     transition: transform 0.5s;
+    color: white;
     font-size: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-shadow: 1px 1px 1px white;
+    text-shadow: 1px 1px 10px rgb(0, 0, 0);
 }
 
 .choice:hover{
