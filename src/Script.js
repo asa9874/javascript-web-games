@@ -393,7 +393,8 @@ export const SCRIPT = [
     {
         "name": "주인공",
         "Scripttext": "여정을 계속하던 중, 나는 위험에 처한 낙오자를 발견했다. 그는 절박한 표정으로 나에게 도움을 요청했다.",
-        "event": "rescue_straggler"
+        "event": "rescue_straggler",
+        "background":"Distroyed_city (1)",
     },
     {
         "Scripttext": "나는 그를 구출할지 아니면 위험을 무릅쓰지 말아야 할지 고민했다."
@@ -618,8 +619,11 @@ export const SCRIPT = [
     //event
     {
         "name": "주인공",
-        "Scripttext": "어두운 숲 속을 탐험하던 중, 나는 한 무리의 광신도를 만났다. 그들은 이상한 의식을 행하고 있었다.",
-        "event": "fanatic_encounter"
+        "Scripttext": "도시를 탐색하던 중, 나는 한 무리의 광신도를 만났다.",
+        "event": "fanatic_encounter",
+        "background":"Distroyed_city (17)",
+        "character2":{"img":"fanatic_encounter","position":30}
+        
     },
     {
         "Scripttext": "광신도들은 나를 적대적으로 바라보며 위협을 가해왔다."
@@ -674,7 +678,9 @@ export const SCRIPT = [
     {
         "name": "주인공",
         "Scripttext": "도시를 탐험하던 중, 나는 거대한 몬스터의 포효를 들었다. 몬스터가 나를 발견하기 전에 숨을 곳을 찾아야 했다.",
-        "event": "hide_from_monster"
+        "event": "hide_from_monster",
+        "background":"Distroyed_city (13)",
+        "character1":{"img":"monster","position":30}
     },
     {
         "Scripttext": "몬스터는 날카로운 이빨과 발톱을 가진 무시무시한 생명체였다. 나는 최대한 조용히 움직이며 숨을 곳을 찾아야 했다."
@@ -840,7 +846,11 @@ export const SCRIPT = [
     {
         "name": "주인공",
         "Scripttext": "황폐해진 도시를 탐험하던 중, 나는 무장한 군인들에게 포위되었다. 그들은 돈을 요구하며 나를 협박했다.",
-        "event": "soldier_extortion"
+        "event": "soldier_extortion",
+        "background":"Distroyed_city (11)",
+        "character1":{"img":"soilder (1)","position":40},
+        "character2":{"img":"soilder (2)","position":70},
+        "character3":{"img":"soilder (3)","position":10},
     },
     {
         "Scripttext": "군인들은 무기를 휘두르며 나에게 돈을 내놓으라고 위협했다."

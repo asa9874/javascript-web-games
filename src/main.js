@@ -108,17 +108,14 @@ export function ShowChoicebox(choicenumber){
 
 
     if(choiceevent[1]['shop']){
-      $test.text(eventlist)
       $choiceimg1.text(SCRIPT[NowConversation+1][1]["success"]["effect"]["money"])
       $choiceimg1.show()
     }else{$choiceimg1.hide()}
     if(choiceevent[2]['shop']){
-      $test.text(eventlist)
       $choiceimg2.text(SCRIPT[NowConversation+1][2]["success"]["effect"]["money"])
       $choiceimg2.show()
     }else{$choiceimg2.hide()}
     if(choiceevent[3]['shop']){
-      $test.text(eventlist)
       $choiceimg3.text(SCRIPT[NowConversation+1][3]["success"]["effect"]["money"])
       $choiceimg3.show()
     }else{$choiceimg3.hide()}
@@ -234,9 +231,10 @@ $GameStartBox.on('click', function() {
 
 //오프닝스킵
 $OpeningSkipBox.on('click', function() {
-  NowConversation=5
+  NowConversation=94
   NextConversation();
   $GameStartBox.hide();
   $gamebox.show()
   $OpeningSkipBox.hide()
+  $test.text(eventlist)
 });

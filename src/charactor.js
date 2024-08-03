@@ -14,7 +14,7 @@ export function ChangeCharactor(target,character){
         }
     
         if(character.img){
-            target.attr('src',character.img)
+            target.attr('src',"./character/"+character.img+".png")
         }
     }
 }
