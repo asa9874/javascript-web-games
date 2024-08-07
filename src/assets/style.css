@@ -64,3 +64,13 @@ html, body {
   justify-content: center;
 }
 
+.scorebox{
+  margin: 30px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.score{
+  padding: 10px;
+}

@@ -6,9 +6,20 @@
     <title>카드 뒤집기</title>
   </head>
   <body>
+    <div class="GameStartButton">게임시작</div>
     <div class="backgroundimg"></div>
     <div class="gamebox">
       <div class="cardbox"></div>
+      <table class="scorebox">
+        <tr>
+          <td>플레이어</td>
+          <td class="score playerscore"></td>
+        </tr>
+        <tr>
+          <td>컴퓨터</td>
+          <td class="score computerscore"></td>
+        </tr>
+      </table>
     </div>
     <script type="module" src="./src/main.js"></script>
   </body>
