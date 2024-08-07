@@ -2,7 +2,7 @@ import './assets/reset.css';
 import './assets/style.css';
 import './assets/animation.css';
 import $ from 'jquery'
-import { FlipCard, ReFlipCard } from './animation';
+import { FlipCard, ReFlipCard, UpdatingNumber } from './animation';
 import { FairComputer, SmartComputer, randomComputer } from './computer';
 import { ButtonAble, ButtonDisable, ReFlipAll, generateRandomList } from './card';
 
@@ -14,11 +14,15 @@ const $gamebox=$('.gamebox')
 const $GameOverBox=$('.GameOverBox')
 const $WinLoseText=$('.WinLoseText')
 
-$gamebox.hide()
-$GameOverBox.hide()
 //0 안뒤집어짐 ,1뒤집어짐, -1 없어짐
 const CardList=[]                           //카드인덱스는 0~29까지임
 const CardFairList = generateRandomList()   //짝카드 리스트
+
+$gamebox.hide()
+$gamebox.css('background-image', 'url("./img/gamebackground.png');
+$GameOverBox.hide()
+
+
 
 
 //점수
@@ -50,13 +54,13 @@ for (let i = 0; i <= 30; i++) {ComputerCardBrain.push(0);  }
 //점수 업데이트
 function UpdateScore(){
     if(PlayerTurn){
+        UpdatingNumber($playerscore,playerscore,500)
         playerscore+=2
     }
     else{
+        UpdatingNumber($computerscore,computerscore,500)
         computerscore+=2
     }
-    $playerscore.text(playerscore)
-    $computerscore.text(computerscore)
 }
 
 
@@ -83,6 +87,7 @@ function EndGame(){
 function SelectCard(target){
     const cardSideBack = target.find('.card-side-back');
     cardSideBack.text(CardFairList[target.attr('class').match(/\d+/g)]);
+    cardSideBack.css('background-image', 'url("./cardimg/card ('+CardFairList[target.attr('class').match(/\d+/g)]+').png")');
     FlipCard(target);
     CardList[target.attr('class').match(/\d+/g)]=1
     CountSeletedCard++;
@@ -94,6 +99,7 @@ function SelectCard(target){
 
 //페어카드 확인
 function CheckFairCard(){
+    ButtonDisable()
     CountSeletedCard=0
     var Card1Number=SeletedCard1.attr('class').match(/\d+/g);   //카드 인덱스번호
     var Card2Number=SeletedCard2.attr('class').match(/\d+/g);   //카드 인덱스번호
@@ -121,8 +127,11 @@ function CheckFairCard(){
     setTimeout(function() {
         SeletedCard1.find('.card-side-back').text("");
         SeletedCard2.find('.card-side-back').text("");
+        SeletedCard1.find('.card-side-back').css('background-image','')
+        SeletedCard2.find('.card-side-back').css('background-image','')
         SeletedCard1=""
         SeletedCard2=""
+        
     }, 800);
     ReFlipAll(CardList)
     EndGame()
@@ -137,8 +146,8 @@ function PlayerChange(){
     }
     else{
         console.log("<컴퓨터 턴>")
-        ButtonDisable()
         setTimeout(function() {
+            ButtonDisable()
             ComputerPlay()
         }, 2000);
     }
@@ -177,12 +186,13 @@ $GameStartButton.on('click',function(){
         for (var col=1;col<=6;col++){
             CardList[cardnumber]=0
             $(`.cardrow${row}`).append(`<div class="card card${cardnumber}">
-            <div class="card-side card-side-front"></div>
+            <div class="card-side card-side-front">${CardFairList[cardnumber]}</div>
             <div class="card-side card-side-back"></div>
             </div>`);
             cardnumber++;
         }
     }
+    $('.card-side-front').css('background-image', 'url("./cardimg/cardback.png');
     if($(this).is($('.EasyStart'))){Computerintelligence=0.2}
     if($(this).is($('.NORMALStart'))){Computerintelligence=0.4}
     if($(this).is($('.HARDStart'))){Computerintelligence=0.7}
