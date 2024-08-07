@@ -81,6 +81,8 @@ function EndGame(){
 
 //카드 선택하기
 function SelectCard(target){
+    const cardSideBack = target.find('.card-side-back');
+    cardSideBack.text(CardFairList[target.attr('class').match(/\d+/g)]);
     FlipCard(target);
     CardList[target.attr('class').match(/\d+/g)]=1
     CountSeletedCard++;
@@ -104,6 +106,7 @@ function CheckFairCard(){
         UpdateScore()
     }
     else{
+        
         PlayerTurn= !PlayerTurn
         if(ComputerCardBrain[Card1Number]!=1){
             ComputerCountBrain[CardFairList[Card1Number]].push(Card1Number)
@@ -115,9 +118,12 @@ function CheckFairCard(){
         }
         
     }
-
-    SeletedCard1=""
-    SeletedCard2=""
+    setTimeout(function() {
+        SeletedCard1.find('.card-side-back').text("");
+        SeletedCard2.find('.card-side-back').text("");
+        SeletedCard1=""
+        SeletedCard2=""
+    }, 800);
     ReFlipAll(CardList)
     EndGame()
     PlayerChange()
@@ -172,7 +178,7 @@ $GameStartButton.on('click',function(){
             CardList[cardnumber]=0
             $(`.cardrow${row}`).append(`<div class="card card${cardnumber}">
             <div class="card-side card-side-front"></div>
-            <div class="card-side card-side-back">${CardFairList[cardnumber]}</div>
+            <div class="card-side card-side-back"></div>
             </div>`);
             cardnumber++;
         }

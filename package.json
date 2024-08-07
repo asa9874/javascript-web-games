@@ -17,5 +17,6 @@
     "gh-pages": "^6.1.1",
     "jquery": "^3.7.1",
     "memory-flip-game": "file:"
-  }
+  },
+  "homepage": "https://asa9874.github.io/Memory-Flip-Game/"
 }
