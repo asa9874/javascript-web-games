@@ -1,0 +1,66 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: auto; /* 기본 스크롤 설정 */
+  min-width: 1800px;
+  min-height: 850px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'ONE-Mobile-POP';
+  background-color: antiquewhite;
+}
+
+.gamebox{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1800px;
+  height: 850px;
+  background-color: rgb(128, 100, 100);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.card{
+  width: 110px;
+  height: 150px;
+  transition: 1s;
+  transform-style: preserve-3d ;
+  margin: 10px;
+}
+
+
+.card-side {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5em;
+  font-size: 1.5rem;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-side-front {
+  z-index: 1;
+  background: white;
+}
+
+.card-side-back {
+  background: tomato;
+  transform: rotateY(180deg);
+}
+
+
+
+.cardrow{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
