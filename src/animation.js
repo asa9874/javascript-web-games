@@ -9,7 +9,7 @@ export function StartAnimation(target,animationname,animationduration){
 }
 
 export function FlipCard(target){
-    StartAnimation(target,'cardflip',100)
+    StartAnimation(target,'cardflip',500)
 }
 
 
@@ -46,5 +46,9 @@ export function UpdatingNumber(target,start, duration) {
     }
   
     requestAnimationFrame(updateNumber);
+    setTimeout(function() {
+        target.removeClass('updatingnumber');
+        void target[0].offsetWidth; 
+    }, 300);
 
 }

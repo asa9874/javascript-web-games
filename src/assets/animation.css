@@ -1,5 +1,6 @@
 @keyframes cardflip {
     0% {transform:perspective(800px) rotateY(0deg);}
+    50% {transform:perspective(800px) rotateY(90deg) scale(1.5);}
     100% {transform:perspective(800px) rotateY(180deg);}
 }
 
@@ -12,7 +13,7 @@
 
 @keyframes cardBackflip {
     0% {transform:perspective(800px) rotateY(180deg);}
-    50% {transform:perspective(800px) rotateY(180deg);}
+    0% {transform:perspective(800px) rotateY(180deg);}
     100% {transform:perspective(800px) rotateY(0deg);}
 }
 

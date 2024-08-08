@@ -13,7 +13,9 @@ const $startbox=$('.startbox')
 const $gamebox=$('.gamebox')
 const $GameOverBox=$('.GameOverBox')
 const $WinLoseText=$('.WinLoseText')
-
+const $playercharacter=$('.playercharacter')
+const $computercharacter=$('.computercharacter')
+const $startimg=$('.startimg')
 //0 안뒤집어짐 ,1뒤집어짐, -1 없어짐
 const CardList=[]                           //카드인덱스는 0~29까지임
 const CardFairList = generateRandomList()   //짝카드 리스트
@@ -21,7 +23,6 @@ const CardFairList = generateRandomList()   //짝카드 리스트
 $gamebox.hide()
 $gamebox.css('background-image', 'url("./img/gamebackground.png');
 $GameOverBox.hide()
-
 
 
 
@@ -93,13 +94,15 @@ function SelectCard(target){
     CountSeletedCard++;
     if(!SeletedCard1){SeletedCard1=target}
     else{SeletedCard2=target}
-    if(CountSeletedCard===2){CheckFairCard()}
+    if(CountSeletedCard===2){
+        ButtonDisable()
+        setTimeout(function() {CheckFairCard()},500)
+    }
 }
 
 
 //페어카드 확인
 function CheckFairCard(){
-    ButtonDisable()
     CountSeletedCard=0
     var Card1Number=SeletedCard1.attr('class').match(/\d+/g);   //카드 인덱스번호
     var Card2Number=SeletedCard2.attr('class').match(/\d+/g);   //카드 인덱스번호
@@ -142,10 +145,14 @@ function CheckFairCard(){
 function PlayerChange(){
     if(PlayerTurn){
         console.log("<플레이어 턴>")
+        $playercharacter.css('background-color','red');
+        $computercharacter.css('background-color','black');
         ButtonAble()
     }
     else{
         console.log("<컴퓨터 턴>")
+        $computercharacter.css('background-color','red');
+        $playercharacter.css('background-color','black');
         setTimeout(function() {
             ButtonDisable()
             ComputerPlay()
@@ -180,22 +187,36 @@ $('.cardbox').on('click', '.card', function() {
 $GameStartButton.on('click',function(){
     $gamebox.show()
     $startbox.hide()
+    $startimg.hide()
     var cardnumber=0
     for (var row=1;row<=5;row++){
         $('.cardbox').append(`<div class="cardrow cardrow${row}"></div>`)
         for (var col=1;col<=6;col++){
             CardList[cardnumber]=0
             $(`.cardrow${row}`).append(`<div class="card card${cardnumber}">
-            <div class="card-side card-side-front">${CardFairList[cardnumber]}</div>
+            <div class="card-side card-side-front"></div>
             <div class="card-side card-side-back"></div>
             </div>`);
             cardnumber++;
         }
     }
     $('.card-side-front').css('background-image', 'url("./cardimg/cardback.png');
-    if($(this).is($('.EasyStart'))){Computerintelligence=0.2}
-    if($(this).is($('.NORMALStart'))){Computerintelligence=0.4}
-    if($(this).is($('.HARDStart'))){Computerintelligence=0.7}
-    if($(this).is($('.LUNATICStart'))){Computerintelligence=1}
+    if($(this).is($('.EasyStart'))){
+        Computerintelligence=0.2
+        $computercharacter.attr('src', './char/easy.png');
+    }
+    if($(this).is($('.NORMALStart'))){
+        Computerintelligence=0.4
+        $computercharacter.attr('src', './char/normal.png');
+    }
+    if($(this).is($('.HARDStart'))){
+        Computerintelligence=0.7
+        $computercharacter.attr('src', './char/hard.png');
+    }
+    if($(this).is($('.LUNATICStart'))){
+        Computerintelligence=1
+        $computercharacter.attr('src', './char/lunatic.png');
+    }
     console.log("컴퓨터의 지능:"+Computerintelligence)
 });
+

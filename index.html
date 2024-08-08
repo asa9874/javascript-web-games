@@ -9,21 +9,28 @@
     <div class="backgroundimg"></div>
     <div class="startbox">
       <div class="GameTitle">카드 뒤집기</div>
+      <div class="funny">즐겁다!</div>
       <div class="GameStartButton EasyStart">EASY</div>
       <div class="GameStartButton NORMALStart">NORMAL</div>
       <div class="GameStartButton HARDStart">HARD</div>
       <div class="GameStartButton LUNATICStart">LUNATIC</div>
     </div>
+    <div class="startimg">
+      <img class="gamestartimg gamestartimg1">
+      <img class="gamestartimg gamestartimg2">
+      <img class="gamestartimg gamestartimg3">
+      <img class="gamestartimg gamestartimg4">
+    </div>
 
     <div class="GameOverBox">
       <div class="WinLoseText">너 패배!</div>
-      <table>
+      <table >
         <tr>
-          <td>플레이어</td>
+          <td class="scoreplayer">플레이어</td>
           <td class="score playerscore"></td>
         </tr>
         <tr>
-          <td>컴퓨터</td>
+          <td class="scoreplayer">컴퓨터</td>
           <td class="score computerscore"></td>
         </tr>
       </table>
@@ -46,5 +53,6 @@
           
       </div>
     <script type="module" src="./src/main.js"></script>
+    <script type="module" src="./src/start.js"></script>
   </body>
 </html>
