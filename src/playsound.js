@@ -1,5 +1,7 @@
+import { KeyBoxScale } from "./animation";
+
 //베이스 사운드 함수
-export function playSound(name,vol, loop = false) {
+export function playSound(name,vol=1, loop = false) {
     const audio = new Audio('./'+name+'.mp3');
     audio.volume = vol;
     audio.loop = loop;
@@ -7,16 +9,19 @@ export function playSound(name,vol, loop = false) {
     return audio;
 }
 
+const arrow={1:"up",2:"down",3:"left",4:"right"}
 
-
-//소리이름,간격ms ,개수
-export function playSecondSound(effectname,Interval,count){
-    let countnow=0
+//소리이름, 간격ms ,횟수
+export function playListSound(ArrowList,Interval=1000,count=1){
+    let countnow=-1
     let nIntervId
-    nIntervId=setInterval(playEffectSound,Interval)
-    function playEffectSound(effectname='Blop',effectvolume=1) {
+    playEffectSound()
+    if(count!=1){nIntervId=setInterval(playEffectSound,Interval)}
+    function playEffectSound() {
         countnow++
         if(countnow===count){clearInterval(nIntervId)}
-        playSound("effect/"+effectname,effectvolume)
+        playSound("effect/"+arrow[ArrowList[countnow]])
+        KeyBoxScale(arrow[ArrowList[countnow]]);
     }
 }
+
