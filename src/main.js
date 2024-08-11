@@ -5,10 +5,15 @@ import $ from 'jquery'
 import { playListSound, playSound } from './playsound'
 import { KeyBoxScale, StartAnimation } from './animation'
 
+const $gamebox=$('.gamebox')
+const $startbox=$('.startbox')
+const $endbox=$('.endbox')
+
 let ArrowList=[]
 let NowArrow=0
 let KeyAllow=false
-
+$gamebox.hide()
+$endbox.hide()
 $(document).on('keydown', function(event) {
     if(KeyAllow){
         var direction
@@ -28,11 +33,12 @@ $(document).on('keydown', function(event) {
         }
         playSound('effect/'+direction)
         KeyBoxScale(direction)
-        CheckCorrect(direction)
+
+        var correct = CheckCorrect(direction)
 
         NowArrow++
         console.log(NowArrow,ArrowList.length)
-        if(NowArrow===ArrowList.length){
+        if(correct && NowArrow===ArrowList.length){
             NowArrow=0
             KeyDisable()
             setTimeout(function() {
@@ -46,8 +52,13 @@ $(document).on('keydown', function(event) {
 function CheckCorrect(direction){
     const arrow={"up":1,"down":2,"left":3,"right":4}
     if(arrow[direction]!=ArrowList[NowArrow]){
-        console.log("no")
+        $gamebox.hide()
+        $endbox.show()
+        $('.point').text(ArrowList.length+"점")
+        KeyDisable()
+        return false
     }
+    return true
 
 }
 
@@ -59,8 +70,11 @@ function MakeRandomNumber(){
 }
 
 
-$('.bu').on('click', function() {
-    ComputerStart()
+$('.startbutton').on('click', function() {
+    $gamebox.show()
+    $startbox.hide()
+    setTimeout(function() {ComputerStart()},1000)
+    
 });
 
 function ComputerStart(){

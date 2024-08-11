@@ -20,7 +20,7 @@ body{
   background-color: antiquewhite;
 }
 
-.gamebox{
+.basebox{
   position: absolute;
   display: flex;
   align-items: center;
