@@ -25,3 +25,9 @@ export function playListSound(ArrowList,Interval=1000,count=1){
     }
 }
 
+export function loadSound(){
+    new Audio('./up.mp3');
+    new Audio('./down.mp3');
+    new Audio('./left.mp3');
+    new Audio('./right.mp3');
+}

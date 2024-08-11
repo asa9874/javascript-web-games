@@ -2,7 +2,7 @@ import './assets/reset.css'
 import './assets/style.css'
 import './assets/animation.css'
 import $ from 'jquery'
-import { playListSound, playSound } from './playsound'
+import { loadSound, playListSound, playSound } from './playsound'
 import { KeyBoxScale, StartAnimation } from './animation'
 
 const $gamebox=$('.gamebox')
@@ -14,6 +14,7 @@ let NowArrow=0
 let KeyAllow=false
 $gamebox.hide()
 $endbox.hide()
+loadSound()
 $(document).on('keydown', function(event) {
     if(KeyAllow){
         var direction
