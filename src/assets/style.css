@@ -83,12 +83,22 @@ body{
 }
 
 .Answer{
+  display: flex;
+  align-items: center;
   margin: 8px;
-  width: 98%;
-  height: 27%;
+  width: 94%;
+  height: 12%;
   background-color: rgb(139, 114, 29); 
   font-size: 50px;
   color: rgb(255, 255, 255);
+  transition: 0.3s;
+  padding: 30px;
+}
+
+.Answer:hover{
+  transform: scale(1.005);
+  color:rgb(173, 142, 37);
+  cursor: pointer;
 }
 
 p{
@@ -117,5 +127,29 @@ p{
 .QuestionText{
   word-wrap: break-word;
   overflow: hidden;
-  white-space: pre-wrap;;
+  white-space: pre-wrap;
+}
+
+.OXEffect{
+  position: absolute;
+  z-index: 4;
+  height: 500px;
+  top: 40px;
+  opacity: 0.5;
+}
+
+
+.startbutton{
+  width: 600px;
+  height: 100px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+}
+
+.startbutton:hover{
+  cursor: pointer;
+  color: blueviolet;
 }
