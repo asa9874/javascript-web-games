@@ -1,0 +1,105 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto; /* 기본 스크롤 설정 */
+  min-width: 1800px;
+  min-height: 850px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-family: 'EF_jejudoldam';
+  transition: 1s;
+ 
+}
+
+@font-face {
+  font-family: 'EF_jejudoldam';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_jejudoldam.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+  background-color: antiquewhite;
+}
+
+.basebox{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction:column;
+  width: 1800px;
+  height: 850px;
+  background-color: rgb(128, 100, 100);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.flexbox{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction:column;
+}
+
+.GameImgBox{
+  width: 100%;
+  height: 55%;
+  background-color: rgb(163, 142, 114);
+  background-size: 100% 100%;
+}
+
+
+.QuestionBox{
+  position: absolute;
+  bottom: 3%;
+  width: 96%;
+  height: 30%;
+  background-color: rgb(0, 0, 0);
+  border-radius: 20px;
+  opacity: 0.95;
+  color: white;
+  font-size: 24px;
+}
+
+
+
+.AnswerBox{
+  width: 100%;
+  height: 45%;
+  background-color: rgb(0, 0, 0);
+}
+
+.InnerAnswerBox{
+  width: 80%;
+  height: 95%;
+  background-color: rgb(0, 0, 0);
+}
+
+.Answer{
+  margin: 8px;
+  width: 98%;
+  height: 27%;
+  background-color: rgb(139, 114, 29); 
+  font-size: 50px;
+  color: rgb(255, 0, 0);
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+}
+
+p{
+  margin: 20px;
+}
+
+.character{
+  position: absolute;
+  bottom: 0;
+  height: 465px;
+  width: 300px;
+  object-fit:cover;
+}
