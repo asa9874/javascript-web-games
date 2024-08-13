@@ -19,11 +19,11 @@ export function LoadElements(){
     }
 
     // 이미지 파일 미리 로드
-    var images = ["loading.png", "bar.png", "button.png", "character.png", "character2.png", "heart.png", "O.png", "X.png", "wood2.png"];
+    var images = ["loading.png", "bar.png", "button.png", "character2.png", "character3.png", "heart.png", "O.png", "X.png", "wood2.png","endback.png","startback.png","Decorateimg1.png"];
     var preloadedImages = [];
 
     for (var i = 0; i < images.length; i++) {
         preloadedImages[i] = new Image();
-        preloadedImages[i].src = "path/to/" + images[i];
+        preloadedImages[i].src = "./img/" + images[i];
     }
 }
