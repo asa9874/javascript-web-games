@@ -99,8 +99,14 @@ $startbutton.on('click', function() {
   playSound('start',0.4)
   $loading.show()
   $startbutton.css("pointer-events", "none");
-  if($(this).is($('.easy'))){SelectedScript=SCRIPT}
-  if($(this).is($('.hard'))){SelectedScript=SCRIPTHARD}
+  if($(this).is($('.easy'))){
+    SelectedScript=SCRIPT
+    $('.Difficulty').text("쉬움 난이도")
+  }
+  if($(this).is($('.hard'))){
+    SelectedScript=SCRIPTHARD
+    $('.Difficulty').text("어려움 난이도")
+  }
   loadingAnimation($loading)
   setTimeout(function() {
     $startbox.hide()
@@ -194,3 +200,4 @@ function EndCheck(){
   else{return false} 
 }
 LoadElements()
+$Answer.css("pointer-events", "none");
