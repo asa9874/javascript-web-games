@@ -1,8 +1,10 @@
 import './assets/reset.css'
 import './assets/style.css'
 import $ from 'jquery'
-import { playSound } from './playsound'
+import { LoadElements, playSound } from './playsound'
 import { SCRIPT } from './Script'
+import { SCRIPTHARD } from './ScriptHard'
+import { loadingAnimation } from './animation'
 
 const $maingamebox=$('.maingamebox')
 const $startbox=$('.startbox')
@@ -21,22 +23,33 @@ const $Answer1=$('.Answer1')
 const $Answer2=$('.Answer2')
 const $Answer3=$('.Answer3')
 const $heartbox=$('.heartbox')
+const $Point=$('.Point')
+const $MyPoint=$('.MyPoint')
+const $loading=$('.loading')
+const $loadingimg=$('.loadingimg')
 
 $GameImgBox.css('background-image', 'url("./img/bar.png")');
+$('.startimgbox').css('background-image', 'url("./img/startback.png")');
 $AnswerBox.css('background-image','linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),url("./img/wood2.png")');
-$character.attr('src',"./img/character.png")
+$character.attr('src',"./img/character3.png")
 $Answer.css('background-image','linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)),url("./img/button.png")');
 $heart.attr('src',"./img/heart.png")
 $OXEffect.attr('src',"./img/O.png")
+$loadingimg.attr('src',"./img/loading.png")
+$('.Decorateimg').attr('src',"./img/Decorateimg1.png")
 $OXEffect.hide()
 
 $maingamebox.hide()
 $endbox.hide()
+$loading.hide()
 let Life=5
+let point=0
 
+let SelectedScript
 let NowScript
 let Correct
-let WrongText
+
+let nowmusic
 
 //타이핑관련
 let Conversationtext  // 현재 나온 타이핑
@@ -80,18 +93,31 @@ function PrintText(text){
 
 //시작버튼
 $startbutton.on('click', function() {
-  $startbox.hide()
-  $maingamebox.show()
-  ChangeQuestion()
-  playSound('music',0.08,true)
+  playSound('start',0.4)
+  $loading.show()
+  $startbutton.css("pointer-events", "none");
+  if($(this).is($('.easy'))){SelectedScript=SCRIPT}
+  if($(this).is($('.hard'))){SelectedScript=SCRIPTHARD}
+  loadingAnimation($loading)
+  setTimeout(function() {
+    $startbox.hide()
+    $maingamebox.show()
+    setTimeout(function() {
+      $loading.hide()
+      ChangeQuestion()
+      nowmusic=playSound('music',0.08,true)},1000)
+  }, 2500);
+  
+  
 })
 
 //질문 바꾸기
 function ChangeQuestion(){
+  $Point.text(point+"점")
   $OXEffect.hide()
   $Answer.css("pointer-events", "none");
-  let randomIndex = Math.floor(Math.random() * SCRIPT.length);
-  NowScript=SCRIPT[randomIndex]
+  let randomIndex = Math.floor(Math.random() * SelectedScript.length);
+  NowScript=SelectedScript[randomIndex]
   Correct=NowScript["correct"]
   PrintText(NowScript["text"])
   $Answer.text("")
@@ -110,6 +136,7 @@ $Answer.on('click', function() {
   if(($(this).is($Answer1) && Correct===1) || ($(this).is($Answer2) && Correct===2) || ($(this).is($Answer3) && Correct===3)){
     $OXEffect.attr('src',"./img/O.png")
     playSound('Correct',0.5)
+    point++
   }
   else{
     $OXEffect.attr('src',"./img/X.png")
@@ -140,11 +167,16 @@ function updateLifeImages() {
   }
 }
 
+//게임종료
 function EndCheck(){
   if(Life===0){
+    nowmusic.pause()
     $endbox.show()
     $maingamebox.hide()
+    $MyPoint.text(point+"점")
     return true
   }
   else{return false} 
 }
+
+LoadElements()

@@ -3,7 +3,7 @@ html, body {
   padding: 0;
   height: 100%;
   width: 100%;
-  overflow: auto; /* 기본 스크롤 설정 */
+  overflow: hidden; /* 기본 스크롤 설정 */
   min-width: 1800px;
   min-height: 850px;
   justify-content: center;
@@ -37,6 +37,23 @@ body{
   background-size: 100% 100%;
   background-repeat: no-repeat;
   overflow: hidden;
+}
+
+.startimgbox{
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 80%;
+  background-color: #253b67;
+}
+
+.startbuttonbox{
+  width: 100%;
+  height: 20%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .flexbox{
@@ -147,9 +164,106 @@ p{
   align-items: center;
   justify-content: center;
   font-size: 50px;
+  margin: 30px;
 }
 
 .startbutton:hover{
   cursor: pointer;
   color: blueviolet;
+  background-color: aqua;
 }
+
+.Point{
+  position: absolute;
+  right: 50px;
+  top: 0;
+  font-size: 80px;
+  z-index: 1;
+  color: red;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgb(207, 207, 207);
+}
+
+.MyPoint{
+  font-size: 100px;
+  color: yellowgreen;
+}
+
+.loadingbox{
+
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction:column;
+  width: 1800px;
+  height: 850px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.Decorateimg{
+  position: absolute;
+  z-index: 3;
+  bottom: 0px;
+  left: 30px;
+  width: 100px;
+  height: 100px;
+}
+
+
+.loading{
+  position: absolute;
+  background-color: #253b67;
+  width: 0px;
+  height: 0px;
+  border-radius: 200px;
+  z-index: 5;
+  transition: 1s ease-in-out;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loadingimg{
+  height: 300px;
+  width: 300px;
+}
+
+@keyframes loading {
+  0% {
+    bottom: -100px; 
+    width: 110px;  
+    height: 110px; 
+    border-radius: 50%; 
+  }
+  20% {
+    bottom: 425px;
+    width: 110px; 
+    height: 110px;
+    border-radius: 50%; 
+  }
+  80% {
+    bottom: 0px; 
+    width: 1800px; 
+    height: 850px; 
+    border-radius: 0px;
+  }
+  100% {
+    overflow: hidden;
+    bottom: 425px;
+    width: 0px; 
+    height: 0px; 
+    border-radius: 50%; 
+  }
+}
+
+
+.loadingAnimation {
+  animation-name: loading;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards; /* 애니메이션이 끝난 후에도 최종 상태를 유지 */
+}
+
