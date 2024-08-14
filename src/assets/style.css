@@ -1,0 +1,149 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* 기본 스크롤 설정 */
+  min-width: 1800px;
+  min-height: 850px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-family: 'DungGeunMo';
+  background-color: rgb(218, 145, 187);
+}
+
+.basebox{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction:column;
+  width: 1800px;
+  height: 850px;
+  background-color: rgb(128, 100, 100);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.characterbox{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1100px;
+  height: 700px;
+  background-size: 100% 100%;
+  left: 0;
+  top: 0;
+}
+
+.sidebar{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 700px;
+  height: 850px;
+  background-color: rgb(51, 47, 40);
+  right: 0;
+  top: 0;
+}
+
+.selectbar{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  left: 0;
+  width: 1100px;
+  height: 150px;
+  background-color: rgb(104, 84, 57);
+}
+
+.studentcard{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  height: 700px;
+  background-color: rgb(104, 84, 57);
+  top: 20px;
+  
+}
+
+.choosbuttonbox{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(54, 34, 34);
+  height: 120px;
+  width: 700px;
+  bottom: 0;
+}
+
+.choosebutton{
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 80px;
+  background-color: rgb(218, 211, 203);
+}
+
+.studentcardimg{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0, 0, 0);
+  height: 250px;
+  width: 180px;
+  top: 20px;
+  left: 20px;
+}
+
+.personaldatabox{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  height: 250px;
+  width: 300px;
+  top: 20px;
+  right: 20px;
+}
+
+.studentcardimg{
+  background-size: 100% 100%;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+  padding: 5px;
+}
+th, td {
+  min-width: 100px;
+  height: 40px;
+}
+
+
+.studentinformation{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  height: 400px;
+  width: 560px;
+  bottom: 20px;
+  right: 20px;
+}
