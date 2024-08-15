@@ -1,19 +1,19 @@
 /* tables.css */
 table, th, td {
-    font-size: 30px;
-    padding: 10px;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    width: 100%;
-    text-align: center;
-  }
-  
-  th, td {
-    min-width: 140px;
-    height: 40px;
-  }
-  
-  tr td:first-child {
-    border-right: 1px solid black;
-    width: 140px;
-  }
+  font-size: 25px;
+  padding: 10px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 100%;
+  text-align: center;
+}
+
+th, td {
+  min-width: 110px;
+  height: 40px;
+}
+
+tr td:first-child {
+  border-right: 1px solid black;
+  width: 140px;
+}

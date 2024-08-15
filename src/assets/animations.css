@@ -9,7 +9,7 @@
 
 .character {
   position: absolute;
-  bottom: 0;
+  bottom: -100px;
   left: 350px;
   width: 400px;
   height: 600px;
@@ -44,4 +44,12 @@
 
 .nobutton.click {
   background-color: rgb(129, 20, 20);
+}
+
+.angryNotification.show{
+  left: 700px;
+}
+
+.angryNotification.hide{
+  left: 1500px;
 }
