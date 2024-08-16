@@ -23,19 +23,17 @@ export function playEffectSound(effectname,effectvolume) {
 
 //브금 소리크기
 const BGMLIST={
-    'peaceful': 0.2,
-    'surprise':0.1,
-    'Destroyed World':0.2,
+    'bgm1': 0.2,
 }
 
+let currentBgm
 //브금
-export function PlayBgm(currentBgm,bgmname){
+export function PlayBgm(bgmname){
     if (bgmname){
         if (currentBgm && bgmname) {
             currentBgm.pause();
             currentBgm.currentTime = 0;
         }
-        currentBgm = playSound("music/" + bgmname, BGMLIST[bgmname], true);
+        currentBgm = playSound("bgm/" + bgmname, BGMLIST[bgmname], true);
     }
-    return currentBgm;
 }
