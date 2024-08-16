@@ -14,6 +14,9 @@ $('.yesbutton').on('click', function() {
   $('.studentcard').removeClass('show').addClass('hide');
   $('.character').removeClass('come').addClass('pass');
   $('.choosebutton').css("pointer-events", "none");
+  
+  $('.stamp').attr('src',"./img/yesstamp.png")
+  $('.stamp').show()
   setTimeout(function() {NextPerson()},1000)
 });
 
@@ -23,6 +26,9 @@ $('.nobutton').on('click', function() {
   $('.studentcard').removeClass('show').addClass('hide');
   $('.character').removeClass('come').addClass('unpass');
   $('.choosebutton').css("pointer-events", "none");
+
+  $('.stamp').attr('src',"./img/nostamp.png")
+  $('.stamp').show()
   setTimeout(function() {NextPerson()},1000)
 });
 
@@ -33,10 +39,11 @@ $('.selectbutton5').on('click', function() {
 });
 
 
-function NextPerson(){
+export function NextPerson(){
     $('.studentcard').removeClass('hide').addClass('show');
     $('.character').hide()
     $('.character').removeClass('come').addClass('unpass');
+    $('.stamp').hide()
     ChangePerson()
     
     

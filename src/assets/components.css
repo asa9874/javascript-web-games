@@ -147,3 +147,10 @@
   width: 200px;
   transform: rotate(-20deg);
 }
+
+.stamp{
+  position: absolute;
+  opacity: 0.4;
+  width: 400px;
+  transition: 1s;
+}
