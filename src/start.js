@@ -1,10 +1,15 @@
 import $ from 'jquery'
-import { NextPerson } from './maingame';
+import { NextPerson, StartLoading} from './maingame';
 import { PlayBgm } from './playsound';
+import { SwitchScreen } from './switchscreen';
 
 $('.GameStartButton').on('click', function() {
-    $('.gamestartbox').hide()
-    $('.maingamebox').show()
-    NextPerson()
-    PlayBgm('bgm1')
+    SwitchScreen()
+    setTimeout(function() {
+        $('.gamestartbox').hide()
+        $('.maingamebox').show()
+        NextPerson()
+        PlayBgm('bgm1')
+        StartLoading()
+    },2000);
 });

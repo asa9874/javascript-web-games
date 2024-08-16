@@ -1,50 +1,39 @@
 import $ from 'jquery'
-import { playEffectSound } from './playsound';
+import { ShowSwitchScreen } from './switchscreen';
 
-//모든 버튼 애니메이션
-$('.btn').on('click', function() {
-    var $button = $(this);
-    $button.addClass('click');
-    setTimeout(function() {
-      $button.removeClass('click');
-    }, 200);
-});
+//로딩
+let loadingWidth = 61;
+const decreaseRate = 100; 
+const decreaseStep = 0.05; 
+let loadingInterval
+function decreaseLoadingBar() {
+  if (loadingWidth > 0) {
+      loadingWidth -= decreaseStep;
+      const red = Math.min(255, 255 - Math.floor(255 * (loadingWidth / 100)));
+      const green = Math.min(255, Math.floor(255 * (loadingWidth / 100)));
+      const color = `rgb(${red}, ${green}, 0)`;
 
-$('.choosebutton').css("pointer-events", "none");
+      $('.timebar').css({
+          'width': loadingWidth + '%',
+          'background-color': color
+      });
+    
+  } else {
+    
+    clearInterval(loadingInterval); // 로딩바가 0이 되면 타이머를 멈춥니다.
+    ShowSwitchScreen()
+  }
+}
 
-$('.choosebutton').on('click', function() {
-  playEffectSound('stamp',0.3)
-  $('.stamp').show()
-  
-  $('.choosebutton').css("pointer-events", "none");
-
-  setTimeout(function() {
-    $('.studentcard').removeClass('show').addClass('hide');
-  },500)
-
-  setTimeout(function() {NextPerson()},1500)
-  
-});
-
-//예스버튼
-$('.yesbutton').on('click', function() {
-  $('.stamp').attr('src',"./img/yesstamp.png")
-  setTimeout(function() {
-    $('.character').removeClass('come').addClass('pass');
-  },500)
-});
-
-
-//노버튼
-$('.nobutton').on('click', function() {
-  setTimeout(function() {
-    $('.character').removeClass('come').addClass('unpass');
-  },500)
-  $('.stamp').attr('src',"./img/nostamp.png")
-});
+//로딩 시작
+export function StartLoading(){
+  loadingWidth = 61;
+  loadingInterval=setInterval(decreaseLoadingBar, decreaseRate);
+}
 
 
 
+//사람 데이터 관련변수
 let randomDepartment  
 let randomName  
 let randomGrade 
@@ -54,27 +43,25 @@ let randomLocation
 
 //다음사람
 export function NextPerson(){
-    //문서 입장 애니메이션
+    //문서 등장 애니메이션
     $('.studentcard').removeClass('hide').addClass('show');
     $('.character').hide()
     $('.character').removeClass('come').addClass('unpass');
     $('.stamp').hide()
     
-    
-    //버튼on
-    setTimeout(function() {
-      $('.choosebutton').css("pointer-events", "auto");
-    }, 800);
-
-    //캐릭터 입장 애니메이션
+    //캐릭터 등장 애니메이션
     setTimeout(function() {
       $('.character').show()
       $('.character').removeClass('unpass').removeClass('pass').addClass('come');
       $('.studentcard').removeClass('hide').addClass('show');
     }, 100);
 
+    //버튼on
+    setTimeout(function() {
+      $('.choosebutton').css("pointer-events", "auto");
+    }, 800);
 
-    //화난사람
+    //화난사람(추후 조건 따로 함수로 분리)
     if(randomDepartment==="maid"){
       $('.angryNotification').removeClass('hide').addClass('show');
       setTimeout(function() {
@@ -96,18 +83,13 @@ function ChangePerson(){
   randomClub  = CLUB_NAMES[Math.floor(Math.random() * CLUB_NAMES.length)];
   randomLocation  = FANTASY_LOCATIONS[Math.floor(Math.random() * FANTASY_LOCATIONS.length)];
 
-
-
   const randomNumber = Math.floor(Math.random() * 20) + 1;
   var studentimg=`./img/character/${randomDepartment}/${randomDepartment} (${randomNumber}).png`
-
-
 
   //캐릭터 이미지,배경
   $('.studentcardimg').css('background-image',`url('${studentimg}')`)
   $('.studentcardimg').css('background-color',`${BACKCOLORS[randomDepartment]}`)
   $('.character').attr('src',studentimg)
-
 
   //캐릭터 정보
   $('.studentname').text(randomName)
@@ -119,6 +101,7 @@ function ChangePerson(){
   $('.studentdepartment').text(DEPARTMENTSNAME[randomDepartment])
 }
 
+//데이터들
 const DEPARTMENTS = ["maid", "soilder", "witch"];
 const BACKCOLORS={"maid":"rgb(209, 208, 208)", "soilder":"rgb(110, 219, 125)", "witch":"rgb(238, 149, 238)"}
 const DEPARTMENTSNAME={"maid":"메이드 학과", "soilder":"군인학과", "witch":"마녀학과"}

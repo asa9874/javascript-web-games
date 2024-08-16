@@ -16,7 +16,11 @@ $('.yesimg').attr('src',"./img/yes.png")
 $('.noimg').attr('src',"./img/no.png")
 $('.angrychairman').attr('src',"./img/angry.png")
 $('.stamp').attr('src',"./img/nostamp.png")
-
+$('.timebarimg').attr('src',"./img/nostamp.png")
 
 //스크립트
 $('.scriptbox').hide()
+
+
+//화면전환
+$('.switchscreenbox').hide()
