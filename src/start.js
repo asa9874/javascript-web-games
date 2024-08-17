@@ -8,8 +8,6 @@ $('.GameStartButton').on('click', function() {
     setTimeout(function() {
         $('.gamestartbox').hide()
         $('.maingamebox').show()
-        NextPerson()
         PlayBgm('bgm1')
-        StartLoading()
     },2000);
 });

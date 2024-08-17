@@ -1,6 +1,6 @@
 import $ from 'jquery'
 import { playEffectSound } from './playsound';
-import { NextPerson } from './maingame';
+import { CheckCorrect, NextPerson, StartLoading } from './maingame';
 import { ShowSwitchScreen } from './switchscreen';
 
 //모든 버튼 애니메이션
@@ -27,6 +27,7 @@ $('.choosebutton').on('click', function() {
 //예스버튼
 $('.yesbutton').on('click', function() {
   $('.stamp').attr('src',"./img/yesstamp.png")
+  CheckCorrect()
   setTimeout(function() {
     $('.character').removeClass('come').addClass('pass');
   },500)
@@ -35,10 +36,10 @@ $('.yesbutton').on('click', function() {
 
 //노버튼
 $('.nobutton').on('click', function() {
+  $('.stamp').attr('src',"./img/nostamp.png")
   setTimeout(function() {
     $('.character').removeClass('come').addClass('unpass');
   },500)
-  $('.stamp').attr('src',"./img/nostamp.png")
 });
 
 
@@ -57,6 +58,13 @@ $('.selectbutton1').on('click', function() {
   $('.notificationbox').show()
 });
 
+
+let firstnotification=true
 $('.notificationX').on('click', function() {
   $('.notificationbox').hide()
+  if(firstnotification){
+    NextPerson()
+    StartLoading()
+    firstnotification=false
+  }
 });

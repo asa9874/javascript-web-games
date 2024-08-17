@@ -2,6 +2,9 @@ import $ from 'jquery'
 import { ShowSwitchScreen } from './switchscreen';
 import { playEffectSound } from './playsound';
 
+
+
+
 //로딩
 let loadingWidth = 100;
 const decreaseRate = 100; 
@@ -34,6 +37,9 @@ export function StartLoading(){
 
 
 
+
+
+
 //사람 데이터 관련변수
 let randomDepartment  
 let randomName  
@@ -61,16 +67,24 @@ export function NextPerson(){
     setTimeout(function() {
       $('.choosebutton').css("pointer-events", "auto");
     }, 800);
-
-    //화난사람(추후 조건 따로 함수로 분리)
-    if(randomDepartment==="maid"){
-      $('.angryNotification').removeClass('hide').addClass('show');
-      setTimeout(function() {
-        $('.angryNotification').removeClass('show').addClass('hide');
-      },2000);
-    }
+    
     ChangePerson()
 }
+
+export function CheckCorrect(){
+  if(DAY1["grade"][randomGrade]){
+    $('.angryNotification').removeClass('hide').addClass('show');
+    setTimeout(function() {
+      $('.angryNotification').removeClass('show').addClass('hide');
+    },2000);
+  }
+}
+
+//조건
+//true 무조건 거부
+const DAY1={"grade":{"대학원생":true}}
+
+
 
 
 
@@ -101,6 +115,9 @@ function ChangePerson(){
   $('.studentlocation').text(randomLocation)
   $('.studentdepartment').text(DEPARTMENTSNAME[randomDepartment])
 }
+
+
+
 
 //데이터들
 const DEPARTMENTS = ["maid", "soilder", "witch"];
