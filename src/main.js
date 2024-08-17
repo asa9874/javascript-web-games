@@ -2,7 +2,7 @@ import './assets/style.css'
 import $ from 'jquery'
 
 //시작화면
-//$('.gamestartbox').hide()
+$('.gamestartbox').hide()
 $('.startimg').css('background-image',"linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),url('./img/startimg.png')")
 $('.starttitle').attr('src',"./img/title.png")
 
@@ -19,6 +19,8 @@ $('.angrychairman').attr('src',"./img/angry.png")
 $('.stamp').attr('src',"./img/nostamp.png")
 $('.timebarimg').attr('src',"./img/nostamp.png")
 
+//$('.notificationbox').hide()
+
 //스크립트
 $('.scriptbox').hide()
 
@@ -26,3 +28,7 @@ $('.scriptbox').hide()
 //화면전환
 $('.switchscreenbox').hide()
 $('.switchimg').attr('src',"./img/switch.png")
+
+
+//점수화면
+//$('.resultbox').hide()

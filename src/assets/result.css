@@ -1,0 +1,36 @@
+
+.resultplate{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    
+    background-color: rgb(241, 184, 217);
+    transition: 1s;
+    z-index: 100;
+}
+
+.resultplate.show{
+    top: 0;
+}
+
+.resultplate.hide{
+    top: -100%;
+}
+
+.resultTitle{
+    position: absolute;
+    top: 30px;
+    font-size: 80px;
+}
+
+.resultinnerbox{
+    position: absolute;
+    top: 130px;
+    width: 700px;
+    height: 700px;
+    border-radius: 30px;
+    background-color: rgb(236, 141, 197);
+}

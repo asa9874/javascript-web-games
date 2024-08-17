@@ -436,3 +436,17 @@
   cursor: pointer;
 }
 
+
+.status{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 430px;
+  background-color: red;
+}
+
+.goal{
+  font-size: 50px;
+}

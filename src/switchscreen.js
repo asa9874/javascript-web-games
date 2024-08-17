@@ -25,3 +25,5 @@ export function SwitchScreen(){
         $('.switchscreen').removeClass('startingpoint')
     }, 3000);
 }
+
+

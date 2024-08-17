@@ -1,6 +1,7 @@
 import $ from 'jquery'
 import { ShowSwitchScreen } from './switchscreen';
 import { playEffectSound } from './playsound';
+import { ShowResult } from './result';
 
 
 
@@ -8,7 +9,7 @@ import { playEffectSound } from './playsound';
 //로딩
 let loadingWidth = 100;
 const decreaseRate = 100; 
-const decreaseStep = 0.1; 
+const decreaseStep = 10;   //기본0.2
 let loadingInterval
 function decreaseLoadingBar() {
   if (loadingWidth > 0) {
@@ -25,7 +26,10 @@ function decreaseLoadingBar() {
   } else {
     
     clearInterval(loadingInterval); // 로딩바가 0이 되면 타이머를 멈춥니다.
-    ShowSwitchScreen()
+    ShowResult()
+    setTimeout(function() {
+      $('.maingamebox').hide()
+    }, 1000);
   }
 }
 
@@ -36,7 +40,8 @@ export function StartLoading(){
 }
 
 
-
+let goal=20
+let nowpoint=0
 
 
 
@@ -77,7 +82,16 @@ export function CheckCorrect(){
     setTimeout(function() {
       $('.angryNotification').removeClass('show').addClass('hide');
     },2000);
+    nowpoint-=2
   }
+  nowpoint++
+  
+  $('.goal').text(`${nowpoint}/${goal}`)
+  const red = Math.min(255, 255 - Math.floor(255 * (nowpoint / goal)));
+  const green = Math.min(255, Math.floor(255 * (nowpoint / goal)));
+  const color = `rgb(${red}, ${green}, 0)`;
+  
+  $('.status').css("background-color", color)
 }
 
 //조건
