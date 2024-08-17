@@ -1,10 +1,11 @@
 import $ from 'jquery'
 import { ShowSwitchScreen } from './switchscreen';
+import { playEffectSound } from './playsound';
 
 //로딩
-let loadingWidth = 61;
+let loadingWidth = 100;
 const decreaseRate = 100; 
-const decreaseStep = 0.05; 
+const decreaseStep = 0.1; 
 let loadingInterval
 function decreaseLoadingBar() {
   if (loadingWidth > 0) {
@@ -27,7 +28,7 @@ function decreaseLoadingBar() {
 
 //로딩 시작
 export function StartLoading(){
-  loadingWidth = 61;
+  loadingWidth = 100;
   loadingInterval=setInterval(decreaseLoadingBar, decreaseRate);
 }
 
@@ -89,7 +90,7 @@ function ChangePerson(){
   //캐릭터 이미지,배경
   $('.studentcardimg').css('background-image',`url('${studentimg}')`)
   $('.studentcardimg').css('background-color',`${BACKCOLORS[randomDepartment]}`)
-  $('.character').attr('src',studentimg)
+  $('.characterimg').attr('src',studentimg)
 
   //캐릭터 정보
   $('.studentname').text(randomName)

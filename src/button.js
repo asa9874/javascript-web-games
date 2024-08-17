@@ -52,3 +52,11 @@ $('.selectbutton5').on('click', function() {
 $('.selectbutton4').on('click', function() {
   ShowSwitchScreen()
 });
+
+$('.selectbutton1').on('click', function() {
+  $('.notificationbox').show()
+});
+
+$('.notificationX').on('click', function() {
+  $('.notificationbox').hide()
+});

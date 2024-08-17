@@ -7,14 +7,6 @@
   transform: translate(0, 0);
 }
 
-.character {
-  position: absolute;
-  bottom: -100px;
-  left: 350px;
-  width: 400px;
-  height: 600px;
-  transition: 1s;
-}
 
 .character.pass {
   left: 1500px;

@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import { playEffectSound } from './playsound';
 
 export function ShowSwitchScreen(){
     $('.switchscreenbox').show()
@@ -14,7 +15,13 @@ export function HideSwitchScreen(){
 
 export function SwitchScreen(){
     ShowSwitchScreen()
+    playEffectSound('switch',0.5)
     setTimeout(function() {
         HideSwitchScreen()
     }, 2000);
+
+    setTimeout(function() {
+        $('.switchscreen').removeClass('hide').addClass('startingpoint');
+        $('.switchscreen').removeClass('startingpoint')
+    }, 3000);
 }
