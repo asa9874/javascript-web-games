@@ -1,6 +1,7 @@
 import './assets/style.css'
 import $ from 'jquery'
 
+
 //시작화면
 //$('.gamestartbox').hide()
 $('.startimg').css('background-image',"linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),url('./img/startimg.png')")
