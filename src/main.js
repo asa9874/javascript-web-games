@@ -6,7 +6,7 @@ import $ from 'jquery'
 //$('.gamestartbox').hide()
 $('.startimg').css('background-image',"linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),url('./img/startimg.png')")
 $('.starttitle').attr('src',"./img/title.png")
-
+$('.startsubtitle').attr('src',"./img/subtitle.png")
 
 //메인게임
 $('.maingamebox').hide()

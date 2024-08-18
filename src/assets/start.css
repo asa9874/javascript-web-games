@@ -20,6 +20,11 @@
     top: 0;
 }
 
+.startsubtitle{
+    position: absolute;
+    top:130px
+}
+
 .GameStartButton{
     display: flex;
     align-items: center;
