@@ -298,7 +298,6 @@
   position: absolute;
   display: flex;
   align-items: center;
-  justify-content: center;
   bottom: 0;
   left: 0;
   width: 1100px;
@@ -413,6 +412,7 @@
   height: 90%;
   background-color: #1f1c1c;
   border-radius: 10px;
+  background-size: 100% 100%;
 }
 
 .notificationContentText{
@@ -449,4 +449,13 @@
 
 .goal{
   font-size: 50px;
+}
+
+.book{
+  width: 100px;
+  margin: 20px;
+}
+
+.book:hover{
+  cursor: pointer;
 }

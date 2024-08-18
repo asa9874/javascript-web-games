@@ -9,7 +9,7 @@ import { ShowResult } from './result';
 //로딩
 let loadingWidth = 100;
 const decreaseRate = 100; 
-const decreaseStep = 10;   //기본0.2
+const decreaseStep = 0.10;   //기본0.2
 let loadingInterval
 function decreaseLoadingBar() {
   if (loadingWidth > 0) {

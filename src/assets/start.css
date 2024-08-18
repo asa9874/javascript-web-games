@@ -28,6 +28,7 @@
     width: 200px;
     background-color: rgb(255, 192, 211);
     font-size: 50px;
+    border-radius: 30px;
 }
 
 .GameStartButton:hover{
