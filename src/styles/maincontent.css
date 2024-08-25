@@ -1,0 +1,11 @@
+.maincontent{
+    background-color: rgb(0, 0, 0);
+    margin-top: 56px;
+    display: flex;
+}
+
+
+.card{
+    margin: 10px;
+    width: 24rem;
+}
