@@ -20,7 +20,7 @@ for (let i = 1; i <= totalImages; i++) {
   const cardHTML = `
       <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
           <div class="card mb-4">
-              <img data-src="./src/assets/signage/${imageName}" class="card-img-top lazy" alt="Image ${i}">
+              <img data-src="./signage/${imageName}" class="card-img-top lazy" alt="Image ${i}">
               <div class="card-body">
                   <h5 class="card-title">${imageTitle}</h5>
               </div>
@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
       if (event.target && event.target.tagName === 'IMG') {
         const src = event.target.getAttribute('src');
         const modalImage = document.getElementById('modalImage');
-        console.log('./src/assets/original'+src.substr(36))
-        modalImage.src ='./src/assets/original/'+src.substr(36);
+        console.log('./original/'+src.substr(25))
+        modalImage.src ='./original/'+src.substr(25);
         
         const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
         imageModal.show();
