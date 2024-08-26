@@ -1,11 +1,26 @@
 .maincontent{
     background-color: rgb(0, 0, 0);
     margin-top: 56px;
-    display: flex;
 }
 
 
 .card{
-    margin: 10px;
-    width: 24rem;
+    margin: 4px;
+    width: 100%;  /* col-* 클래스의 너비에 맞게 */
+    max-width: 300px; /* 카드 최대 너비 */
+    transition: 1s;
+}
+
+.custom-container{
+    max-width: 1800px;
+}
+
+.card-img-top.lazy {
+    
+    height: 320px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.card-img-top.lazy-loaded {
+    opacity: 1;
 }
