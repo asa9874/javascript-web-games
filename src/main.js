@@ -8,15 +8,11 @@ $('.headerimg').attr('src',"./src/assets/1 (1).png")
 const mainContent = $('.maincontent');
 const imagePrefix = "jpeg-optimizer_ai"; // 이미지 파일의 접두사
 const imageExtension = ".png"; // 이미지 파일의 확장자
-const totalImages = 20; // 이미지 파일의 총 개수
-
-const IMGNAME=['',
-]
+const totalImages = 31; // 이미지 파일의 총 개수
 
 for (let i = 1; i <= totalImages; i++) {
   const imageName = `${imagePrefix} (${i})${imageExtension}`;
   let imageTitle='이미지'
-  if(IMGNAME[i]){imageTitle=IMGNAME[i]}
   const cardHTML = `
       <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
           <div class="card mb-4">
