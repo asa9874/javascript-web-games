@@ -1,0 +1,9 @@
+/* animations.css */
+.popupbox.show{
+  top: 200px;
+  opacity: 1;
+}
+
+.popupbox.hide{
+  left: 1500px;
+}

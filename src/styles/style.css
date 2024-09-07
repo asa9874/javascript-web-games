@@ -1,11 +1,4 @@
-.mainbox{
-    background-color: #adb5bd;
-    height: 1000px;
-}
-
-.nav{
-    width: 20px;
-    height: 1000px;
-    background-color: antiquewhite;
-    z-index: 100;
-}
+@import url('./reset.css');
+@import url('./animations.css');
+@import url('./popup.css');
+@import url('./captcha.css');
