@@ -34,14 +34,16 @@ $(".form-check-input").on("change", function() {
 if ($(this).is(":checked")) {
     $(this).prop("disabled", true);
     $('.captchacontainer').show()
+    $('.captchabox').removeClass('hide').addClass('show');
     // 체크되었을 때
     
     $('.warningtext').hide()
     setTimeout(() => {
-        $(this).prop("checked", false); // 10초 후 체크 해제
+        $('.captchabox').removeClass('show').addClass('hide');
+        $(this).prop("checked", false); // 30초 후 체크 해제
         $(this).prop("disabled", false);
         $('.warningtext').show()
         $('.captchacontainer').hide()
-    }, 10000); //
+    }, 30000); //
     }
 })

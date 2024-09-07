@@ -4,6 +4,13 @@
   opacity: 1;
 }
 
-.popupbox.hide{
-  left: 1500px;
+
+.captchabox.show{
+  top: 50px;
+  opacity: 1;
+}
+
+.captchabox.hide{
+  top: 80px;
+  opacity: 0;
 }
