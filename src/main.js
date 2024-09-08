@@ -13,7 +13,7 @@ $('.captchacontainer').hide()
 $('.captchawrongtext').hide()
 $('.captchacontainer2').hide()
 
-$('.popup').hide()
+//$('.popup').hide()
 
 
 
