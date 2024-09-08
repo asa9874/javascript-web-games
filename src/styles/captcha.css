@@ -15,6 +15,7 @@
     height: 100%;
     transition: 1s;
 }
+
 .captchabackplate{
     z-index: 12;
 }
@@ -33,6 +34,8 @@
     opacity: 0;
     transition: 1s;
 }
+
+
 
 .captchabox > .bluebox{
     background-color: blue;
@@ -66,6 +69,7 @@
     margin: 5px;
     height: 31%;
     width: 31%;
+    
 }
 
 .captchafooter{
@@ -91,4 +95,80 @@
 .select:hover{
     cursor: pointer;
     transform: scale(1.02);
+}
+
+.captchawrongtext{
+    position: absolute;
+    color: red;
+    font-size: 40px;
+    left: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.captchabackplate2{
+    z-index: 14;
+}
+
+
+.captchacontainer2{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'LeeSeoyun';
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+}
+
+.captchabox2{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(175, 165, 190);
+    width: 600px;
+    height: 500px;
+    z-index: 15;
+    top: 80px;
+    transition: 1s;
+}
+
+.captcha2img{
+    width: 90%;
+    height: 200px;
+    background-color: aqua;
+    background-size: 100% 100%;
+}
+
+.form-check-input3{
+    margin: 20px;
+    width: 90%;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    font-size: 30px;
+}
+
+#submitBtn{
+    height: 50px;
+    width: 200px;
+    font-size: 30px;
+}
+
+.captcha2title{
+    width: 90%;
+    height: 100px;
+    margin: 10px;
+    font-size: 70px;
+    text-align: center;
 }

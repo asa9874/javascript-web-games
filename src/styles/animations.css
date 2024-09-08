@@ -14,3 +14,7 @@
   top: 80px;
   opacity: 0;
 }
+
+.darkened {
+  filter: brightness(30%);
+}

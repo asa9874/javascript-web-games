@@ -10,6 +10,13 @@ $('.captchaimg').css('background-image',"url('./captcha.png')")
 $('.captcha').hide()
 $('.warningtext').hide()
 $('.captchacontainer').hide()
+$('.captchawrongtext').hide()
+$('.captchacontainer2').hide()
+
+$('.popup').hide()
+
+
+
 $advertise.on('click', function() {
   window.open(`https://www.youtube.com/watch?v=1AHzBNLA6mY`);
 })

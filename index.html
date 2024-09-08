@@ -18,7 +18,8 @@
         <div class="backplate"></div>
         <div class="popupbox bg-dark">
             <div class="popuptitle">당신은 <a style="color: red;">성인</a>입니까?</div>
-            <div class="popupdescription">이 사이트는 <a style="color: red;">성인</a>을 위한 사이트는 아니지만 <a style="color: red;">성인</a>이 아니면 들어오지 못합니다.</div>
+            <div class="popupdescription">이 사이트는 <a style="color: red;">성인</a>을 위한 사이트는 아니지만 <a
+                    style="color: red;">성인</a>이 아니면 들어오지 못합니다.</div>
             <div>
                 <button type="button" class="btn btn-primary yesbtn advertise">네</button>
                 <button type="button" class="btn btn-danger nobtn">아니요</button>
@@ -28,9 +29,9 @@
                     <div class="captchatext">로봇이 아닙니다</div>
                     <div class="captchaimg"></div>
                 </div>
-                </div>
             </div>
         </div>
+    </div>
     </div>
 
     <div class="captchacontainer">
@@ -52,12 +53,35 @@
                 <div class="select select9"></div>
             </div>
             <div class="captchafooter">
-                <div class="footerelementsbox"></div>
+                <div class="footerelementsbox">
+                    <p class="captchawrongtext">다시 시도하세요</p>
+                </div>
                 <button type="button" class="btn btn-primary captchabutton">제출</button>
+                <div class="captcha2">
+                    <input class="form-check-input2" type="checkbox" value="" id="flexCheckDefault">
+                    <div class="captchatext">로봇이 아닙니다</div>
+                    <div class="captchaimg"></div>
+                </div>
             </div>
         </div>
     </div>
-    
+
+    <div class="captchacontainer2">
+        <div class="backplate captchabackplate2"></div>
+        <div class="captchabox2">
+            <div class="captcha2title">따라 적으시오</div>
+            <div class="captcha2img"></div>
+            <input class="form-check-input3" type="text" value="">
+            <button id="submitBtn">Submit</button>
+        </div>
+        
+    </div>
+
+
+
+    <div class="mainpage">
+        <div class="catimg"></div>
+    </div>
 
 
 
@@ -75,6 +99,8 @@
     <script type="module" src="./src/main.js"></script>
     <script type="module" src="./src/popup.js"></script>
     <script type="module" src="./src/captcha.js"></script>
+    <script type="module" src="./src/captcha2.js"></script>
+    <script type="module" src="./src/mainpage.js"></script>
 </body>
 
 </html>
