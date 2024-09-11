@@ -19,7 +19,7 @@ $(".form-check-input").on("change", function() {
             $('.warningtext').show()
             $('.captchacontainer').hide()
             $('.captchacontainer2').hide()
-        }, 7000); //
+        }, 70000); //
         }
     })
 

@@ -17,5 +17,6 @@ $('#submitBtn').on('click', function() {
         $('.popup').hide()
         $('.captchacontainer').hide()
         $('.captchacontainer2').hide()
+        window.location.href = './bettery/bettery.html'
     }
 });
