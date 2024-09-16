@@ -1,11 +1,11 @@
 # 기억력게임
 
-### [플레이하기](https://asa9874.github.io/Rhythm-Game/)
+### [플레이하기](https://asa9874.github.io/javascript-web-games/Rhythm-Game/)
 
-
+<img src="https://github.com/user-attachments/assets/965e19eb-0262-4173-b0b3-e356abd43882" width="600" height="400"/>
 
 # 개요
-> ### 배포주소: https://asa9874.github.io/inspection-game/
+> ### 배포주소: https://asa9874.github.io/javascript-web-games/Rhythm-Game/
 
 
 # 🛠️Stacks

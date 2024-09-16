@@ -1,15 +1,14 @@
 # 검문게임
 
-### [플레이하기](https://asa9874.github.io/inspection-game/)
+### [플레이하기](https://asa9874.github.io/javascript-web-games/inspection-game/)
 
-![image](https://github.com/user-attachments/assets/52d977ad-5eab-41f2-b669-891a6d97c223)
+<img src="https://github.com/user-attachments/assets/e48f0a1b-ff07-4bf1-b826-bcc8b307cd6f" width="600" height="400"/>
 
-![image](https://github.com/user-attachments/assets/c244c663-cf8b-43b7-a4c9-7ea5001086c4)
 
 # 개요
 > ### 제목: 검문게임
 > ### 제작기간: 2024.08.14 ~ 2024.08.18
-> ### 배포주소: https://asa9874.github.io/inspection-game/
+> ### 배포주소: https://asa9874.github.io/javascript-web-games/inspection-game/
 
 
 

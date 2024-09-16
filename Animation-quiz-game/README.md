@@ -1,22 +1,19 @@
 # Animation-quiz-game
     두개의 애니메이션중 먼저 나온 애니메이션을 선택하는 게임입니다.
     5번 틀리게 된다면 게임이 종료됩니다.
-### [😎지금 바로 플레이하기](https://asa9874.github.io/Animation-quiz-game/)
+### [😎지금 바로 플레이하기](https://asa9874.github.io/javascript-web-games/Animation-quiz-game/)
 
 
 
 # 게임 이미지
-![image](https://github.com/user-attachments/assets/5a75f1e7-2a13-49fc-af71-3e0fd5de0a27)
-![image](https://github.com/user-attachments/assets/96f23f8f-628b-46bf-aa27-451a241884e9)
-![image](https://github.com/user-attachments/assets/d4eb93ba-feb3-475a-b3e1-e7f8b1a14425)
-
+<img src="https://github.com/user-attachments/assets/84ec8e05-5da9-4a79-bcef-715fe5203f38" width="600" height="400"/>
 
 
 
 # 개요
 > ### 제목: 애니메이션 퀴즈 게임
 > ### 제작기간: 2024.07.24~2024.07.26
-> ### 배포주소: https://asa9874.github.io/Animation-quiz-game/
+> ### 배포주소: https://asa9874.github.io/javascript-web-games/Animation-quiz-game/
 
 
 # 🛠️Stacks

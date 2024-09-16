@@ -1,15 +1,14 @@
 # 텍스트 어드벤쳐 게임
-### [플레이하기](https://asa9874.github.io/Text-Adventure-Game/)
+### [플레이하기](https://asa9874.github.io/javascript-web-games/Text-Adventure-Game/)
+
+<img src="https://github.com/user-attachments/assets/5df55907-f468-4aa2-9642-dab8af3f4919" width="600" height="400"/>
 
 
-![image](https://github.com/user-attachments/assets/1054e21a-25cb-4994-8e24-35b02639bd04)
-
-![image](https://github.com/user-attachments/assets/8a2f4411-b377-4916-ae5e-b52d04852b83)
 
 # 개요
 > ### 제목: 텍스트 어드벤쳐 게임
 > ### 제작기간: 2024.07.28~2024.08.3
-> ### 배포주소: https://asa9874.github.io/Text-Adventure-Game/
+> ### 배포주소: https://asa9874.github.io/javascript-web-games/Text-Adventure-Game/
 
 
 

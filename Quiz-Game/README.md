@@ -1,14 +1,13 @@
 # 카드 맞추기 게임
 
-### [플레이하기](https://asa9874.github.io/Quiz-Game/)
+### [플레이하기](https://asa9874.github.io/javascript-web-games/Quiz-Game/)
 
-![image](https://github.com/user-attachments/assets/64d4979a-0174-40b4-9322-bf81a8392d7b)
-
+<img src="https://github.com/user-attachments/assets/faa370ff-4d28-41cb-b040-ffea2f44193c" width="600" height="400"/>
 
 # 개요
 > ### 제목: 컴퓨터 지식 퀴즈 게임
 > ### 제작기간: 2024.08.12 ~ 2024.08.13
-> ### 배포주소: https://asa9874.github.io/Quiz-Game/
+> ### 배포주소: https://asa9874.github.io/javascript-web-games/Quiz-Game/
 
 
 

@@ -1,8 +1,9 @@
 <h1>Node.js, Vite 수박게임 클론코딩, 깃헙페이지 배포</h1>
 <h2>게임플레이</h2>
-https://asa9874.github.io/fruit-game/
+https://asa9874.github.io/javascript-web-games/fruit-game/
 
-![image](https://github.com/asa9874/fruit-game/assets/84450816/e5e024fe-5177-4be4-9dbd-be624e210e56)
+<img src="https://github.com/user-attachments/assets/961eac78-f78a-4479-a1f7-457c9872d935" width="600" height="400"/>
+
 
 <h3>🌳Node.js사용법</h3>
 https://asa9874.tistory.com/271

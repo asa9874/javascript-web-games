@@ -1,16 +1,15 @@
 # 카드 맞추기 게임
 
-### [플레이하기](https://asa9874.github.io/Memory-Flip-Game/)
+### [플레이하기](https://asa9874.github.io/javascript-web-games/Memory-Flip-Game/)
 
 
-![image](https://github.com/user-attachments/assets/489d4300-8cc4-4814-a905-ec00363e2dea)
+<img src="https://github.com/user-attachments/assets/0ab9576f-48bb-4acc-aa24-5d0e5c3d0ac2" width="600" height="400"/>
 
-![image](https://github.com/user-attachments/assets/6ea74a97-9515-4bb7-b6c1-fb7e261611c3)
 
 # 개요
 > ### 제목: 카드 맞추기 게임
 > ### 제작기간: 2024.08.07 ~ 2024.08.08
-> ### 배포주소: https://asa9874.github.io/Memory-Flip-Game/
+> ### 배포주소: https://asa9874.github.io/javascript-web-games/Memory-Flip-Game/
 
 
 
