@@ -16,6 +16,7 @@
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
 
+
 # 애니메이션 퀴즈게임(2024.07.26)
     두개의 애니메이션중 먼저 나온 애니메이션을 선택하는 게임입니다.
     5번 틀리게 된다면 게임이 종료됩니다.
