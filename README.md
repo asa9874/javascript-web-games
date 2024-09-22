@@ -152,3 +152,6 @@
 ### [**플레이**](https://asa9874.github.io/javascript-web-games/Park)  
 
 
+# 공부기록()
+    초기 주차별 공부기록 사이트 html,css
+### [**플레이**](https://asa9874.github.io/javascript-web-games/Study_record)  
