@@ -130,11 +130,16 @@
 ![Selenium](https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white)
 
 
-
+# ai 미술관(2024.08.28)
+    만든 ai 그림들 모아둔 사이트
+    부트스트랩 연습겸 만들어봄 
+### [**플레이**](https://asa9874.github.io/javascript-web-games/AiArtMuseum/)   
 
 # 광고,캡챠(2024.09.13)
     캡챠, 광고만들어봄 
 ### [**플레이**](https://asa9874.github.io/javascript-web-games/advertise/)       
+
+    
 
 
 
