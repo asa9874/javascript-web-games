@@ -145,11 +145,10 @@
 # 피하기 게임()
     미완임(제작예정없음)
     wasd 움직임만 구현해둠
-### [**플레이**](https://asa9874.github.io/javascript-web-games/avoid-game)  
 
 
 # 포트폴리오 비슷한사이트?()
-    html 익숙해질겸 초기에 만들어본 사이트
+    극초기 html 익숙해질겸 초기에 만들어본 사이트
 ### [**플레이**](https://asa9874.github.io/javascript-web-games/Park)  
 
 
