@@ -132,5 +132,24 @@
 
 
 
+# 광고,캡챠(2024.09.13)
+    캡챠, 광고만들어봄 
+### [**플레이**](https://asa9874.github.io/javascript-web-games/advertise/)       
+
+
+
+----------
+
+# 미완성, 잡다한것, 극초기
+
+# 피하기 게임()
+    미완임(제작예정없음)
+    wasd 움직임만 구현해둠
+### [**플레이**](https://asa9874.github.io/javascript-web-games/avoid-game)  
+
+
+# 포트폴리오 비슷한사이트?()
+    html 익숙해질겸 초기에 만들어본 사이트
+### [**플레이**](https://asa9874.github.io/javascript-web-games/Park)  
 
 
